@@ -1,0 +1,164 @@
+---
+sidebar: sidebar 
+permalink: use/task-add-fsx-volumes.html 
+keywords: fsx for ontap, fsx, aws, create volumes, create nfs volumes, delete nfs volumes, cifs volumes, iscsi, mount volume, delete working environment 
+summary: 'Dopo aver configurato l"ambiente di lavoro, è possibile creare e gestire volumi, cloni e snapshot di Amazon FSX per NetApp ONTAP, modificare le policy di tiering e rimuovere o eliminare FSX per ONTAP.' 
+---
+= Creare volumi per Amazon FSX per NetApp ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver configurato l'ambiente di lavoro, è possibile creare e montare FSX per volumi ONTAP.
+
+
+
+== Creare volumi
+
+È possibile creare e gestire volumi NFS, CIFS e iSCSI dal proprio ambiente di lavoro FSX per ONTAP in BlueXP. I volumi creati utilizzando l'interfaccia CLI di ONTAP saranno visibili anche nell'ambiente di lavoro FSX per ONTAP.
+
+.Prima di iniziare
+Prima di creare un nuovo volume, è necessario un volume attivo https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Connettore in AWS"^].
+
+Se si desidera utilizzare SMB, è necessario aver configurato DNS e Active Directory. Per ulteriori informazioni sulla configurazione di rete di DNS e Active Directory, vedere link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html["AWS: Prerequisiti per l'utilizzo di Microsoft ad autogestito"^].
+
+.A proposito di questa attività
+È possibile aggiungere volumi aprendo l'ambiente di lavoro e selezionando la scheda *Volumes* (volumi) o semplicemente utilizzando il pannello dell'ambiente di lavoro *Details* (Dettagli) da Canvas. Questa attività descrive l'aggiunta di volumi mediante il pannello *Dettagli*.
+
+.Fasi
+. Selezionare l'ambiente di lavoro FSX per ONTAP sul Canvas. Se non si dispone di un connettore abilitato, viene richiesto di aggiungerne uno.
+. Nel pannello *Dettagli*, utilizzare i tre punti (image:icon-three-dots.png["icona di tre punti"]) per aprire il menu delle opzioni. Fare clic su *Add Volume* (Aggiungi volume).
++
+image:screenshot-add-volume.png["Schermata dell'opzione add volume (Aggiungi volume) nel pannello Details (Dettagli)."]
+
+. *Dettagli del volume, protezione e tag*
++
+.. Immettere un nome per il nuovo volume.
+.. Il campo Storage VM (SVM) popola automaticamente la SVM in base al nome dell'ambiente di lavoro.
+.. Inserire le dimensioni del volume e selezionare un'unità (GIB o TIB). Si noti che le dimensioni del volume aumentano con l'utilizzo.
+.. Selezionare un criterio di snapshot. Per impostazione predefinita, viene eseguita una snapshot ogni ora (mantenendo le ultime sei copie), ogni giorno (mantenendo le ultime due copie) e ogni settimana (mantenendo le ultime due copie).
+.. In alternativa, è possibile creare tag per classificare i volumi facendo clic sul segno più e immettendo il nome e il valore di un tag.
+
+
+. *Volume Protocol*:
++
+.. Selezionare un protocollo di volume NFS, CIFS o iSCSI.
++
+[role="tabbed-block"]
+====
+.NFS
+--
+... Selezionare un criterio di controllo degli accessi.
+... Selezionare le versioni di NFS.
+... Selezionare una policy di esportazione personalizzata. Fare clic sull'icona delle informazioni per i criteri dei valori validi.
++
+image:screenshot_fsx_volume_protocol_nfs.png["Una schermata della configurazione NFS FSX per la creazione del volume ONTAP."]
+
+
+
+--
+.CIFS
+--
+... Immettere un nome di condivisione.
+... Inserire utenti o gruppi separati da un punto e virgola.
+... Selezionare il livello di autorizzazione per il volume.
++
+image:screenshot_fsx_volume_protocol_cifs.png["Una schermata della configurazione NFS FSX per la creazione del volume ONTAP."]
+
+... Se si tratta del primo volume CIFS per questo ambiente di lavoro, verrà richiesto di configurare la connettività CIFS utilizzando un'impostazione di _Active Directory_ o _Workgroup_.
++
+**** Se si seleziona un'impostazione del gruppo di lavoro, immettere il nome del server e del gruppo di lavoro per un gruppo di lavoro configurato per CIFS.
+**** Se si seleziona un'installazione di Active Directory, è necessario fornire le seguenti informazioni di configurazione.
++
+[cols="25,75"]
+|===
+| Campo | Descrizione 
+
+
+| Indirizzo IP primario DNS | Gli indirizzi IP dei server DNS che forniscono la risoluzione dei nomi per il server CIFS. Il server DNS elencato deve contenere i record di posizione del servizio (SRV) necessari per individuare i server LDAP di Active Directory e i controller di dominio per il dominio a cui si unisce il server CIFS. 
+
+
+| Dominio Active Directory da unire | L'FQDN del dominio Active Directory (ad) a cui si desidera che il server CIFS si unisca. 
+
+
+| Credenziali autorizzate per l'accesso al dominio | Il nome e la password di un account Windows con privilegi sufficienti per aggiungere computer all'unità organizzativa (OU) specificata nel dominio ad. 
+
+
+| Nome NetBIOS del server CIFS | Un nome server CIFS univoco nel dominio ad. 
+
+
+| Unità organizzativa | L'unità organizzativa all'interno del dominio ad da associare al server CIFS. L'impostazione predefinita è CN=computer. 
+
+
+| Dominio DNS | Il dominio DNS per la macchina virtuale di storage (SVM). Nella maggior parte dei casi, il dominio è lo stesso del dominio ad. 
+
+
+| Server NTP | Selezionare *Enable NTP Server Configuration* (attiva configurazione server NTP) per configurare un server NTP utilizzando il DNS di Active Directory. Se è necessario configurare un server NTP utilizzando un indirizzo diverso, utilizzare l'API. Vedere https://docs.netapp.com/us-en/cloud-manager-automation/index.html["Documenti sull'automazione BlueXP"^] per ulteriori informazioni. 
+|===
+
+
+
+
+--
+.ISCSI
+--
+È possibile connettere il LUN utilizzando un gruppo iniziatore esistente o crearne uno nuovo. Per mappare un gruppo di iniziatori esistente, selezionare il sistema operativo e uno o più gruppi di iniziatori.
+
+Per creare un nuovo gruppo iniziatore:
+
+... Selezionare **Crea nuovo**.
+... Selezionare il sistema operativo in uso.
+... Fare clic per aggiungere uno o più nomi host iSCSI Qualified Name (IQN). È possibile selezionare IQN esistenti o aggiungere nuovi IQN. Per ulteriori informazioni su come trovare l'IQN per un volume, vedere link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connect-lun.html["Collegare un host a un LUN"^].
+... Inserire un nome **Gruppo iniziatore**.
++
+image:screenshot-volume-protocol-iscsi.png["Una schermata della configurazione iSCSI FSX per la creazione del volume ONTAP."]
+
+
+
+--
+====
+
+
+. *Profilo di utilizzo e tiering*
++
+.. Per impostazione predefinita, l'opzione *efficienza dello storage* è disattivata. È possibile modificare questa impostazione per attivare la deduplica e la compressione.
+.. Per impostazione predefinita, *Tiering Policy* è impostato su *Snapshot Only*. È possibile selezionare una policy di tiering diversa in base alle proprie esigenze.
++
+image:screenshot_fsx_volume_usage_tiering.png["Schermata del profilo di utilizzo e della configurazione del tiering per la creazione di volumi FSX per ONTAP."]
+
+
+
+. *Revisione*: Esaminare la configurazione del volume. Fare clic su *Previous* (precedente) per modificare le impostazioni o su *Add* (Aggiungi) per creare il volume.
+
+
+.Risultato
+Il nuovo volume viene aggiunto all'ambiente di lavoro.
+
+
+
+== Montare i volumi
+
+Accedi alle istruzioni di montaggio da BlueXP per montare il volume su un host.
+
+.A proposito di questa attività
+È possibile montare i volumi aprendo l'ambiente di lavoro e selezionando la scheda *Volumes* (volumi) o semplicemente utilizzando il pannello dell'ambiente di lavoro *Details* (Dettagli) da Canvas. Questa attività descrive l'aggiunta di volumi mediante il pannello *Dettagli*.
+
+.Fasi
+. Selezionare l'ambiente di lavoro FSX per ONTAP sul Canvas.
+. Nel pannello *Dettagli*, utilizzare l'icona a tre punti (image:icon-three-dots.png["icona di tre punti"]) per aprire il menu delle opzioni. Fare clic su *Visualizza volumi*.
++
+image:screenshot-view-volume.png["Una schermata che illustra come aprire il menu delle azioni del volume."]
+
+. Utilizzare *Manage Volumes* (Gestisci volumi) per aprire il menu *Volume Actions* (azioni volume). Fare clic su *Mount command* e seguire le istruzioni per montare il volume.
++
+image:screenshot-mount-volume.png["Una schermata del comando mount volume."]
+
+
+
+.Risultato
+Il volume viene ora montato sull'host.

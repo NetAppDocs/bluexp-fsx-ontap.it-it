@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: start/task-getting-started-fsx.html 
+keywords: Amazon FSx for NetApp ONTAP, fsx, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, bluexp website, get started, network, vpn, tier, tiering, storage tier, data tier, granting, permissions, policy, iam policy, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, create 
+summary: Con BlueXP, puoi iniziare a utilizzare FSX per ONTAP in pochi passaggi. 
+---
+= Avvio rapido di Amazon FSX per NetApp ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilizzo di link:https://docs.netapp.com/us-en/cloud-manager-family/["BlueXP"^], Puoi iniziare a utilizzare FSX per ONTAP in pochi passaggi.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Impostare un ruolo IAM in AWS
+[role="quick-margin-para"]
+Per creare o gestire un ambiente di lavoro Amazon FSX per NetApp ONTAP, è necessario aggiungere le credenziali AWS a BlueXP fornendo l'ARN di un ruolo IAM che assegna a BlueXP le autorizzazioni necessarie per creare un ambiente di lavoro FSX per ONTAP. A tale scopo, è necessario link:../requirements/task-setting-up-permissions-fsx.html["Impostare un ruolo IAM che consenta a BlueXP SaaS di assumere il ruolo"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Creare un ambiente di lavoro FSX per ONTAP
+[role="quick-margin-para"]
+È necessario link:../use/task-creating-fsx-working-environment.html["Creare un ambiente di lavoro Amazon FSX per NetApp ONTAP"] prima di aggiungere volumi.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Creare un connettore per AWS
+[role="quick-margin-para"]
+È necessario disporre di un https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#how-to-create-a-connector["Connettore per AWS"^] Per aprire l'ambiente di lavoro FSX per ONTAP, creare volumi o eseguire altre azioni. Quando è necessario un connettore, BlueXP chiede se non è già attivo.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Aggiungere e montare un volume
+[role="quick-margin-para"]
+È possibile link:../use/task-add-fsx-volumes.html["Creare e montare FSX per volumi ONTAP"] Utilizzando BlueXP.
+
+.Cosa succederà
+Ora puoi utilizzare BlueXP per gestire i volumi e configurare servizi aggiuntivi come replica, copia e sincronizzazione e classificazione.
