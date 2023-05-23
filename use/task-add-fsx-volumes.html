@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head class="at-element-marker">
+  <title>Creare volumi per Amazon FSX per NetApp ONTAP | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Creare volumi per Amazon FSX per NetApp ONTAP | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+	<meta property="og:description" content="Dopo aver configurato l"ambiente di lavoro, è possibile creare e gestire volumi, cloni e snapshot di Amazon FSX per NetApp ONTAP, modificare le policy di tie..." />
+  <meta property="og:image" content="https://docs.netapp.com/it-it/cloud-manager-fsx-ontap/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Dopo aver configurato l"ambiente di lavoro, è possibile creare e gestire volumi, cloni e snapshot di Amazon FSX per NetApp ONTAP, modificare le policy di tie...">
+  <meta name="keywords" content=" fsx for ontap, fsx, aws, create volumes, create nfs volumes, delete nfs volumes, cifs volumes, iscsi, mount volume, delete working environment"><!-- Icons -->
+  <link rel="icon" href="/it-it/cloud-manager-fsx-ontap/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/cloud-manager-fsx-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/it-it/cloud-manager-fsx-ontap/css/netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/it-it/cloud-manager-fsx-ontap/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/it-it/cloud-manager-fsx-ontap/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/it-it/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" />
+  <link rel='stylesheet' href='/it-it/cloud-manager-fsx-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = consentId;
+      head.appendChild(onetrustScript);
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/it-it/cloud-manager-fsx-ontap/js/na-search.js'></script><script src='/it-it/cloud-manager-fsx-ontap/js/na-pagenav.js'></script><script src='/it-it/cloud-manager-fsx-ontap/js/na-utility.js'></script>
+ <!--  
+  <link rel='stylesheet' href='/it-it/cloud-manager-fsx-ontap/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/it-it/cloud-manager-fsx-ontap/css/prism-netapp.css' type='text/css'>
+ -->
+
+  <!-- <script src='/it-it/cloud-manager-fsx-ontap/js/na-utility.js'></script> -->
+  <script src='/it-it/cloud-manager-fsx-ontap/js/clouddocs.js'></script>
+  <script src='/it-it/cloud-manager-fsx-ontap/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <script src='/it-it/cloud-manager-fsx-ontap/js/toc.js'></script> -->
+  <!-- <script src='/it-it/cloud-manager-fsx-ontap/js/customscripts.js'></script> --><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/it-it/cloud-manager-fsx-ontap"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/it-it/cloud-manager-fsx-ontap/js/custom-dropdown.js'></script>
+  <script src='/it-it/cloud-manager-fsx-ontap/js/FileSaver.min.js'></script>
+  <script src='/it-it/cloud-manager-fsx-ontap/js/jszip-utils.min.js'></script>
+  <script src='/it-it/cloud-manager-fsx-ontap/js/jszip.min.js'></script>
+  <!-- <script src='/it-it/cloud-manager-fsx-ontap/js/pdf-ux.js'></script> -->
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-fsx-ontap.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html&page-title=Creare volumi per Amazon FSX per NetApp ONTAP" class="page-nav-contribute-link" role="button"><img src="/it-it/cloud-manager-fsx-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-fsx-ontap/blob/main/use/task-add-fsx-volumes.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/cloud-manager-fsx-ontap/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/cloud-manager-fsx-ontap/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">IN QUESTA PAGINA</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Prodotto e soluzioni</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Supporto e training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Testimonianze dei clienti</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contatto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/it-it/cloud-manager-fsx-ontap/search.html"
+          data-type="widget" 
+          data-placeholder="Esplora la documentazione"
+          data-no-results-found="Nessun risultato per {query}"
+          data-did-you-mean="Cerca {suggestion}."
+          data-no-results-found-did-you-mean="Nessun risultato per {query}. Intendi {suggestion}?"
+          data-results-found="{hitCount} risultati trovati"
+          data-error-message="Si è verificato un problema durante il recupero dei risultati. Riprova."
+          data-error-reset="Reimposta ricerca"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">Italiano</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/it-it/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/es-es/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li></ul>
+    </div>
+    <!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/it-it/cloud-manager-fsx-ontap/images/collapse.png" alt="Comprimi pannello di navigazione"></button>
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/it-it/cloud-manager-fsx-ontap/images/pdf.png" alt="" width="16" height="16"/>PDF disponibili<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/it-it/cloud-manager-fsx-ontap/pdfs/fullsite-sidebar/Documentazione_di_Amazon_FSX_per_NetApp_ONTAP.pdf" >
+          <img src="/it-it/cloud-manager-fsx-ontap/images/pdf.png" alt="" width="16" height="16"/>PDF del sito di questa documentazione</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-fsx-ontap/pdfs/sidebar/Inizia_subito.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-fsx-ontap/images/pdf.png" alt="" width="16" height="16"/>
+            Inizia subito
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-fsx-ontap/pdfs/sidebar/Requisiti.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-fsx-ontap/images/pdf.png" alt="" width="16" height="16"/>
+            Requisiti
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-fsx-ontap/pdfs/sidebar/USA_Amazon_FSX_per_NetApp_ONTAP.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-fsx-ontap/images/pdf.png" alt="" width="16" height="16"/>
+            USA Amazon FSX per NetApp ONTAP
+          </a>
+          
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-fsx-ontap/pdfs/sidebar/Conoscenza_e_supporto.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-fsx-ontap/images/pdf.png" alt="" width="16" height="16"/>
+            Conoscenza e supporto
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/it-it/cloud-manager-fsx-ontap/images/pdf-zip.png" alt="" width="16" height="16"/>
+      <pre>Raccolta di documenti PDF separati<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/it-it/cloud-manager-family/"><img src="/it-it/cloud-manager-fsx-ontap/images/left_arrow.png" alt=""><pre>Tutta la documentazione BlueXP</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documentazione di Amazon FSX per NetApp ONTAP"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/index.html">
+        Documentazione di Amazon FSX per NetApp ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note di rilascio"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/whats-new.html">
+        Note di rilascio
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Inizia subito"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Inizia subito</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Scopri di più su FSX per ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/start/concept-fsx-aws.html">
+        Scopri di più su FSX per ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Avvio rapido"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html">
+        Avvio rapido
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Requisiti"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Requisiti</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostare le autorizzazioni per FSX per ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/requirements/task-setting-up-permissions-fsx.html">
+        Impostare le autorizzazioni per FSX per ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Regole del gruppo di sicurezza per FSX per ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/requirements/reference-security-groups-fsx.html">
+        Regole del gruppo di sicurezza per FSX per ONTAP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="USA Amazon FSX per NetApp ONTAP"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> USA Amazon FSX per NetApp ONTAP</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare o scoprire un ambiente di lavoro"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html">
+        Creare o scoprire un ambiente di lavoro
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire un ambiente di lavoro"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/use/task-manage-working-environment.html">
+        Gestire un ambiente di lavoro
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare e montare volumi"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html">
+        Creare e montare volumi
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire volumi e servizi dati"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/use/task-manage-fsx-volumes.html">
+        Gestire volumi e servizi dati
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conoscenza e supporto"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Conoscenza e supporto</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrati per ricevere assistenza"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/support/task-support-registration.html">
+        Registrati per ricevere assistenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Richiedi assistenza"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/support/task-get-help.html">
+        Richiedi assistenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note legali"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-fsx-ontap/legal-notices.html">
+        Note legali
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/it-it/cloud-manager-fsx-ontap/images/expand.png" alt="Espandi pannello di navigazione"></button>
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Documentazione Cloud</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/it-it/cloud-manager-family/">BlueXP</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/it-it/cloud-manager-fsx-ontap/">Amazon&nbsp;FSx&nbsp;for&nbsp;NetApp&nbsp;ONTAP</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Creare volumi per Amazon FSX per NetApp ONTAP</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2023-05-23 20:13:32 +0000">05/23/2023</time>
+    
+  
+
+<span>Collaboratori
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Dopo aver configurato l&#8217;ambiente di lavoro, è possibile creare e montare FSX per volumi ONTAP.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creare-volumi">Creare volumi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>È possibile creare e gestire volumi NFS, CIFS e iSCSI dal proprio ambiente di lavoro FSX per ONTAP in BlueXP. I volumi creati utilizzando l&#8217;interfaccia CLI di ONTAP saranno visibili anche nell&#8217;ambiente di lavoro FSX per ONTAP.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prima di iniziare</div>
+<p>Prima di creare un nuovo volume, è necessario un volume attivo <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"Connettore in AWS"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Se si desidera utilizzare SMB, è necessario aver configurato DNS e Active Directory. Per ulteriori informazioni sulla configurazione di rete di DNS e Active Directory, vedere <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html" target="_blank" rel="noopener">"AWS: Prerequisiti per l&#8217;utilizzo di Microsoft ad autogestito"</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">A proposito di questa attività</div>
+<p>È possibile aggiungere volumi aprendo l&#8217;ambiente di lavoro e selezionando la scheda <strong>Volumes</strong> (volumi) o semplicemente utilizzando il pannello dell&#8217;ambiente di lavoro <strong>Details</strong> (Dettagli) da Canvas. Questa attività descrive l&#8217;aggiunta di volumi mediante il pannello <strong>Dettagli</strong>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Selezionare l&#8217;ambiente di lavoro FSX per ONTAP sul Canvas. Se non si dispone di un connettore abilitato, viene richiesto di aggiungerne uno.</p>
+</li>
+<li>
+<p>Nel pannello <strong>Dettagli</strong>, utilizzare i tre punti (<span class="image"><img src="../media/icon-three-dots.png" alt="icona di tre punti"></span>) per aprire il menu delle opzioni. Fare clic su <strong>Add Volume</strong> (Aggiungi volume).</p>
+<div class="paragraph">
+<p><span class="image"><img src="../media/screenshot-add-volume.png" alt="Schermata dell&#8217;opzione add volume (Aggiungi volume) nel pannello Details (Dettagli)."></span></p>
+</div>
+</li>
+<li>
+<p><strong>Dettagli del volume, protezione e tag</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Immettere un nome per il nuovo volume.</p>
+</li>
+<li>
+<p>Il campo Storage VM (SVM) popola automaticamente la SVM in base al nome dell&#8217;ambiente di lavoro.</p>
+</li>
+<li>
+<p>Inserire le dimensioni del volume e selezionare un&#8217;unità (GIB o TIB). Si noti che le dimensioni del volume aumentano con l&#8217;utilizzo.</p>
+</li>
+<li>
+<p>Selezionare un criterio di snapshot. Per impostazione predefinita, viene eseguita una snapshot ogni ora (mantenendo le ultime sei copie), ogni giorno (mantenendo le ultime due copie) e ogni settimana (mantenendo le ultime due copie).</p>
+</li>
+<li>
+<p>In alternativa, è possibile creare tag per classificare i volumi facendo clic sul segno più e immettendo il nome e il valore di un tag.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Volume Protocol</strong>:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Selezionare un protocollo di volume NFS, CIFS o iSCSI.</p>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">NFS</div>
+<div class="content">
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Selezionare un criterio di controllo degli accessi.</p>
+</li>
+<li>
+<p>Selezionare le versioni di NFS.</p>
+</li>
+<li>
+<p>Selezionare una policy di esportazione personalizzata. Fare clic sull&#8217;icona delle informazioni per i criteri dei valori validi.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../media/screenshot_fsx_volume_protocol_nfs.png" alt="Una schermata della configurazione NFS FSX per la creazione del volume ONTAP."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">CIFS</div>
+<div class="content">
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Immettere un nome di condivisione.</p>
+</li>
+<li>
+<p>Inserire utenti o gruppi separati da un punto e virgola.</p>
+</li>
+<li>
+<p>Selezionare il livello di autorizzazione per il volume.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../media/screenshot_fsx_volume_protocol_cifs.png" alt="Una schermata della configurazione NFS FSX per la creazione del volume ONTAP."></span></p>
+</div>
+</li>
+<li>
+<p>Se si tratta del primo volume CIFS per questo ambiente di lavoro, verrà richiesto di configurare la connettività CIFS utilizzando un&#8217;impostazione di <em>Active Directory</em> o <em>Workgroup</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se si seleziona un&#8217;impostazione del gruppo di lavoro, immettere il nome del server e del gruppo di lavoro per un gruppo di lavoro configurato per CIFS.</p>
+</li>
+<li>
+<p>Se si seleziona un&#8217;installazione di Active Directory, è necessario fornire le seguenti informazioni di configurazione.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Campo</th>
+<th class="tableblock halign-left valign-top">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indirizzo IP primario DNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gli indirizzi IP dei server DNS che forniscono la risoluzione dei nomi per il server CIFS. Il server DNS elencato deve contenere i record di posizione del servizio (SRV) necessari per individuare i server LDAP di Active Directory e i controller di dominio per il dominio a cui si unisce il server CIFS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dominio Active Directory da unire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;FQDN del dominio Active Directory (ad) a cui si desidera che il server CIFS si unisca.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credenziali autorizzate per l&#8217;accesso al dominio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il nome e la password di un account Windows con privilegi sufficienti per aggiungere computer all&#8217;unità organizzativa (OU) specificata nel dominio ad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nome NetBIOS del server CIFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un nome server CIFS univoco nel dominio ad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unità organizzativa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;unità organizzativa all&#8217;interno del dominio ad da associare al server CIFS. L&#8217;impostazione predefinita è CN=computer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dominio DNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il dominio DNS per la macchina virtuale di storage (SVM). Nella maggior parte dei casi, il dominio è lo stesso del dominio ad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server NTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selezionare <strong>Enable NTP Server Configuration</strong> (attiva configurazione server NTP) per configurare un server NTP utilizzando il DNS di Active Directory. Se è necessario configurare un server NTP utilizzando un indirizzo diverso, utilizzare l&#8217;API. Vedere <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">"Documenti sull&#8217;automazione BlueXP"</a> per ulteriori informazioni.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">ISCSI</div>
+<div class="content">
+<div class="paragraph">
+<p>È possibile connettere il LUN utilizzando un gruppo iniziatore esistente o crearne uno nuovo. Per mappare un gruppo di iniziatori esistente, selezionare il sistema operativo e uno o più gruppi di iniziatori.</p>
+</div>
+<div class="paragraph">
+<p>Per creare un nuovo gruppo iniziatore:</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Selezionare <strong>Crea nuovo</strong>.</p>
+</li>
+<li>
+<p>Selezionare il sistema operativo in uso.</p>
+</li>
+<li>
+<p>Fare clic per aggiungere uno o più nomi host iSCSI Qualified Name (IQN). È possibile selezionare IQN esistenti o aggiungere nuovi IQN. Per ulteriori informazioni su come trovare l&#8217;IQN per un volume, vedere <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connect-lun.html" target="_blank" rel="noopener">"Collegare un host a un LUN"</a>.</p>
+</li>
+<li>
+<p>Inserire un nome <strong>Gruppo iniziatore</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../media/screenshot-volume-protocol-iscsi.png" alt="Una schermata della configurazione iSCSI FSX per la creazione del volume ONTAP."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Profilo di utilizzo e tiering</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Per impostazione predefinita, l&#8217;opzione <strong>efficienza dello storage</strong> è disattivata. È possibile modificare questa impostazione per attivare la deduplica e la compressione.</p>
+</li>
+<li>
+<p>Per impostazione predefinita, <strong>Tiering Policy</strong> è impostato su <strong>Snapshot Only</strong>. È possibile selezionare una policy di tiering diversa in base alle proprie esigenze.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../media/screenshot_fsx_volume_usage_tiering.png" alt="Schermata del profilo di utilizzo e della configurazione del tiering per la creazione di volumi FSX per ONTAP."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Revisione</strong>: Esaminare la configurazione del volume. Fare clic su <strong>Previous</strong> (precedente) per modificare le impostazioni o su <strong>Add</strong> (Aggiungi) per creare il volume.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>Il nuovo volume viene aggiunto all&#8217;ambiente di lavoro.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="montare-i-volumi">Montare i volumi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Accedi alle istruzioni di montaggio da BlueXP per montare il volume su un host.</p>
+</div>
+<div class="paragraph">
+<div class="title">A proposito di questa attività</div>
+<p>È possibile montare i volumi aprendo l&#8217;ambiente di lavoro e selezionando la scheda <strong>Volumes</strong> (volumi) o semplicemente utilizzando il pannello dell&#8217;ambiente di lavoro <strong>Details</strong> (Dettagli) da Canvas. Questa attività descrive l&#8217;aggiunta di volumi mediante il pannello <strong>Dettagli</strong>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Selezionare l&#8217;ambiente di lavoro FSX per ONTAP sul Canvas.</p>
+</li>
+<li>
+<p>Nel pannello <strong>Dettagli</strong>, utilizzare l&#8217;icona a tre punti (<span class="image"><img src="../media/icon-three-dots.png" alt="icona di tre punti"></span>) per aprire il menu delle opzioni. Fare clic su <strong>Visualizza volumi</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../media/screenshot-view-volume.png" alt="Una schermata che illustra come aprire il menu delle azioni del volume."></span></p>
+</div>
+</li>
+<li>
+<p>Utilizzare <strong>Manage Volumes</strong> (Gestisci volumi) per aprire il menu <strong>Volume Actions</strong> (azioni volume). Fare clic su <strong>Mount command</strong> e seguire le istruzioni per montare il volume.</p>
+<div class="paragraph">
+<p><span class="image"><img src="../media/screenshot-mount-volume.png" alt="Una schermata del comando mount volume."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>Il volume viene ora montato sull&#8217;host.</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Condizioni per l'utilizzo</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Direttiva sulla privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Direttiva sui Cookie</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Impostazioni cookie</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a target="_self" href="javascript:netapp_mailto()">Invia feedback su questa pagina</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-fsx-ontap/images/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/it-it/cloud-manager-fsx-ontap/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/it-it/cloud-manager-fsx-ontap/js/prism.js'></script>
+      <script type="text/javascript" src='/it-it/cloud-manager-fsx-ontap/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/it-it/cloud-manager-fsx-ontap/js/tabbed-blocks.js'></script>
+    <script src='/it-it/cloud-manager-fsx-ontap/js/sidebar.js'></script>
+  </body></html>
