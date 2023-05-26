@@ -31,6 +31,15 @@ link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["A
 
 == Funzionalità aggiuntive di BlueXP
 
+* Amazon FSX per NetApp ONTAP è supportato quando si utilizza BlueXP in modalità _standard_ o _limitata_.
++
+** La modalità Standard sfrutta il layer BlueXP SaaS per fornire funzionalità complete.
+** La modalità limitata è disponibile per le organizzazioni con restrizioni di connettività.
++
+Fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["Modalità di implementazione di BlueXP"^] per ulteriori informazioni.
+
+
+
 * Utilizzo di link:https://docs.netapp.com/us-en/cloud-manager-family/["BlueXP"^] (Cloud Manager) e un connettore in AWS, è possibile creare e gestire volumi, replicare i dati e integrare FSX per ONTAP con i servizi cloud NetApp, come la classificazione BlueXP e BlueXP Copy and Sync (Cloud Sync).
 * Utilizzando la tecnologia basata sull'intelligenza artificiale (ai), la classificazione BlueXP (Cloud Data Sense) può aiutarti a comprendere il contesto dei dati e a identificare i dati sensibili che risiedono nei tuoi account FSX per ONTAP. https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["Scopri di più"^].
 * Utilizzando la copia e la sincronizzazione BlueXP, puoi automatizzare la migrazione dei dati verso qualsiasi destinazione nel cloud o on-premise. https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html["Scopri di più"^]
