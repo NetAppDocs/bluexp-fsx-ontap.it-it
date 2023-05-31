@@ -74,7 +74,7 @@ NOTE: Tutte le altre opzioni richiedono un connettore e sono disattivate.
 È possibile modificare la capacità di throughput in qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.
 
 .Prima di iniziare
-Hai bisogno di un attivo https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["Connettore in AWS"^].
+Hai bisogno di un attivo https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Connettore in AWS"^].
 
 .Fasi
 . Aprire l'ambiente di lavoro FSX per ONTAP.
@@ -90,7 +90,7 @@ Hai bisogno di un attivo https://docs.netapp.com/us-en/cloud-manager-setup-admin
 È possibile modificare la capacità dello storage e gli IOPS in qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.
 
 .Prima di iniziare
-Hai bisogno di un attivo https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["Connettore in AWS"^].
+Hai bisogno di un attivo https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Connettore in AWS"^].
 
 .Fasi
 . Aprire l'ambiente di lavoro FSX per ONTAP.

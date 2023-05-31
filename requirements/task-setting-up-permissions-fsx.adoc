@@ -142,6 +142,6 @@ image:screenshot-govcloud-checkbox.png["Una schermata della casella di controllo
 
 == Link correlati
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["Credenziali e autorizzazioni AWS"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["Gestione delle credenziali AWS per BlueXP"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html["Credenziali e autorizzazioni AWS"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Gestione delle credenziali AWS per BlueXP"^]
 

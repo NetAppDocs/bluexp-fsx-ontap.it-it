@@ -61,7 +61,7 @@ NOTE: link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-ru
 
 . *IP mobile* (solo zone di disponibilità multiple)
 +
-Lasciare vuoto _CIDR Range_ per impostare automaticamente un intervallo disponibile. In alternativa, è possibile utilizzare https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html["AWS Transit Gateway"^] per configurare manualmente un intervallo.
+Lasciare vuoto _CIDR Range_ per impostare automaticamente un intervallo disponibile. In alternativa, è possibile utilizzare https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-transit-gateway.html["AWS Transit Gateway"^] per configurare manualmente un intervallo.
 
 . *Tabelle di percorso* (solo zone di disponibilità multiple)
 +
@@ -69,7 +69,7 @@ Selezionare le tabelle di routing che includono i percorsi verso gli indirizzi I
 
 . *Crittografia dei dati*
 +
-Accettare la chiave master AWS predefinita o fare clic su *Change Key* (Cambia chiave) per selezionare una diversa chiave master cliente AWS (CMK). Per ulteriori informazioni su CMK, vedere link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["Configurazione di AWS KMS"^].
+Accettare la chiave master AWS predefinita o fare clic su *Change Key* (Cambia chiave) per selezionare una diversa chiave master cliente AWS (CMK). Per ulteriori informazioni su CMK, vedere link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["Configurazione di AWS KMS"^].
 
 . *Configurazione dello storage*
 +
