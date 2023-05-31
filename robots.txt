@@ -1,1 +1,1 @@
-Sitemap: https://docs.netapp.com/it-it/cloud-manager-fsx-ontap/sitemap.xml
+Sitemap: https://docs.netapp.com/it-it/bluexp-fsx-ontap/sitemap.xml
