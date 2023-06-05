@@ -700,7 +700,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 14:39:14 +0000">05/31/2023</time>
+    <time datetime="2023-06-05 12:06:02 +0000">06/05/2023</time>
     
   
 
@@ -767,7 +767,10 @@
 <p>Inserire il nome dell&#8217;ambiente di lavoro che si desidera utilizzare.</p>
 </li>
 <li>
-<p>In alternativa, è possibile creare tag per categorizzare l&#8217;ambiente di lavoro facendo clic sul segno più e immettendo il nome e il valore di un tag.</p>
+<p>In alternativa, è possibile creare tag facendo clic sul segno più e immettendo il nome e il valore di un tag.</p>
+</li>
+<li>
+<p>Se si desidera, è possibile specificare l&#8217;ora di inizio per Amazon FSX for NetApp ONTAP per eseguire la manutenzione settimanale di 30 minuti. Questo può essere utilizzato per garantire che la manutenzione non coincida con le attività aziendali critiche. Se si seleziona <strong>Nessuna preferenza</strong>, viene assegnato un orario di inizio casuale. È possibile modificarlo in qualsiasi momento.</p>
 </li>
 <li>
 <p>Inserire e confermare la password del cluster ONTAP che si desidera utilizzare.</p>
@@ -809,7 +812,41 @@
 <li>
 <p><strong>IP mobile</strong> (solo zone di disponibilità multiple)</p>
 <div class="paragraph">
-<p>Lasciare vuoto <em>CIDR Range</em> per impostare automaticamente un intervallo disponibile. In alternativa, è possibile utilizzare <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-transit-gateway.html" target="_blank" rel="noopener">"AWS Transit Gateway"</a> per configurare manualmente un intervallo.</p>
+<p>Lasciare vuoto <em>CIDR Range</em> per impostare automaticamente un intervallo disponibile. In alternativa, è possibile utilizzare <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html" target="_blank" rel="noopener">"AWS Transit Gateway"</a> per configurare manualmente un intervallo.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-fsx-ontap/images/warning.svg" alt="Attenzione">
+</td>
+<td class="content">
+<div class="ulist">
+<div class="title">Gli IPS nei seguenti intervalli non sono supportati:</div>
+<ul>
+<li>
+<p>0.0.0.0/8</p>
+</li>
+<li>
+<p>127.0.0.0/8</p>
+</li>
+<li>
+<p>198.19.0.0/20</p>
+</li>
+<li>
+<p>224.0.0.0/4</p>
+</li>
+<li>
+<p>240.0.0.0/4</p>
+</li>
+<li>
+<p>255.255.255.255/32</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
