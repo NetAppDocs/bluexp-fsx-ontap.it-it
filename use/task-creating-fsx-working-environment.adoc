@@ -43,7 +43,8 @@ image:screenshot_add_fsx_working_env.png["Schermata dell'aggiunta di un ambiente
 . *Dettagli e credenziali*
 +
 .. Inserire il nome dell'ambiente di lavoro che si desidera utilizzare.
-.. In alternativa, è possibile creare tag per categorizzare l'ambiente di lavoro facendo clic sul segno più e immettendo il nome e il valore di un tag.
+.. In alternativa, è possibile creare tag facendo clic sul segno più e immettendo il nome e il valore di un tag.
+.. Se si desidera, è possibile specificare l'ora di inizio per Amazon FSX for NetApp ONTAP per eseguire la manutenzione settimanale di 30 minuti. Questo può essere utilizzato per garantire che la manutenzione non coincida con le attività aziendali critiche. Se si seleziona *Nessuna preferenza*, viene assegnato un orario di inizio casuale. È possibile modificarlo in qualsiasi momento.
 .. Inserire e confermare la password del cluster ONTAP che si desidera utilizzare.
 .. Se si desidera, deselezionare l'opzione per utilizzare la stessa password per l'utente SVM e impostare una password diversa.
 
@@ -61,8 +62,21 @@ NOTE: link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-ru
 
 . *IP mobile* (solo zone di disponibilità multiple)
 +
-Lasciare vuoto _CIDR Range_ per impostare automaticamente un intervallo disponibile. In alternativa, è possibile utilizzare https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-transit-gateway.html["AWS Transit Gateway"^] per configurare manualmente un intervallo.
+Lasciare vuoto _CIDR Range_ per impostare automaticamente un intervallo disponibile. In alternativa, è possibile utilizzare https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html["AWS Transit Gateway"^] per configurare manualmente un intervallo.
 
++
+[WARNING]
+====
+.Gli IPS nei seguenti intervalli non sono supportati:
+** 0.0.0.0/8
+** 127.0.0.0/8
+** 198.19.0.0/20
+** 224.0.0.0/4
+** 240.0.0.0/4
+** 255.255.255.255/32
+
+
+====
 . *Tabelle di percorso* (solo zone di disponibilità multiple)
 +
 Selezionare le tabelle di routing che includono i percorsi verso gli indirizzi IP mobili. Se si dispone di una sola tabella di routing per le subnet nel VPC (la tabella di routing principale), BlueXP aggiunge automaticamente gli indirizzi IP mobili alla tabella di routing.

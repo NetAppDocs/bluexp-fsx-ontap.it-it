@@ -42,10 +42,15 @@ image:screenshot-add-volume.png["Schermata dell'opzione add volume (Aggiungi vol
 .. Il campo Storage VM (SVM) popola automaticamente la SVM in base al nome dell'ambiente di lavoro.
 .. Inserire le dimensioni del volume e selezionare un'unità (GIB o TIB). Si noti che le dimensioni del volume aumentano con l'utilizzo.
 .. Selezionare un criterio di snapshot. Per impostazione predefinita, viene eseguita una snapshot ogni ora (mantenendo le ultime sei copie), ogni giorno (mantenendo le ultime due copie) e ogni settimana (mantenendo le ultime due copie).
-.. In alternativa, è possibile creare tag per classificare i volumi facendo clic sul segno più e immettendo il nome e il valore di un tag.
+.. Se si desidera, creare tag per classificare i volumi facendo clic sul segno più e immettendo il nome e il valore di un tag.
+.. Facoltativamente, selezionare l'opzione di ottimizzazione per creare un FlexGroup e distribuire i dati del volume nel cluster.
++
+
+NOTE: La distribuzione FlexGroup è disponibile solo per i protocolli di volume NFS e CIFS.
 
 
-. *Volume Protocol*:
+
+. *Protocollo volumi*:
 +
 .. Selezionare un protocollo di volume NFS, CIFS o iSCSI.
 +
@@ -131,6 +136,7 @@ image:screenshot-volume-protocol-iscsi.png["Una schermata della configurazione i
 +
 image:screenshot_fsx_volume_usage_tiering.png["Schermata del profilo di utilizzo e della configurazione del tiering per la creazione di volumi FSX per ONTAP."]
 
+.. Se si seleziona Optimization (FlexGroup) (ottimizzazione), è necessario specificare il numero di componenti in cui distribuire i dati del volume. Si consiglia vivamente di utilizzare un numero pari di componenti per garantire una distribuzione uniforme dei dati.
 
 
 . *Revisione*: Esaminare la configurazione del volume. Fare clic su *Previous* (precedente) per modificare le impostazioni o su *Add* (Aggiungi) per creare il volume.
