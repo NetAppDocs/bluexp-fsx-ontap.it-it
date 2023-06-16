@@ -66,7 +66,7 @@ Per consentire a BlueXP di creare il file system FSX per NetApp ONTAP, sono nece
 --
 .Capacità automatica
 --
-Per l'abilitazione sono necessarie le seguenti autorizzazioni aggiuntive link:../use/task-manage-fsx-working-environment.html["gestione automatica della capacità"].
+Per l'abilitazione sono necessarie le seguenti autorizzazioni aggiuntive link:../use/task-manage-working-environment.html["gestione automatica della capacità"].
 
 [source, json]
 ----
