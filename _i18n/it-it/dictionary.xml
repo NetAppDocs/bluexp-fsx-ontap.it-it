@@ -244,8 +244,6 @@
   <block id="b29f6e00261f220f9ca9601a3dbc09df" category="section-title">Modificare i volumi</block>
   <block id="b609b522164fd601ccb14538b7074e4e" category="paragraph">Dopo aver creato un volume, è possibile modificarlo in qualsiasi momento.</block>
   <block id="a324b09bde8b0186d3f43692b7556fd9" category="list-text">Selezionare *Edit volume settings* (Modifica impostazioni volume).</block>
-  <block id="4ba141f8bd3c71509d32aaf3d8ae34d6" category="list-text">Per NFS, è possibile modificare le dimensioni e i tag.</block>
-  <block id="ad348a3307068da0d1c8c03655a0d11e" category="list-text">Per CIFS, è possibile modificare il nome della condivisione, gli utenti, le autorizzazioni e il criterio Snapshot in base alle esigenze.</block>
   <block id="24347b3ddf5a25cc9c27e54ae285ade1" category="list-text">Selezionare *Applica*.</block>
   <block id="fee2a02b904d6d1f207e959dbd807a75" category="section-title">Clonare i volumi</block>
   <block id="6b94d8d9a10c7d18376b9f389dba9855" category="paragraph">Dopo aver creato un volume, è possibile creare un nuovo volume di lettura/scrittura da un nuovo Snapshot.</block>
@@ -763,4 +761,5 @@
   <block id="39f382b97080640c75604b5890f3a5d3" category="paragraph">L'associazione delle credenziali NSS all'account BlueXP è diversa dall'account NSS associato a un account utente BlueXP.</block>
   <block id="e3bc6d35311568d55f1c8ea11984b964" category="paragraph">Queste credenziali NSS sono associate all'ID account BlueXP specifico. Gli utenti che appartengono all'account BlueXP possono accedere a queste credenziali da *Support &gt; NSS Management*.</block>
   <block id="69ca45f3f7552de8b10ae32cba3897d2" category="paragraph">Per l'abilitazione sono necessarie le seguenti autorizzazioni aggiuntive <block ref="1cea652ab03a953c6704c3bb96fcb9b7" category="inline-link-macro-rx"></block>.</block>
+  <block id="1a152437275e48cffd13b98c296a5e3f" category="admonition">Non è possibile modificare i tag di volume creati in BlueXP fino a quando non vengono sincronizzati con AWS. Questa operazione può richiedere fino a un'ora. Se l'opzione *Manage volume tags* (Gestisci tag volume) non è attiva, AWS non ha ancora sincronizzato i tag del volume.</block>
 </blocks>

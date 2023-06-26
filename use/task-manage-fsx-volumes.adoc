@@ -41,11 +41,6 @@ Dopo aver creato un volume, è possibile modificarlo in qualsiasi momento.
 . Aprire l'ambiente di lavoro.
 . Aprire la scheda del volume e selezionare *Manage Volume* (Gestisci volume) per aprire il menu *Volume Actions* (azioni volume).
 . Selezionare *Edit volume settings* (Modifica impostazioni volume).
-+
-.. Per NFS, è possibile modificare le dimensioni e i tag.
-.. Per CIFS, è possibile modificare il nome della condivisione, gli utenti, le autorizzazioni e il criterio Snapshot in base alle esigenze.
-
-
 . Selezionare *Applica*.
 
 
@@ -68,6 +63,9 @@ Dopo aver creato un volume, è possibile creare un nuovo volume di lettura/scrit
 == Gestire i tag di volume
 
 È possibile aggiungere, modificare o eliminare tag di volume. I tag aggiunti in BlueXP vengono riflessi nella console AWS. La sincronizzazione dei tag con la console AWS può richiedere fino a un'ora.
+
+
+NOTE: Non è possibile modificare i tag di volume creati in BlueXP fino a quando non vengono sincronizzati con AWS. Questa operazione può richiedere fino a un'ora. Se l'opzione *Manage volume tags* (Gestisci tag volume) non è attiva, AWS non ha ancora sincronizzato i tag del volume.
 
 .Fasi
 . Aprire l'ambiente di lavoro.
