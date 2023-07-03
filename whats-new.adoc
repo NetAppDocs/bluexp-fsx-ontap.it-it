@@ -18,6 +18,14 @@ Scopri le novità di Amazon FSX per NetApp ONTAP.
 
 
 
+== 02 luglio 2023
+
+* Ora puoi farlo link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-svm.html["Aggiungere una VM di storage"] Al file system Amazon FSX per NetApp ONTAP utilizzando BlueXP.
+* La scheda **le mie opportunità** è ora **la mia proprietà**. La documentazione viene aggiornata in modo da riflettere il nuovo nome.
+
+
+
+
 == 04 giugno 2023
 
 * Quando link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["creazione di un ambiente di lavoro"], è possibile specificare l'ora di inizio della finestra di manutenzione settimanale di 30 minuti per garantire che la manutenzione non sia in conflitto con le attività aziendali critiche.
@@ -60,9 +68,9 @@ Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-mana
 
 == 31 luglio 2022
 
-* Se in precedenza hai fornito le tue credenziali AWS a Cloud Manager, la nuova funzionalità *My Opportunities* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando Cloud Manager. È inoltre possibile esaminare i servizi dati disponibili attraverso la scheda *My Opportunities* (le mie opportunità).
+* Se in precedenza hai fornito le tue credenziali AWS a Cloud Manager, la nuova funzionalità *My estate* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando Cloud Manager. Puoi anche rivedere i servizi dati disponibili attraverso la scheda *My estate*.
 +
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#discover-an-existing-fsx-for-ontap-file-system["Scopri FSX per ONTAP utilizzando le mie opportunità"^]
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#discover-an-existing-fsx-for-ontap-file-system["Scopri FSX per ONTAP utilizzando My estate"^]
 
 * Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#change-throughput-capacity["modificare la capacità di throughput"^] In qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.
 * Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html#replicate-and-sync-data["replica e sincronizzazione dei dati"^] A sistemi on-premise e ad altri sistemi FSX per ONTAP che utilizzano FSX per ONTAP come fonte.

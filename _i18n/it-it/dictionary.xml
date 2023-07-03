@@ -219,13 +219,8 @@
   <block id="6b08174ed3c706cc286cc9f41f482a92" category="inline-image-macro">Una schermata di Amazon FSX per NetApp ONTAP nella pagina Working Environments (ambienti di lavoro).</block>
   <block id="9e7c4f3f6c0cffd7e172ba0e7b1cfdba" category="paragraph"><block ref="9e7c4f3f6c0cffd7e172ba0e7b1cfdba" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e69624fa729e14e6bbcae0cf7889e100" category="section-title">Scopri un file system FSX per ONTAP esistente</block>
-  <block id="decbe5e805a0a9516184b64d9bad01c3" category="paragraph">Se in precedenza hai fornito le tue credenziali AWS a BlueXP, *My Opportunities* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando BlueXP. È inoltre possibile esaminare i servizi dati disponibili.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">A proposito di questa attività</block>
-  <block id="a5444638448a3ec03827da5d57eb445b" category="paragraph">Puoi scoprire FSX per i file system ONTAP quando lo desideri <block ref="7d3d3d003158d818e356e6a619082003" category="inline-xref-macro-rx"></block> Oppure utilizzando la pagina *le mie opportunità*. Questa attività descrive il rilevamento utilizzando *My Opportunities*</block>
-  <block id="b74bb93cbb66b60fd6c91eba3c535cb2" category="list-text">In BlueXP, fare clic sulla scheda *My Opportunities*.</block>
   <block id="e9ba45e021b291739ba996c9cde18a78" category="list-text">Viene visualizzato il numero di FSX rilevati per i file system ONTAP. Fare clic su *Discover* (rileva).</block>
-  <block id="7208d8184b0d0e6e3c7bcf475c8f9bd2" category="inline-image-macro">Una schermata della pagina le mie opportunità per FSX per ONTAP.</block>
-  <block id="9e4da126e3095f89c00bb676d98195d8" category="paragraph"><block ref="9e4da126e3095f89c00bb676d98195d8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9b4a4c841d4545b117e4104be254a0e8" category="list-text">Selezionare uno o più file system e fare clic su *Discover* per aggiungerli al Canvas.</block>
   <block id="0187b41b8a735f30cc0556afd7387b9d" category="list-text">Se si seleziona un cluster senza nome, viene richiesto di inserire un nome per il cluster.</block>
   <block id="547dba06b4fcfe3fa41996e831e9fb1c" category="list-text">Se si seleziona un cluster che non dispone delle credenziali richieste per consentire a BlueXP di gestire il file system FSX per ONTAP, viene richiesto di selezionare le credenziali con le autorizzazioni richieste.</block>
@@ -266,16 +261,12 @@
   <block id="f879ed761f1ca2475598c0bea304d10d" category="list-text">Aprire la scheda del volume e selezionare *Manage Volume* (Gestisci volume) per aprire il menu *Advanced Actions* (azioni avanzate).</block>
   <block id="dedc9eb7ac0cb065a0b90f9f63104b01" category="list-text">Selezionare *Cambia policy di tiering*.</block>
   <block id="baef40813f00b62c8e9dcc643a76c881" category="list-text">Selezionare un nuovo criterio di tiering dei volumi e fare clic su *Change* (Modifica).</block>
-  <block id="016049d3662ab4f0c21871ed98f2bb37" category="section-title">Replica e sincronizzazione dei dati</block>
-  <block id="abca63d751ec4cebd209af264e376ee4" category="inline-link">replica dei dati tra sistemi</block>
-  <block id="35931d34af92c203401fd4bb760eb1cf" category="inline-link">creare relazioni di sincronizzazione</block>
   <block id="f91674f3b22216fc484532cd24dda908" category="section-title">Eliminare i volumi</block>
   <block id="9497c556620605c0441cf034ff68a527" category="paragraph">Eliminare i volumi non più necessari.</block>
   <block id="f257be535aca4e5a3655fc2dd2887500" category="paragraph">Non è possibile eliminare un volume che faceva parte di una relazione SnapMirror utilizzando BlueXP. I volumi SnapMirror devono essere cancellati utilizzando AWS Management Console o CLI.</block>
   <block id="f596a753aac59df7e240140c2eb96e99" category="list-text">Selezionare *Delete the volume* (Elimina volume).</block>
   <block id="56f7e1cad5439f90ac8bd08115c74e4a" category="list-text">Inserire il nome dell'ambiente di lavoro e confermare che si desidera eliminare il volume. La rimozione completa del volume da BlueXP può richiedere fino a un'ora.</block>
   <block id="590368745da00a61c492e4b834d9568e" category="admonition">Se si tenta di eliminare un volume clonato, viene visualizzato un errore.</block>
-  <block id="9e6871113ad24ed3830e2e58ce51dfc4" category="summary">BlueXP consente di gestire l'ambiente di lavoro FSX per ONTAP. È possibile attivare la gestione automatica della capacità, modificare il throughput, la capacità dello storage e gli IOPS e rimuovere o eliminare l'ambiente di lavoro.</block>
   <block id="67621e5c95adeb158c257c0f8a4d3e15" category="doc">Gestire un ambiente di lavoro Amazon FSX per NetApp ONTAP</block>
   <block id="9123b1a896e43bd47ae8708d015514ba" category="section-title">Gestire la capacità automatica</block>
   <block id="1c05e31e27d15b210cdcb01d01331c36" category="paragraph">È possibile scegliere di attivare la gestione automatica della capacità per aggiungere storage incrementale in base alla richiesta. La gestione automatica della capacità esegue il polling del cluster a intervalli regolari per valutare la domanda e aumenta automaticamente la capacità dello storage con incrementi del 10% fino al 80% della capacità massima del cluster.</block>
@@ -424,8 +415,6 @@
   <block id="f7ba76d5c9beab0576f118a6254843e9" category="section-title">18 settembre 2022</block>
   <block id="3abe9a67eae0ad33b1c96ff4ae8b1eaa" category="inline-link-macro">Modificare la capacità dello storage e gli IOPS</block>
   <block id="3f10ba55f7b5ee2ce092504fcea72477" category="section-title">31 luglio 2022</block>
-  <block id="dd15e63d013ad6e70302caae66b83f6d" category="list-text">Se in precedenza hai fornito le tue credenziali AWS a Cloud Manager, la nuova funzionalità *My Opportunities* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando Cloud Manager. È inoltre possibile esaminare i servizi dati disponibili attraverso la scheda *My Opportunities* (le mie opportunità).</block>
-  <block id="6ebe96f0162b363fd765e000afd1c4f0" category="inline-link-macro">Scopri FSX per ONTAP utilizzando le mie opportunità</block>
   <block id="e2399171d04de4904bc9ceb3e1c97260" category="inline-link-macro">modificare la capacità di throughput</block>
   <block id="7699be7c50b8640b313d71cce9004797" category="inline-link-macro">replica e sincronizzazione dei dati</block>
   <block id="42c82b44ceecde8407f75a70409e2aec" category="inline-link-macro">Creazione di volumi iSCSI in FSX per ONTAP utilizzando Cloud Manager</block>
@@ -647,9 +636,6 @@
   <block id="390a3dfacd9551e05363b9eb09a0464c" category="sidebar">Regole del gruppo di sicurezza</block>
   <block id="7aa1575aeeddba65d55707b41584cd4a" category="sidebar">USA Amazon FSX per NetApp ONTAP</block>
   <block id="4654b99a0535f374a8ff766873df50a6" category="sidebar">Creare o scoprire un ambiente di lavoro</block>
-  <block id="cde704f6035294578016569ea9508122" category="sidebar">Gestire l'ambiente di lavoro</block>
-  <block id="9be5a2eae9bab39aee7d0161c137cd43" category="sidebar">Creare e montare volumi</block>
-  <block id="ba96e9a97f70e26f5839a4ab40b0081b" category="sidebar">Gestire volumi e servizi dati</block>
   <block id="74e5a199ea27b8b415c0c77d75229e79" category="sidebar">NVMe e iSCSI host Configuration (Configurazione host iSCSI e NVMe)</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Conoscenza e supporto</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blog e community</block>
@@ -657,7 +643,6 @@
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Blog Cloud Central</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Webinar sul cloud</block>
   <block id="c82c15e6d66564201da1f424b2fb9bf4" category="sidebar">Documentazione di Amazon FSX per NetApp ONTAP</block>
-  <block id="bff0ab4dab26d38051ade7a231a2a6f2" category="sidebar">Scopri di più su FSX per ONTAP</block>
   <block id="6faf2fd9ba5b0e89a953f43cd89d6c46" category="sidebar">Gestire un ambiente di lavoro</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Tutta la documentazione BlueXP</block>
   <block id="25ee158968a50cfd221a03cd5c35714d" category="list-text">Amazon FSX per NetApp ONTAP è supportato quando si utilizza BlueXP in modalità _standard_ o _limitata_.</block>
@@ -687,17 +672,12 @@
   <block id="52f0d52ceec121b410112b2a5dba2d7a" category="paragraph">Utilizzo di <block ref="22fc26cf6eb0c7b721364c48d2d0a99b" category="inline-link-macro-rx"></block>, Puoi iniziare a utilizzare FSX per ONTAP in pochi passaggi.</block>
   <block id="c252661fa67fb818de00d332271e5952" category="paragraph">È necessario disporre di un<block ref="752bdc7b6cc8b206a39bceaddedfafff" category="inline-link-rx"></block> Per aprire l'ambiente di lavoro FSX per ONTAP, creare volumi o eseguire altre azioni. Quando è necessario un connettore, BlueXP chiede se non è già attivo.</block>
   <block id="fed3b58ee53350fc679af9313a452f78" category="paragraph">Accettare la chiave master AWS predefinita o fare clic su *Change Key* (Cambia chiave) per selezionare una diversa chiave master cliente AWS (CMK). Per ulteriori informazioni su CMK, vedere <block ref="8fe12519351ca8a607a9a9e011c48c01" category="inline-link-macro-rx"></block>.</block>
-  <block id="598ac5ec4509a5fa7d37ccc4259276e2" category="paragraph">È possibile replicare i dati tra ambienti di storage utilizzando BlueXP. Per configurare FSX per la replica ONTAP, vedere<block ref="b3f9ef9ab8e2f6f80ef424579ec0a2be" category="inline-link-rx"></block>.</block>
-  <block id="4fe2848eb7d4a0d2def783dfbceaf41d" category="paragraph">È possibile creare relazioni di sincronizzazione utilizzando la copia e la sincronizzazione BlueXP. Per configurare le relazioni di sincronizzazione, vedere<block ref="ebda92a6c5428de5c74cf0458cae3b5e" category="inline-link-rx"></block>.</block>
   <block id="8d757dbdc7fa419adfd2d9b20629a645" category="paragraph">Hai bisogno di un attivo<block ref="36a4e36eea867c3f44362f37d4545eda" category="inline-link-rx"></block>.</block>
-  <block id="3d21cd9a1f8be881b83afe344443ea88" category="paragraph">Prima di creare un nuovo volume, è necessario un volume attivo<block ref="7c63a28be6cb831de5033d7fc716e2b5" category="inline-link-rx"></block>.</block>
   <block id="b344b4701c7bc470b4d413e98ef9c9f9" category="cell">Selezionare *Enable NTP Server Configuration* (attiva configurazione server NTP) per configurare un server NTP utilizzando il DNS di Active Directory. Se è necessario configurare un server NTP utilizzando un indirizzo diverso, utilizzare l'API. Vedere<block ref="7665d9260dd9d6a287f2bbc0560d523f" category="inline-link-rx"></block> per ulteriori informazioni.</block>
   <block id="82fec6d31b25a5ecb50c02e473be2188" category="list-text">Fare clic per aggiungere uno o più nomi host iSCSI Qualified Name (IQN). È possibile selezionare IQN esistenti o aggiungere nuovi IQN. Per ulteriori informazioni su come trovare l'IQN per un volume, vedere <block ref="bb4247f1c80c630362ed25b8c41eed59" category="inline-link-macro-rx"></block>.</block>
   <block id="b6f1ebb155eaf4c6e07d7a105b1d5a53" category="list-text">Quando si crea un ambiente di lavoro, è ora possibile utilizzare BlueXP <block ref="3ba2cfc3ef2a3c163fc4910682cfb7d6" category="inline-link-macro-rx"></block> Che consente il traffico solo all'interno del VPC selezionato. Questa funzione <block ref="097f8dd60847dad6062ac7ea2bd09c06" category="inline-link-macro-rx"></block>.</block>
   <block id="46ce6a634ad58fa667690e7f5c151b26" category="list-text">È possibile scegliere se <block ref="2af1713063b9a7e50c1f5e13c7671bae" category="inline-link-macro-rx"></block> e. <block ref="013335dc35ce07c311c673e8a99c88f9" category="inline-link-macro-rx"></block> tag per categorizzare i volumi.</block>
-  <block id="7a1efada084b28a5a54db20f07f2e373" category="paragraph">È ora possibile scegliere di attivare <block ref="798ae2d54008eb1f5d42a000af614a06" category="inline-link-macro-rx"></block> per aggiungere storage incrementale in base alla richiesta. La gestione automatica della capacità esegue il polling del cluster a intervalli regolari per valutare la domanda e aumenta automaticamente la capacità dello storage con incrementi del 10% fino al 80% della capacità massima del cluster.</block>
   <block id="8b5edcd6e9d4ab9285ee3664af7ea2a9" category="paragraph">Ora puoi farlo <block ref="9b7f213d695f8dd25ea908078792fd69" category="inline-link-macro-rx"></block> In qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.</block>
-  <block id="466d6bdc4ee1f71dd893e6c99f71163b" category="paragraph"><block ref="466d6bdc4ee1f71dd893e6c99f71163b" category="inline-link-macro-rx"></block></block>
   <block id="733ef426ec092c634a1b7dbaf3373220" category="list-text">Ora puoi farlo <block ref="9152528a95687d317ab62dcde238fdef" category="inline-link-macro-rx"></block> In qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.</block>
   <block id="32417d8e9e3c82c4c5314062782575c9" category="list-text">Ora puoi farlo <block ref="f635c46f2cd088dcf1369f807e47e94f" category="inline-link-macro-rx"></block> A sistemi on-premise e ad altri sistemi FSX per ONTAP che utilizzano FSX per ONTAP come fonte.</block>
   <block id="9f4e04fb3f0860f8350f8ebb5e3a6709" category="list-text">Ora puoi farlo <block ref="2e2cc205fa7502696c4503aa2708460c" category="inline-link-macro-rx"></block>.</block>
@@ -762,4 +742,68 @@
   <block id="e3bc6d35311568d55f1c8ea11984b964" category="paragraph">Queste credenziali NSS sono associate all'ID account BlueXP specifico. Gli utenti che appartengono all'account BlueXP possono accedere a queste credenziali da *Support &gt; NSS Management*.</block>
   <block id="69ca45f3f7552de8b10ae32cba3897d2" category="paragraph">Per l'abilitazione sono necessarie le seguenti autorizzazioni aggiuntive <block ref="1cea652ab03a953c6704c3bb96fcb9b7" category="inline-link-macro-rx"></block>.</block>
   <block id="1a152437275e48cffd13b98c296a5e3f" category="admonition">Non è possibile modificare i tag di volume creati in BlueXP fino a quando non vengono sincronizzati con AWS. Questa operazione può richiedere fino a un'ora. Se l'opzione *Manage volume tags* (Gestisci tag volume) non è attiva, AWS non ha ancora sincronizzato i tag del volume.</block>
+  <block id="982342913ed4c65e25bbc0d7a29cc903" category="paragraph">Se in precedenza hai fornito le tue credenziali AWS a BlueXP, *My estate* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando BlueXP. È inoltre possibile esaminare i servizi dati disponibili.</block>
+  <block id="bbc904daea44543b400fcb32aad70c89" category="paragraph">Puoi scoprire FSX per i file system ONTAP quando lo desideri <block ref="7d3d3d003158d818e356e6a619082003" category="inline-xref-macro-rx"></block> Oppure utilizzando la pagina *My estate*. Questa attività descrive il rilevamento mediante *My estate*</block>
+  <block id="c44ce3fd744555a7c9e3cb0429cb71e1" category="list-text">In BlueXP, fare clic sulla scheda *My estate*.</block>
+  <block id="75b0fcc2885b1eaac454cf9392c47fae" category="inline-image-macro">Una schermata della pagina My estate per FSX per ONTAP.</block>
+  <block id="442b9b00a851e385483f988d6deb5a9b" category="paragraph"><block ref="442b9b00a851e385483f988d6deb5a9b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="178f7d653798a30b03a224bd262b2193" category="list-text">Hai bisogno di un attivo<block ref="7c63a28be6cb831de5033d7fc716e2b5" category="inline-link-rx"></block>.</block>
+  <block id="9297684f36da0f0f1bee258dc9e26606" category="summary">Una volta creato l'ambiente di lavoro, è possibile aggiungere, visualizzare e gestire le macchine virtuali (VM) di storage su un cluster Amazon FSX per NetApp ONTAP gestito.</block>
+  <block id="09fd7d4c10e67376a6e8ddb20af8bec1" category="doc">Aggiunta e gestione di macchine virtuali storage per Amazon FSX per NetApp ONTAP</block>
+  <block id="97db92f07b671990ad480605be666c0b" category="paragraph">Una volta creato l'ambiente di lavoro, è possibile aggiungere, visualizzare e gestire una macchina virtuale di storage (VM), nota anche come _SVM_, su un cluster Amazon FSX per NetApp ONTAP gestito.</block>
+  <block id="4343b2bdc884cb638429641e12c0514c" category="section-title">Aggiungere una VM di storage</block>
+  <block id="451e576c5eeebc2e49f82cf9cb99cc95" category="inline-link-macro">AWS: Gestione di FSX per le macchine virtuali per lo storage ONTAP</block>
+  <block id="ef5264f83fd1399bf2039379d925c326" category="paragraph">Utilizzando BlueXP, è possibile aggiungere VM di storage al file system Amazon FSX per ONTAP fino al numero massimo consentito. Fare riferimento a. <block ref="542be7ed4bf1e8cdfb99773f949b9be5" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
+  <block id="c58f39af7af885b3de4e1c55331f663f" category="paragraph">È possibile aggiungere una VM di storage aprendo l'ambiente di lavoro e selezionando la scheda *VM di storage* o dal pannello dell'ambiente di lavoro *Panoramica*. Questa attività descrive l'aggiunta di una VM di storage utilizzando il pannello *Storage VM*.</block>
+  <block id="93f5e6c9fa12acc64acdb6b378a09bdd" category="inline-link-macro">Gestire le VM di storage in BlueXP</block>
+  <block id="161af8b5034edcc63941678877ecc17b" category="list-text">Creare una o più VM di storage. Fare riferimento a. <block ref="61e460b38f962b5f0888ccf756a23b8f" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
+  <block id="574e262b2dd630a4c7eb4272e82e5aab" category="list-text">Selezionare il pannello *Storage VM*. Vengono visualizzate le SVM esistenti. Selezionare **Aggiungi SVM** per aggiungere una nuova SVM.</block>
+  <block id="176bf974e403285fd95d3fbb9db016e5" category="inline-image-macro">Schermata del pannello Storage VM.</block>
+  <block id="a0c67784fb87f1d5a7cf89b46b9f9ccc" category="paragraph"><block ref="a0c67784fb87f1d5a7cf89b46b9f9ccc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0cb08f4fadd064ac852519b0a5f65133" category="list-text">*Aggiunta di una macchina virtuale per lo storage*</block>
+  <block id="8d2c4d8c3c38e6158959f1755a1ba127" category="list-text">Immettere il nome della VM di storage.</block>
+  <block id="4526ac6b58668132334f4a9b19d2a07b" category="list-text">Selezionare lo stile di protezione del volume root della VM di storage configurato. I valori validi sono **UNIX**, **NTFS** o **misto**.</block>
+  <block id="018dde2c5d72e2150624f098fc0cc1a6" category="list-text">Facoltativamente, specificare una password amministrativa per la VM di storage.</block>
+  <block id="9543403a9b9b42e9d5d0bfc9f21c11ea" category="list-text">Facoltativamente, è possibile creare fino a cinquanta tag per classificare la SVM facendo clic sul segno più e immettendo il nome e il valore di un tag.</block>
+  <block id="7a769e7e42a18ebf369a288f74ee719a" category="list-text">Selezionare **Aggiungi** per aggiungere la VM di storage.</block>
+  <block id="59ea7c00742a0b7e298503e1f32e0728" category="paragraph">La nuova VM di storage viene aggiunta all'ambiente di lavoro e al file system Amazon FSX per NetApp ONTAP.</block>
+  <block id="44b681a7cf925625164e7c4c46844561" category="section-title">Gestire una VM di storage</block>
+  <block id="03440d1141f070ed41a52d3ff99eb20c" category="paragraph">È possibile visualizzare i dettagli delle VM di storage, gestire tag, impostare una connessione SMB/CIFS o eliminare una SVM di storage.</block>
+  <block id="017d4418a9c48f4f00ec01c0bfa6dfe2" category="list-text">Selezionare il pannello *Storage VM*.</block>
+  <block id="e8710a17688284d6cb60abe72d638468" category="list-text">Utilizzare i tre punti (<block ref="4d658ec40ed039406a8a891871de0f3d" category="inline-image-macro-rx" type="image"></block>) Per aprire il menu delle opzioni per la VM di storage.</block>
+  <block id="a9c09842af31af9cdda6d40752a231e6" category="inline-image-macro">Schermata del menu delle opzioni di gestione delle macchine virtuali dello storage dal pannello delle macchine virtuali dello storage.</block>
+  <block id="85f46b970d5cbec706143f8c887a539c" category="paragraph"><block ref="85f46b970d5cbec706143f8c887a539c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="95ed4b80139db8b5b5b8076e8fdaf8ec" category="list-text">Selezionare un'opzione di menu per visualizzare o gestire le impostazioni della VM di storage.</block>
+  <block id="64e34a8b4dd985ab1c20dc09d4e0e8a3" category="list-text">**Visualizzare i dettagli SVM**: È possibile esaminare i dettagli, tra cui volume root, stile di protezione, protocolli consentiti, dominio Active Directory e tag.</block>
+  <block id="94fbec0c035b64d9cc88594687e76f69" category="list-text">**Gestisci tag SVM**: È possibile aggiungere, modificare o rimuovere tag di storage VM. Le modifiche apportate verranno sincronizzate con la console AWS.</block>
+  <block id="2ee8cc8dbc2e1be735d4ae835a6ab479" category="list-text">**Configurazione SMB/CIFS**: Se si tratta della prima connessione CIFS per questo ambiente di lavoro, verrà richiesto di configurare la connettività CIFS utilizzando un'impostazione di _Active Directory_ o _Workgroup_.</block>
+  <block id="0b614a99d1477b4fce8c90ecbfc24bb0" category="example-title">Configurazione di Active Directory</block>
+  <block id="20486a7eae9ebb16137abc464481958e" category="list-text">**Elimina SVM**: È possibile eliminare la VM di storage. Per eliminarlo, verificare il nome della VM di storage.</block>
+  <block id="5cb8a753feb750c955f13c217735d677" category="admonition">Prima di eliminare la VM di storage, è necessario eliminare tutti i volumi presenti nella VM di storage.</block>
+  <block id="8e9385ac5e4c99f8e0628779659448ca" category="summary">BlueXP consente di gestire l'ambiente di lavoro FSX per ONTAP. È possibile abilitare la gestione automatica della capacità, modificare il throughput e la capacità dello storage e gli IOPS, rimuovere o eliminare l'ambiente di lavoro e gestire servizi dati come backup e ripristino, copia e sincronizzazione, classificazione, replica e caching dei volumi.</block>
+  <block id="516c626a337f0fa0093cc3145386640f" category="section-title">Gestire i servizi dati</block>
+  <block id="d51e6c9bd2e7b6163e5a1aef40ed76e3" category="paragraph">Puoi gestire servizi dati aggiuntivi dall'ambiente di lavoro Amazon FSX per NetApp ONTAP.</block>
+  <block id="135193a42a4bc9020d4010ff52aafa41" category="inline-image-macro">Una schermata della scheda servizi dati sull'ambiente di lavoro</block>
+  <block id="275efdc26577366e7591e34db9833a6c" category="paragraph"><block ref="275efdc26577366e7591e34db9833a6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1feb4fc1fb8c9928667496a5edda35aa" category="paragraph">Per ulteriori informazioni sulla configurazione dei servizi dati, fare riferimento a:</block>
+  <block id="ede1cce9f240fed5ecc4264bd699cee1" category="inline-link-macro">Backup e ripristino BlueXP</block>
+  <block id="31c1170ec8150a60fd9682f9e95a651e" category="list-text"><block ref="4b6df2b9eda75a87ef42b7a6cf79b855" category="inline-link-macro-rx"></block> Fornisce una protezione dei dati efficiente, sicura e conveniente per i dati NetApp ONTAP, Kubernetes volumi persistenti, database e macchine virtuali, sia on-premise che nel cloud.</block>
+  <block id="9b4b22e819a51a3523fc811f5d93370a" category="inline-link-macro">Copia e sincronizzazione BlueXP</block>
+  <block id="5bba45a3f7b8fac945170d30f0c6c6ba" category="list-text"><block ref="1c982db0fcf2f2bf2ef5b764237d1066" category="inline-link-macro-rx"></block> È un servizio di replica e sincronizzazione cloud per il trasferimento dei dati NAS tra archivi a oggetti on-premise e cloud.</block>
+  <block id="d895c3b822b8528e39132b5c071c098c" category="list-text"><block ref="e6a2daea76f015a44bfb9cf7c14b1c0a" category="inline-link-macro-rx"></block> consente di eseguire la scansione e classificare i dati nel multicloud ibrido della tua organizzazione.</block>
+  <block id="37fa21b7ca602fd8fe055b26a1de7d8b" category="inline-link-macro">Replicare i dati</block>
+  <block id="224186161d4d2bc87c1dd12d707fa1aa" category="list-text"><block ref="c5d7a032677bb1a70c3bf846b6254cfd" category="inline-link-macro-rx"></block> Tra sistemi storage ONTAP per supportare backup e disaster recovery nel cloud o tra cloud.</block>
+  <block id="ff45d71e69fb5930de79de7c94326d7b" category="inline-link-macro">Caching dei volumi</block>
+  <block id="c60116399e1bacdf1594c88491ed4a01" category="list-text"><block ref="cce03ca8e200e7f8ffdb2d2c799734f1" category="inline-link-macro-rx"></block> fornisce un volume persistente e scrivibile in un luogo remoto. È possibile utilizzare il caching dei volumi BlueXP per accelerare l'accesso ai dati o per trasferire il traffico dai volumi ad accesso elevato.</block>
+  <block id="942e802a236d6542c0c6f797428d8abb" category="section-title">02 luglio 2023</block>
+  <block id="d41b120a4f792ebe6195de3355c6309a" category="inline-link-macro">Aggiungere una VM di storage</block>
+  <block id="ef4fe9904a05c0168f433db5ef979256" category="list-text">Ora puoi farlo <block ref="73429b7c98363ef2dcc9eca20bd224e7" category="inline-link-macro-rx"></block> Al file system Amazon FSX per NetApp ONTAP utilizzando BlueXP.</block>
+  <block id="c835313828dae8f6f2e19118949a05ce" category="list-text">La scheda **le mie opportunità** è ora **la mia proprietà**. La documentazione viene aggiornata in modo da riflettere il nuovo nome.</block>
+  <block id="5acc19c1ac9cb4ec703f692929b77d4f" category="paragraph">È ora possibile scegliere di attivare <block ref="798ae2d54008eb1f5d42a000af614a06" category="inline-link-macro-rx"></block> per aggiungere storage incrementale in base alla richiesta. La gestione automatica della capacità esegue il polling del cluster a intervalli regolari per valutare la domanda e aumenta automaticamente la capacità dello storage con incrementi del 10% fino al 80% della capacità massima del cluster.</block>
+  <block id="8427e95422b20518ebfdf9669981c983" category="list-text">Se in precedenza hai fornito le tue credenziali AWS a Cloud Manager, la nuova funzionalità *My estate* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando Cloud Manager. Puoi anche rivedere i servizi dati disponibili attraverso la scheda *My estate*.</block>
+  <block id="690df0feee64ee1dfd9e2fabd3bd7196" category="inline-link-macro">Scopri FSX per ONTAP utilizzando My estate</block>
+  <block id="3126d0bb3bdeb0d61fd04be8640e4d8e" category="paragraph"><block ref="3126d0bb3bdeb0d61fd04be8640e4d8e" category="inline-link-macro-rx"></block></block>
+  <block id="72bf8572f979788f8a9b08819c412e18" category="sidebar">Creare e montare un volume</block>
+  <block id="a377a5b84f9f0bc2da96286bf312e442" category="sidebar">Aggiungere e gestire una VM di storage</block>
+  <block id="e2439a8512b353f75391ba9c346bc84d" category="sidebar">Gestire i volumi</block>
 </blocks>

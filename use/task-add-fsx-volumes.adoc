@@ -22,13 +22,13 @@ Dopo aver configurato l'ambiente di lavoro, è possibile creare e montare FSX pe
 
 È possibile creare e gestire volumi NFS, CIFS e iSCSI dal proprio ambiente di lavoro FSX per ONTAP in BlueXP. I volumi creati utilizzando l'interfaccia CLI di ONTAP saranno visibili anche nell'ambiente di lavoro FSX per ONTAP.
 
-.Prima di iniziare
-Prima di creare un nuovo volume, è necessario un volume attivo https://docs.netapp.com/us-en/bluexp-setup-admin/task-creating-connectors-aws.html["Connettore in AWS"^].
-
-Se si desidera utilizzare SMB, è necessario aver configurato DNS e Active Directory. Per ulteriori informazioni sulla configurazione di rete di DNS e Active Directory, vedere link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html["AWS: Prerequisiti per l'utilizzo di Microsoft ad autogestito"^].
-
 .A proposito di questa attività
 È possibile aggiungere volumi aprendo l'ambiente di lavoro e selezionando la scheda *Volumes* (volumi) o semplicemente utilizzando il pannello dell'ambiente di lavoro *Details* (Dettagli) da Canvas. Questa attività descrive l'aggiunta di volumi mediante il pannello *Dettagli*.
+
+.Prima di iniziare
+* Hai bisogno di un attivo https://docs.netapp.com/us-en/bluexp-setup-admin/task-creating-connectors-aws.html["Connettore in AWS"^].
+* Se si desidera utilizzare SMB, è necessario aver configurato DNS e Active Directory. Per ulteriori informazioni sulla configurazione di rete di DNS e Active Directory, vedere link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/self-manage-prereqs.html["AWS: Prerequisiti per l'utilizzo di Microsoft ad autogestito"^].
+
 
 .Fasi
 . Selezionare l'ambiente di lavoro FSX per ONTAP sul Canvas. Se non si dispone di un connettore abilitato, viene richiesto di aggiungerne uno.
