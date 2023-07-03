@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="it">
   <head class="at-element-marker">
-  <title>Gestire un ambiente di lavoro Amazon FSX per NetApp ONTAP | NetApp Documentation</title>
+  <title>Aggiunta e gestione di macchine virtuali storage per Amazon FSX per NetApp ONTAP | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Gestire un ambiente di lavoro Amazon FSX per NetApp ONTAP | NetApp Documentation" />
+  <meta property="og:title" content="Aggiunta e gestione di macchine virtuali storage per Amazon FSX per NetApp ONTAP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-	<meta property="og:description" content="BlueXP consente di gestire l"ambiente di lavoro FSX per ONTAP. È possibile abilitare la gestione automatica della capacità, modificare il throughput e la cap..." />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+	<meta property="og:description" content="Una volta creato l"ambiente di lavoro, è possibile aggiungere, visualizzare e gestire le macchine virtuali (VM) di storage su un cluster Amazon FSX per NetAp..." />
   <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-fsx-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="BlueXP consente di gestire l"ambiente di lavoro FSX per ONTAP. È possibile abilitare la gestione automatica della capacità, modificare il throughput e la cap...">
-  <meta name="keywords" content=" amazon fsx for netapp ontap, fsx, manage working environment, delete working environment, remove working environment, throughput capacity, change throughput, automatic capacity management, capacity management, storage capacity, replication, classification, sync, backup, recovery"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Una volta creato l"ambiente di lavoro, è possibile aggiungere, visualizzare e gestire le macchine virtuali (VM) di storage su un cluster Amazon FSX per NetAp...">
+  <meta name="keywords" content=" fsx for ontap, fsx, aws, storage vm, storage virtual machine, svm, add svm, virtual machine, delete svm, tags, smb, cifs, delete"><!-- Icons -->
   <link rel="icon" href="/it-it/bluexp-fsx-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/bluexp-fsx-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -32,17 +32,17 @@
   <link rel="stylesheet" href="/it-it/bluexp-fsx-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/it-it/bluexp-fsx-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  <link rel="canonical" href="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
-  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-fsx-ontap/use/task-manage-working-environment.html" />
+  <link rel="canonical" href="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-fsx-ontap/use/task-add-fsx-svm.html" />
   <link rel='stylesheet' href='/it-it/bluexp-fsx-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -177,7 +177,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-fsx-ontap.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-manage-working-environment.html&page-title=Gestire un ambiente di lavoro Amazon FSX per NetApp ONTAP" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-fsx-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-fsx-ontap/blob/main/use/task-manage-working-environment.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-fsx-ontap/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-fsx-ontap/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-fsx-ontap.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-add-fsx-svm.html&page-title=Aggiunta e gestione di macchine virtuali storage per Amazon FSX per NetApp ONTAP" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-fsx-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-fsx-ontap/blob/main/use/task-add-fsx-svm.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-fsx-ontap/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-fsx-ontap/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">IN QUESTA PAGINA</div>
@@ -297,23 +297,23 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+          <a href="https://docs.netapp.com/it-it/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/de-de/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+          <a href="https://docs.netapp.com/de-de/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/es-es/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+          <a href="https://docs.netapp.com/es-es/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/fr-fr/bluexp-fsx-ontap/use/task-manage-working-environment.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+          <a href="https://docs.netapp.com/fr-fr/bluexp-fsx-ontap/use/task-add-fsx-svm.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
         </li></ul>
     </div>
     <!-- End Language Selector -->
@@ -420,14 +420,14 @@
           
 
 
+
+
+
+
+
+
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
-
-
-
-
-
-
 
 
         </li>
@@ -584,7 +584,7 @@
       data-pdf-exists="true" 
       data-pdf-filename="Gestire un ambiente di lavoro"
       data-li-level="2#" 
-      class="  active "
+      class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/use/task-manage-working-environment.html">
         Gestire un ambiente di lavoro
       </a></li><li 
@@ -605,7 +605,7 @@
       data-pdf-exists="true" 
       data-pdf-filename="Aggiungere e gestire una VM di storage"
       data-li-level="2#" 
-      class=" "
+      class="  active "
     ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/use/task-add-fsx-svm.html">
         Aggiungere e gestire una VM di storage
       </a></li></ul></li><li 
@@ -702,7 +702,7 @@
       </div>
     </span>
   </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Gestire un ambiente di lavoro Amazon FSX per NetApp ONTAP</h1>
+  <h1 class="n-doc__component-detail-heading">Aggiunta e gestione di macchine virtuali storage per Amazon FSX per NetApp ONTAP</h1>
 </div>
 
 
@@ -722,167 +722,170 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>BlueXP consente di gestire l&#8217;ambiente di lavoro FSX per ONTAP. È possibile abilitare la gestione automatica della capacità, modificare il throughput e la capacità dello storage e gli IOPS, rimuovere o eliminare l&#8217;ambiente di lavoro e gestire servizi dati come backup e ripristino, copia e sincronizzazione, classificazione, replica e caching dei volumi.</p>
+<p>Una volta creato l&#8217;ambiente di lavoro, è possibile aggiungere, visualizzare e gestire una macchina virtuale di storage (VM), nota anche come <em>SVM</em>, su un cluster Amazon FSX per NetApp ONTAP gestito.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="gestire-la-capacità-automatica">Gestire la capacità automatica</h2>
+<h2 id="aggiungere-una-vm-di-storage">Aggiungere una VM di storage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>È possibile scegliere di attivare la gestione automatica della capacità per aggiungere storage incrementale in base alla richiesta. La gestione automatica della capacità esegue il polling del cluster a intervalli regolari per valutare la domanda e aumenta automaticamente la capacità dello storage con incrementi del 10% fino al 80% della capacità massima del cluster.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/bluexp-fsx-ontap/images/note.svg" alt="Nota">
-</td>
-<td class="content">
-Se non è stato specificato manualmente un valore IOPS durante la creazione dell&#8217;ambiente di lavoro, BlueXP aumenterà gli IOPS di 3 IOPS per GiB della nuova capacità totale. Se è stato specificato un valore IOPS, BlueXP non regolerà gli IOPS. Per ulteriori informazioni sulla configurazione degli IOPS, fare riferimento a. <a href="task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-ontap-working-environment">"creare un ambiente di lavoro"</a>.
-</td>
-</tr>
-</table>
+<p>Utilizzando BlueXP, è possibile aggiungere VM di storage al file system Amazon FSX per ONTAP fino al numero massimo consentito. Fare riferimento a. <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html" target="_blank" rel="noopener">"AWS: Gestione di FSX per le macchine virtuali per lo storage ONTAP"</a> per ulteriori informazioni.</p>
 </div>
 <div class="paragraph">
-<p>La gestione automatica della capacità è disattivata per impostazione predefinita. È possibile gestire la capacità automatica con o senza un connettore attivo in AWS.</p>
+<div class="title">A proposito di questa attività</div>
+<p>È possibile aggiungere una VM di storage aprendo l&#8217;ambiente di lavoro e selezionando la scheda <strong>VM di storage</strong> o dal pannello dell&#8217;ambiente di lavoro <strong>Panoramica</strong>. Questa attività descrive l&#8217;aggiunta di una VM di storage utilizzando il pannello <strong>Storage VM</strong>.</p>
 </div>
-<div class="sect2">
-<h3 id="gestire-la-capacità-automatica-senza-un-connettore-attivo">Gestire la capacità automatica senza un connettore attivo</h3>
-<div class="paragraph">
-<p>È possibile gestire la capacità automatica senza un connettore attivo in AWS.</p>
+<div class="ulist">
+<div class="title">Prima di iniziare</div>
+<ul>
+<li>
+<p>Hai bisogno di un attivo <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"Connettore in AWS"</a>.</p>
+</li>
+<li>
+<p>Creare una o più VM di storage. Fare riferimento a. <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms.html" target="_blank" rel="noopener">"Gestire le VM di storage in BlueXP"</a> per ulteriori informazioni.</p>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>Selezionare l&#8217;ambiente di lavoro nell&#8217;area di lavoro e selezionare <strong>Inserisci ambiente di lavoro</strong>.</p>
+<p>Selezionare l&#8217;ambiente di lavoro FSX per ONTAP sul Canvas. Se non si dispone di un connettore abilitato, viene richiesto di aggiungerne uno.</p>
 </li>
 <li>
-<p>Selezionare l&#8217;icona a forma di matita (<span class="image"><img src="../media/icon-pencil.png" alt="Immagine dell&#8217;icona di modifica a forma di matita."></span>) Per aprire la pagina <strong>Gestione automatica della capacità</strong>.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/bluexp-fsx-ontap/images/note.svg" alt="Nota">
-</td>
-<td class="content">
-Tutte le altre opzioni richiedono un connettore e sono disattivate.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Selezionare la casella per attivare la gestione automatica della capacità.</p>
-</li>
-<li>
-<p>Deselezionare la casella per disattivare la gestione automatica della capacità, se precedentemente attivata.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Selezionare <strong>Applica</strong>.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="gestire-la-capacità-automatica-con-un-connettore-attivo">Gestire la capacità automatica con un connettore attivo</h3>
+<p>Selezionare il pannello <strong>Storage VM</strong>. Vengono visualizzate le SVM esistenti. Selezionare <strong>Aggiungi SVM</strong> per aggiungere una nuova SVM.</p>
 <div class="paragraph">
-<p>È possibile gestire la capacità automatica con un connettore attivo in AWS.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Fasi</div>
-<ol class="arabic">
-<li>
-<p>Aprire l&#8217;ambiente di lavoro FSX per ONTAP.</p>
-</li>
-<li>
-<p>Dalla scheda <strong>Panoramica</strong>, selezionare <strong>funzioni</strong>.</p>
-</li>
-<li>
-<p>Selezionare l&#8217;icona a forma di matita (<span class="image"><img src="../media/icon-pencil.png" alt="Immagine dell&#8217;icona di modifica a forma di matita."></span>) Per aprire la pagina <strong>Gestione automatica della capacità</strong>.</p>
-</li>
-<li>
-<p>Nella pagina <strong>Gestione automatica della capacità</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Selezionare la casella per attivare la gestione automatica della capacità.</p>
-</li>
-<li>
-<p>Deselezionare la casella per disattivare la gestione automatica della capacità, se precedentemente attivata.</p>
-</li>
-</ul>
+<p><span class="image"><img src="../media/svm-add.png" alt="Schermata del pannello Storage VM."></span></p>
 </div>
 </li>
 <li>
-<p>Selezionare <strong>Applica</strong>.</p>
+<p><strong>Aggiunta di una macchina virtuale per lo storage</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Immettere il nome della VM di storage.</p>
+</li>
+<li>
+<p>Selezionare lo stile di protezione del volume root della VM di storage configurato. I valori validi sono <strong>UNIX</strong>, <strong>NTFS</strong> o <strong>misto</strong>.</p>
+</li>
+<li>
+<p>Facoltativamente, specificare una password amministrativa per la VM di storage.</p>
+</li>
+<li>
+<p>Facoltativamente, è possibile creare fino a cinquanta tag per classificare la SVM facendo clic sul segno più e immettendo il nome e il valore di un tag.</p>
+</li>
+<li>
+<p>Selezionare <strong>Aggiungi</strong> per aggiungere la VM di storage.</p>
 </li>
 </ol>
 </div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>La nuova VM di storage viene aggiunta all&#8217;ambiente di lavoro e al file system Amazon FSX per NetApp ONTAP.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="modificare-la-capacità-di-throughput">Modificare la capacità di throughput</h2>
+<h2 id="gestire-una-vm-di-storage">Gestire una VM di storage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>È possibile modificare la capacità di throughput in qualsiasi momento dopo aver creato l&#8217;ambiente di lavoro FSX per ONTAP.</p>
+<p>È possibile visualizzare i dettagli delle VM di storage, gestire tag, impostare una connessione SMB/CIFS o eliminare una SVM di storage.</p>
 </div>
 <div class="paragraph">
 <div class="title">Prima di iniziare</div>
-<p>Hai bisogno di un attivo <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html" target="_blank" rel="noopener">"Connettore in AWS"</a>.</p>
+<p>Hai bisogno di un attivo <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"Connettore in AWS"</a>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>Aprire l&#8217;ambiente di lavoro FSX per ONTAP.</p>
+<p>Selezionare l&#8217;ambiente di lavoro FSX per ONTAP sul Canvas. Se non si dispone di un connettore abilitato, viene richiesto di aggiungerne uno.</p>
 </li>
 <li>
-<p>Dalla scheda <strong>Panoramica</strong>, selezionare <strong>funzioni</strong>.</p>
+<p>Selezionare il pannello <strong>Storage VM</strong>.</p>
 </li>
 <li>
-<p>Selezionare l&#8217;icona a forma di matita (<span class="image"><img src="../media/icon-pencil.png" alt="Immagine dell&#8217;icona di modifica a forma di matita."></span>) Per aprire la pagina di modifica <strong>throughput Capacity</strong>.</p>
-</li>
-<li>
-<p>Selezionare una nuova capacità di throughput dal menu a discesa e selezionare <strong>Aggiorna</strong>. Questa modifica può richiedere fino a 25 minuti e non interrompe l&#8217;accesso ai dati.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="modificare-la-capacità-dello-storage-e-gli-iops">Modificare la capacità dello storage e gli IOPS</h2>
-<div class="sectionbody">
+<p>Utilizzare i tre punti (<span class="image"><img src="../media/icon-three-dots.png" alt="icona di tre punti"></span>) Per aprire il menu delle opzioni per la VM di storage.</p>
 <div class="paragraph">
-<p>È possibile modificare la capacità dello storage e gli IOPS in qualsiasi momento dopo aver creato l&#8217;ambiente di lavoro FSX per ONTAP.</p>
+<p><span class="image"><img src="../media/svm-manage.png" alt="Schermata del menu delle opzioni di gestione delle macchine virtuali dello storage dal pannello delle macchine virtuali dello storage."></span></p>
 </div>
-<div class="paragraph">
-<div class="title">Prima di iniziare</div>
-<p>Hai bisogno di un attivo <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html" target="_blank" rel="noopener">"Connettore in AWS"</a>.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Fasi</div>
-<ol class="arabic">
-<li>
-<p>Aprire l&#8217;ambiente di lavoro FSX per ONTAP.</p>
 </li>
 <li>
-<p>Dalla scheda <strong>Panoramica</strong>, selezionare <strong>funzioni</strong>.</p>
+<p>Selezionare un&#8217;opzione di menu per visualizzare o gestire le impostazioni della VM di storage.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Visualizzare i dettagli SVM</strong>: È possibile esaminare i dettagli, tra cui volume root, stile di protezione, protocolli consentiti, dominio Active Directory e tag.</p>
 </li>
 <li>
-<p>Selezionare l&#8217;icona a forma di matita (<span class="image"><img src="../media/icon-pencil.png" alt="Immagine dell&#8217;icona di modifica a forma di matita."></span>) Per aprire la pagina di modifica <strong>Storage Capacity &amp; IOPS</strong>.</p>
+<p><strong>Gestisci tag SVM</strong>: È possibile aggiungere, modificare o rimuovere tag di storage VM. Le modifiche apportate verranno sincronizzate con la console AWS.</p>
 </li>
 <li>
-<p>È possibile modificare la capacità dello storage e gli IOPS una volta ogni sei ore. Se si tenta di apportare modifiche con maggiore frequenza, viene visualizzato un errore.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/screenshot-configure-iops.png" alt="Una schermata della pagina per modificare la capacità dello storage e i valori IOPS."></span></p>
+<p><strong>Configurazione SMB/CIFS</strong>: Se si tratta della prima connessione CIFS per questo ambiente di lavoro, verrà richiesto di configurare la connettività CIFS utilizzando un&#8217;impostazione di <em>Active Directory</em> o <em>Workgroup</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se si seleziona un&#8217;impostazione del gruppo di lavoro, immettere il nome del server e del gruppo di lavoro per un gruppo di lavoro configurato per CIFS.</p>
+</li>
+<li>
+<p>Se si seleziona un&#8217;installazione di Active Directory, è necessario fornire le seguenti informazioni di configurazione.</p>
+<details open>
+<summary class="title">Configurazione di Active Directory</summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Campo</th>
+<th class="tableblock halign-left valign-top">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indirizzo IP primario DNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gli indirizzi IP dei server DNS che forniscono la risoluzione dei nomi per il server CIFS. Il server DNS elencato deve contenere i record di posizione del servizio (SRV) necessari per individuare i server LDAP di Active Directory e i controller di dominio per il dominio a cui si unisce il server CIFS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dominio Active Directory da unire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;FQDN del dominio Active Directory (ad) a cui si desidera che il server CIFS si unisca.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credenziali autorizzate per l&#8217;accesso al dominio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il nome e la password di un account Windows con privilegi sufficienti per aggiungere computer all&#8217;unità organizzativa (OU) specificata nel dominio ad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nome NetBIOS del server CIFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un nome server CIFS univoco nel dominio ad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unità organizzativa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;unità organizzativa all&#8217;interno del dominio ad da associare al server CIFS. L&#8217;impostazione predefinita è CN=computer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dominio DNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il dominio DNS per la macchina virtuale di storage (SVM). Nella maggior parte dei casi, il dominio è lo stesso del dominio ad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server NTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selezionare <strong>Enable NTP Server Configuration</strong> (attiva configurazione server NTP) per configurare un server NTP utilizzando il DNS di Active Directory. Se è necessario configurare un server NTP utilizzando un indirizzo diverso, utilizzare l&#8217;API. Vedere <a href="https://docs.netapp.com/us-en/bluexp-automation/index.html" target="_blank" rel="noopener">"Documenti sull&#8217;automazione BlueXP"</a> per ulteriori informazioni.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</details>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Elimina SVM</strong>: È possibile eliminare la VM di storage. Per eliminarlo, verificare il nome della VM di storage.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -890,93 +893,7 @@ Tutte le altre opzioni richiedono un connettore e sono disattivate.
 <img src="/us-en/bluexp-fsx-ontap/images/note.svg" alt="Nota">
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>L&#8217;utilizzo massimo della capacità di storage consigliato è del 80% per mantenere le performance di Data Tiering e consentire la capacità di dati aggiuntivi.</p>
-</li>
-<li>
-<p>Selezionando <strong>Automatic</strong> IOPS viene mantenuto un rapporto di tre IOPS SSD con provisioning per GiB dello storage primario fino a 160,000. Non è possibile eseguire il provisioning manuale di un valore IOPS superiore a 160,000.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Selezionare la casella di controllo per confermare che la modifica della capacità dello storage influisce sul costo del servizio FSX per ONTAP e che non è possibile apportare modifiche aggiuntive per sei ore.</p>
-</li>
-<li>
-<p>Selezionare <strong>Aggiorna</strong> per confermare le modifiche.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="rimuovere-fsx-per-ontap-dallo-spazio-di-lavoro">Rimuovere FSX per ONTAP dallo spazio di lavoro</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Puoi rimuovere FSX per ONTAP da BlueXP senza eliminare l&#8217;account o i volumi FSX per ONTAP. È possibile aggiungere l&#8217;ambiente di lavoro FSX per ONTAP a BlueXP in qualsiasi momento.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Fasi</div>
-<ol class="arabic">
-<li>
-<p>Aprire l&#8217;ambiente di lavoro. Se non si dispone di un connettore in AWS, viene visualizzata la schermata di richiesta. È possibile ignorarlo e procedere con la rimozione dell&#8217;ambiente di lavoro.</p>
-</li>
-<li>
-<p>Nella parte superiore destra della pagina, selezionare il menu delle azioni e scegliere <strong>Rimuovi dall&#8217;area di lavoro</strong>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/screenshot_fsx_working_environment_remove.png" alt="Schermata dell&#8217;opzione di rimozione di FSX per ONTAP dall&#8217;interfaccia BlueXP."></span></p>
-</div>
-</li>
-<li>
-<p>Selezionare <strong>Rimuovi</strong> per rimuovere FSX per ONTAP da BlueXP.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="eliminare-lambiente-di-lavoro-fsx-per-ontap">Eliminare l&#8217;ambiente di lavoro FSX per ONTAP</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>È possibile eliminare FSX per ONTAP da BlueXP.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/bluexp-fsx-ontap/images/warning.svg" alt="Attenzione">
-</td>
-<td class="content">
-Questa azione eliminerà tutte le risorse associate all&#8217;ambiente di lavoro. Questa azione non può essere annullata.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<div class="title">Prima di iniziare</div>
-<p>Prima di eliminare l&#8217;ambiente di lavoro, è necessario:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Interrompere tutte le relazioni di replica con questo ambiente di lavoro.</p>
-</li>
-<li>
-<p><a href="task-manage-fsx-volumes.html#delete-volumes">"Eliminare tutti i volumi"</a> associato al file system. Per rimuovere o eliminare i volumi, è necessario un connettore attivo in AWS.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/bluexp-fsx-ontap/images/note.svg" alt="Nota">
-</td>
-<td class="content">
-I volumi guasti devono essere cancellati utilizzando AWS Management Console o CLI.
+Prima di eliminare la VM di storage, è necessario eliminare tutti i volumi presenti nella VM di storage.
 </td>
 </tr>
 </table>
@@ -984,55 +901,8 @@ I volumi guasti devono essere cancellati utilizzando AWS Management Console o CL
 </li>
 </ul>
 </div>
-<div class="olist arabic">
-<div class="title">Fasi</div>
-<ol class="arabic">
-<li>
-<p>Aprire l&#8217;ambiente di lavoro. Se non si dispone di un connettore in AWS, viene visualizzata la schermata di richiesta. È possibile ignorarlo e procedere con l&#8217;eliminazione dell&#8217;ambiente di lavoro.</p>
-</li>
-<li>
-<p>Nella parte superiore destra della pagina, selezionare il menu delle azioni e scegliere <strong>Elimina</strong>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/screenshot_fsx_working_environment_delete.png" alt="Schermata dell&#8217;opzione di eliminazione di FSX per ONTAP dall&#8217;interfaccia BlueXP."></span></p>
-</div>
-</li>
-<li>
-<p>Inserire il nome dell&#8217;ambiente di lavoro e selezionare <strong>Delete</strong> (Elimina).</p>
 </li>
 </ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="gestire-i-servizi-dati">Gestire i servizi dati</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Puoi gestire servizi dati aggiuntivi dall&#8217;ambiente di lavoro Amazon FSX per NetApp ONTAP.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/data-services.png" alt="Una schermata della scheda servizi dati sull&#8217;ambiente di lavoro"></span></p>
-</div>
-<div class="paragraph">
-<p>Per ulteriori informazioni sulla configurazione dei servizi dati, fare riferimento a:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html" target="_blank" rel="noopener">"Backup e ripristino BlueXP"</a> Fornisce una protezione dei dati efficiente, sicura e conveniente per i dati NetApp ONTAP, Kubernetes volumi persistenti, database e macchine virtuali, sia on-premise che nel cloud.</p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html" target="_blank" rel="noopener">"Copia e sincronizzazione BlueXP"</a> È un servizio di replica e sincronizzazione cloud per il trasferimento dei dati NAS tra archivi a oggetti on-premise e cloud.</p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/bluexp-classification/index.html" target="_blank" rel="noopener">"Classificazione BlueXP"</a> consente di eseguire la scansione e classificare i dati nel multicloud ibrido della tua organizzazione.</p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/bluexp-replication/index.html" target="_blank" rel="noopener">"Replicare i dati"</a> Tra sistemi storage ONTAP per supportare backup e disaster recovery nel cloud o tra cloud.</p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/bluexp-volume-caching/index.html" target="_blank" rel="noopener">"Caching dei volumi"</a> fornisce un volume persistente e scrivibile in un luogo remoto. È possibile utilizzare il caching dei volumi BlueXP per accelerare l&#8217;accesso ai dati o per trasferire il traffico dai volumi ad accesso elevato.</p>
-</li>
-</ul>
 </div>
 </div>
 </div>

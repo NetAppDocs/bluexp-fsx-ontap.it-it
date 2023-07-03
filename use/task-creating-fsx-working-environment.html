@@ -428,6 +428,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -527,11 +529,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Scopri di più su FSX per ONTAP"
+      data-pdf-filename="Scopri di più su Amazon FSX per NetApp ONTAP"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/start/concept-fsx-aws.html">
-        Scopri di più su FSX per ONTAP
+        Scopri di più su Amazon FSX per NetApp ONTAP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Avvio rapido"
@@ -550,18 +552,18 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Impostare le autorizzazioni per FSX per ONTAP"
+      data-pdf-filename="Impostare le autorizzazioni"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html">
-        Impostare le autorizzazioni per FSX per ONTAP
+        Impostare le autorizzazioni
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Regole del gruppo di sicurezza per FSX per ONTAP"
+      data-pdf-filename="Regole del gruppo di sicurezza"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/requirements/reference-security-groups-fsx.html">
-        Regole del gruppo di sicurezza per FSX per ONTAP
+        Regole del gruppo di sicurezza
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="USA Amazon FSX per NetApp ONTAP"
@@ -587,18 +589,25 @@
         Gestire un ambiente di lavoro
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Creare e montare volumi"
+      data-pdf-filename="Creare e montare un volume"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/use/task-add-fsx-volumes.html">
-        Creare e montare volumi
+        Creare e montare un volume
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gestire volumi e servizi dati"
+      data-pdf-filename="Gestire i volumi"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html">
-        Gestire volumi e servizi dati
+        Gestire i volumi
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aggiungere e gestire una VM di storage"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-fsx-ontap/use/task-add-fsx-svm.html">
+        Aggiungere e gestire una VM di storage
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Conoscenza e supporto"
@@ -678,21 +687,21 @@
   </div>
 </div>
 
-      <div class="ie-nmt-disclaimer">
-  <span>
-    <div class="ie-nmt-disclaimer-container">
-      <div class="ie-nmt-disclaimer-icon">
-        <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/it-it/bluexp-fsx-ontap/images/sprite.svg#circle-info">
-        </svg>
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <svg class="luci-icon" aria-hidden="true">
+            <use xlink:href="/it-it/bluexp-fsx-ontap/images/sprite.svg#circle-info">
+          </svg>
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
       </div>
-      <div class="ie-nmt-disclaimer-content">
-        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
-      </div>
-      <div style="clear:both;"></div>
-    </div>
-  </span>
-</div><div class="n-doc__component-detail-heading-wrap">
+    </span>
+  </div><div class="n-doc__component-detail-heading-wrap">
   <h1 class="n-doc__component-detail-heading">Crea o scopri un ambiente di lavoro Amazon FSX per NetApp ONTAP</h1>
 </div>
 
@@ -700,7 +709,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-05 12:06:02 +0000">06/05/2023</time>
+    <time datetime="2023-07-03 14:29:56 +0000">07/03/2023</time>
     
   
 
@@ -914,22 +923,22 @@ Se si specifica un valore IOPS che non soddisfa i requisiti minimi, viene visual
 <h2 id="scopri-un-file-system-fsx-per-ontap-esistente">Scopri un file system FSX per ONTAP esistente</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Se in precedenza hai fornito le tue credenziali AWS a BlueXP, <strong>My Opportunities</strong> può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando BlueXP. È inoltre possibile esaminare i servizi dati disponibili.</p>
+<p>Se in precedenza hai fornito le tue credenziali AWS a BlueXP, <strong>My estate</strong> può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando BlueXP. È inoltre possibile esaminare i servizi dati disponibili.</p>
 </div>
 <div class="paragraph">
 <div class="title">A proposito di questa attività</div>
-<p>Puoi scoprire FSX per i file system ONTAP quando lo desideri <a href="#creare-un-ambiente-di-lavoro-amazon-fsx-per-netapp-ontap">Creare un ambiente di lavoro Amazon FSX per NetApp ONTAP</a> Oppure utilizzando la pagina <strong>le mie opportunità</strong>. Questa attività descrive il rilevamento utilizzando <strong>My Opportunities</strong></p>
+<p>Puoi scoprire FSX per i file system ONTAP quando lo desideri <a href="#creare-un-ambiente-di-lavoro-amazon-fsx-per-netapp-ontap">Creare un ambiente di lavoro Amazon FSX per NetApp ONTAP</a> Oppure utilizzando la pagina <strong>My estate</strong>. Questa attività descrive il rilevamento mediante <strong>My estate</strong></p>
 </div>
 <div class="olist arabic">
 <div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>In BlueXP, fare clic sulla scheda <strong>My Opportunities</strong>.</p>
+<p>In BlueXP, fare clic sulla scheda <strong>My estate</strong>.</p>
 </li>
 <li>
 <p>Viene visualizzato il numero di FSX rilevati per i file system ONTAP. Fare clic su <strong>Discover</strong> (rileva).</p>
 <div class="paragraph">
-<p><span class="image"><img src="../media/screenshot-opportunities.png" alt="Una schermata della pagina le mie opportunità per FSX per ONTAP."></span></p>
+<p><span class="image"><img src="../media/screenshot-opportunities.png" alt="Una schermata della pagina My estate per FSX per ONTAP."></span></p>
 </div>
 </li>
 <li>
