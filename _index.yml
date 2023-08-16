@@ -18,7 +18,7 @@ indexpage:
       url: "/requirements/task-setting-up-permissions-fsx.html"
     - title: Regole del gruppo di sicurezza
       url: "/requirements/reference-security-groups-fsx.html"
-  - title: USA Amazon FSX per NetApp ONTAP
+  - title: USA FSX per ONTAP
     links:
     - title: Creare o scoprire un ambiente di lavoro
       url: "/use/task-creating-fsx-working-environment.html"

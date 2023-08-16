@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: requirements/task-setting-up-permissions-fsx.html 
 keywords: fsx for ontap, iam, user role, permissions, aws govcloud, govcloud, credentials 
-summary: 'Per creare o gestire l"ambiente di lavoro Amazon FSX per NetApp ONTAP, è necessario disporre di una chiave di accesso AWS e di una chiave segreta per un ruolo utente IAM con autorizzazioni FSX per ONTAP.' 
+summary: 'Per creare o gestire un ambiente di lavoro FSX per ONTAP, devi aggiungere le credenziali AWS a BlueXP fornendo l"ARN di un ruolo IAM che assegna ad BlueXP le autorizzazioni necessarie per creare un ambiente di lavoro FSX per ONTAP.' 
 ---
 = Impostare le autorizzazioni per FSX per ONTAP
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Per creare o gestire l"ambiente di lavoro Amazon FSX per NetApp ONTAP,
 
 
 [role="lead"]
-Per creare o gestire un ambiente di lavoro Amazon FSX per NetApp ONTAP, è necessario aggiungere le credenziali AWS a BlueXP fornendo l'ARN di un ruolo IAM che assegna a BlueXP le autorizzazioni necessarie per creare un ambiente di lavoro FSX per ONTAP.
+Per creare o gestire un ambiente di lavoro FSX per ONTAP, devi aggiungere le credenziali AWS a BlueXP fornendo l'ARN di un ruolo IAM che assegna ad BlueXP le autorizzazioni necessarie per creare un ambiente di lavoro FSX per ONTAP.
 
 
 

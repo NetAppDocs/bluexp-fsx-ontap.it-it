@@ -14,7 +14,7 @@ summary: 'Amazon FSX per NetApp ONTAP è un servizio completamente gestito che c
 
 
 [role="lead"]
-link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon FSX per NetApp ONTAP"^] È un servizio completamente gestito che consente ai clienti di lanciare ed eseguire file system basati sul sistema operativo per lo storage ONTAP di NetApp. FSX per ONTAP offre le stesse funzionalità, performance e funzionalità amministrative che i clienti NetApp utilizzano on-premise, con la semplicità, l'agilità, la sicurezza e la scalabilità di un servizio AWS nativo.
+link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon FSX per NetApp ONTAP"^] È un servizio completamente gestito che consente ai clienti di avviare ed eseguire file system basati sul sistema operativo per lo storage NetApp ONTAP. FSX per ONTAP offre le stesse funzionalità, performance e funzionalità amministrative che i clienti NetApp utilizzano on-premise, con la semplicità, l'agilità, la sicurezza e la scalabilità di un servizio AWS nativo.
 
 
 
@@ -31,7 +31,7 @@ link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["A
 
 == Funzionalità aggiuntive di BlueXP
 
-* Amazon FSX per NetApp ONTAP è supportato quando si utilizza BlueXP in modalità _standard_ o _limitata_.
+* FSX per ONTAP è supportato quando si utilizza BlueXP in modalità _standard_ o _restricted_.
 +
 ** La modalità Standard sfrutta il layer BlueXP SaaS per fornire funzionalità complete.
 ** La modalità limitata è disponibile per le organizzazioni con restrizioni di connettività.
@@ -63,7 +63,7 @@ https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services
 
 == Assistenza
 
-Amazon FSX per NetApp ONTAP è una soluzione AWS first-party. Per domande o problemi di supporto tecnico associati al file system, all'infrastruttura o a qualsiasi soluzione che utilizzi questo servizio Amazon FSX per NetApp ONTAP, utilizza il Centro di supporto della console AWS per aprire un caso di supporto con AWS. Selezionare il servizio "FSX per ONTAP" e la categoria appropriata. Fornire le informazioni rimanenti necessarie per creare il caso di supporto AWS.
+Amazon FSX per NetApp ONTAP è una soluzione AWS first-party. Per domande o problemi di supporto tecnico associati al file system, all'infrastruttura o alla soluzione FSX per ONTAP che utilizza questo servizio, utilizza il Support Center nella console di gestione AWS per aprire un caso di supporto con AWS. Selezionare il servizio "FSX per ONTAP" e la categoria appropriata. Fornire le informazioni rimanenti necessarie per creare il caso di supporto AWS.
 
 Per domande generali sulle soluzioni e i servizi di storage BlueXP o BlueXP, è possibile iniziare con la chat BlueXP in linea.
 
