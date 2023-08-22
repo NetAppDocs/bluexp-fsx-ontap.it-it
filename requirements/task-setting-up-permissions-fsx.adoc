@@ -85,7 +85,7 @@ Per consentire a BlueXP di, sono necessarie le seguenti autorizzazioni aggiuntiv
 "ec2:RevokeSecurityGroupEgress",
 "ec2:RevokeSecurityGroupIngress",
 "ec2:CreateSecurityGroup",
-"ec2:DeleteSecurityGroup"
+"ec2:DeleteSecurityGroup",
 "cloudformation:CreateStack",
 "cloudformation:ValidateTemplate",
 "cloudformation:DescribeStacks",
