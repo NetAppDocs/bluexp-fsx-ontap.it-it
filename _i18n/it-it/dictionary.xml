@@ -565,9 +565,7 @@
   <block id="8fad3d94a3385eeb6406613f49896cdd" category="doc">Impostare le autorizzazioni per FSX per ONTAP</block>
   <block id="1db8d07619da1f12a7b920676f6769ae" category="paragraph">Impostare un ruolo IAM che consenta a BlueXP di assumere il ruolo.</block>
   <block id="44030f19e52b4a03b050525f287bbc15" category="list-text">Accedere alla console IAM nell'account di destinazione.</block>
-  <block id="7f4640b00b5df83a54d4aaaa51f7d6ab" category="list-text">In Gestione accessi, fare clic su *ruoli &gt; Crea ruolo* e seguire i passaggi per creare il ruolo.</block>
   <block id="e506de832b98c2693eb3f400ef0722c0" category="list-text">In *Trusted entity type*, selezionare *AWS account*.</block>
-  <block id="c29858d9450fbef0a082acaa54d1bc6d" category="list-text">Selezionare *un altro account AWS* e inserire l'ID di BlueXP.</block>
   <block id="edcfddcfff54621c47b01eddd968a5b0" category="list-text">Per BlueXP SaaS: 952013314444</block>
   <block id="319c3fdfa37c6b0ae4e91a351706489b" category="list-text">Per AWS GovCloud (USA): 033442085313</block>
   <block id="4671b76d583d3e68a446878a3342d736" category="list-text">Creare un criterio che includa le seguenti autorizzazioni minime richieste e facoltative, in base alle necessità.</block>
@@ -577,17 +575,14 @@
   <block id="9175bb34d0aede26315b313b9432bcbb" category="open-title">Gruppi di sicurezza</block>
   <block id="42c16fd45375c160089e29d754f16e36" category="inline-link-macro">generare gruppi di sicurezza</block>
   <block id="78004ed8e8658d85d8a3d99a1a533922" category="paragraph">Per consentire a BlueXP di, sono necessarie le seguenti autorizzazioni aggiuntive <block ref="37425afe2ceb1de25205a180b5a14074" category="inline-link-macro-rx"></block>.</block>
-  <block id="fa9df323148192800073dd2a78c81f73" category="list-text">Copiare l'ARN del ruolo IAM in modo da poterlo incollare in BlueXP nella fase successiva.</block>
   <block id="d47c23803528fa45fad33a3f83dfcf54" category="paragraph">Il ruolo IAM dispone ora delle autorizzazioni necessarie.</block>
   <block id="36bc52aaebad43ec3e49ed9a0efacd43" category="section-title">Aggiungere le credenziali</block>
   <block id="d5dc64744da4d60a47aa835877d08194" category="paragraph">Dopo aver fornito al ruolo IAM le autorizzazioni richieste, aggiungere il ruolo ARN a BlueXP.</block>
-  <block id="6d9d6baff2479ce7a87bf705f93f1641" category="paragraph">Se hai appena creato il ruolo IAM, potrebbero essere necessari alcuni minuti prima che siano disponibili per l'utilizzo. Attendere alcuni minuti prima di aggiungere le credenziali a BlueXP.</block>
   <block id="b019ab068deba8494415cbd226ca0c4e" category="list-text">Nella parte superiore destra della console BlueXP, fare clic sull'icona Impostazioni e selezionare *credenziali*.</block>
   <block id="be9d7b7687f0c55f7e65f14cd2b0f530" category="inline-image-macro">Una schermata che mostra l'icona Settings (Impostazioni) in alto a destra della console BlueXP.</block>
   <block id="cb9e3791dcb67c8a699c104be6a1c49c" category="paragraph"><block ref="cb9e3791dcb67c8a699c104be6a1c49c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="11832df968cbb4cdb8e45984c11a77d0" category="list-text">Fare clic su *Add Credentials* (Aggiungi credenziali) e seguire la procedura guidata.</block>
   <block id="469d6f26b0e14d75fc0c834eeac72311" category="list-text">*Posizione credenziali*: Selezionare *Amazon Web Services &gt; BlueXP*.</block>
-  <block id="8cf335d7d3b1dd5cdac30699d20489c0" category="list-text">*Definisci credenziali*: Fornire l'ARN (Amazon Resource Name) del ruolo IAM.</block>
   <block id="a7cf2ac8ff4dd10d1e304f0abd7fe0bd" category="list-text">Se utilizzi un account AWS GovCloud (US), seleziona *uso un account AWS GovCloud (US)*.</block>
   <block id="045e30d9d567e729274d9202eee4ff62" category="inline-image-macro">Una schermata della casella di controllo dell'account GovCloud (USA).</block>
   <block id="c03a6ecd27b7a5ea40ee52d99c7a247a" category="paragraph"><block ref="c03a6ecd27b7a5ea40ee52d99c7a247a" category="inline-image-macro-rx" type="image"></block></block>
@@ -819,4 +814,12 @@
   <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">Ottieni supporto per un file service del cloud provider</block>
   <block id="f6185bb12f5e53c800be8cda7fbca65b" category="paragraph">Per supporto tecnico relativo a un file service di un cloud provider, alla sua infrastruttura o a una soluzione che utilizza il servizio, fare riferimento a "Guida in linea" nella documentazione BlueXP relativa a quel prodotto.</block>
   <block id="3880ae5df9fdc4d0fc4a6d00a2239530" category="paragraph">Per ricevere supporto tecnico specifico di BlueXP e delle relative soluzioni e servizi storage, utilizza le opzioni di supporto descritte di seguito.</block>
+  <block id="8e2d9036bdca41a47ed6a62d5c651b17" category="list-text">Concede l'accesso BlueXP all'account AWS. In Gestione accessi, fare clic su *ruoli &gt; Crea ruolo* e seguire i passaggi per creare il ruolo.</block>
+  <block id="100857c2eecdae8b99b613fc837c4b77" category="list-text">Seleziona *un altro account AWS* e immetti l'ID *account* di BlueXP:</block>
+  <block id="7705419552b80484a159f2d27d7cf57b" category="inline-link-macro">_ID esterno_</block>
+  <block id="2ecdc21261ba583d893ec3e735f02292" category="inline-link-macro">problema del sostituto confuso</block>
+  <block id="a382deac7db7b733bc63619e401d8f45" category="admonition">Per una maggiore protezione, si consiglia di specificare un <block ref="96b272eff9669a5b2b13cba8c25b9973" category="inline-link-macro-rx"></block>. Per accedere al tuo account AWS, BlueXP dovrà fornire il ruolo ARN (Amazon Resource Name) e l'ID esterno specificato. Questo impedisce <block ref="2847290d28a09952a637392df577ce64" category="inline-link-macro-rx"></block>.</block>
+  <block id="5490038d2be728c6d3679ab6915e87e3" category="list-text">Copia il ruolo ARN del ruolo IAM in modo che sia possibile incollarlo in BlueXP nel passaggio successivo.</block>
+  <block id="1a913f679da8e614b14423480f9ce6be" category="paragraph">Se è stato appena creato il ruolo IAM, attendere alcuni minuti per rendere disponibili le nuove credenziali.</block>
+  <block id="a2841ca82f44794bf8912d92f8eaf4d6" category="list-text">*Definisci credenziali*: Fornire un *nome credenziali* e il *ruolo ARN* e *ID esterno* (se specificato) creati al momento <block ref="a1061025d6c6e25a2b8607068ce69197" category="inline-xref-macro-rx"></block>.</block>
 </blocks>
