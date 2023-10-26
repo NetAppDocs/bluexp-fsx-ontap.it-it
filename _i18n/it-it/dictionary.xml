@@ -121,7 +121,6 @@
   <block id="ee0913f891047fad10e625ab9754d92d" category="paragraph"><block ref="9b424e413e3d5660d5b403cf87df1eb5" category="inline-link-macro-rx"></block> È un servizio completamente gestito che consente ai clienti di lanciare ed eseguire file system basati sul sistema operativo per lo storage ONTAP di NetApp. FSX per ONTAP offre le stesse funzionalità, performance e funzionalità amministrative che i clienti NetApp utilizzano on-premise, con la semplicità, l'agilità, la sicurezza e la scalabilità di un servizio AWS nativo.</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">Caratteristiche</block>
   <block id="5e63cf07e8c4e2bc02fec4b907bfcc00" category="list-text">Non è necessario configurare o gestire dispositivi di storage, software o backup.</block>
-  <block id="620d7e4da65c27b65a66bca15517b802" category="list-text">Supporto per i protocolli CIFS, NFSv3, NFSv4.x e SMB v2.0 - v3.1.1.</block>
   <block id="f6ad83cb7f527e383e392f709849a098" category="list-text">Capacità di storage dei dati virtualmente illimitata e a basso costo utilizzando il Tier di storage IA (Unrequently Available Unrequently Available).</block>
   <block id="3c36508c8697f7ec7a94803545518d69" category="list-text">Certificato per l'esecuzione su applicazioni sensibili alla latenza, tra cui Oracle RAC.</block>
   <block id="6c2a9ed4ea140413912e894a10672e01" category="list-text">Scelta di prezzi in bundle e pay-as-you-go.</block>
@@ -822,4 +821,5 @@
   <block id="5490038d2be728c6d3679ab6915e87e3" category="list-text">Copia il ruolo ARN del ruolo IAM in modo che sia possibile incollarlo in BlueXP nel passaggio successivo.</block>
   <block id="1a913f679da8e614b14423480f9ce6be" category="paragraph">Se è stato appena creato il ruolo IAM, attendere alcuni minuti per rendere disponibili le nuove credenziali.</block>
   <block id="a2841ca82f44794bf8912d92f8eaf4d6" category="list-text">*Definisci credenziali*: Fornire un *nome credenziali* e il *ruolo ARN* e *ID esterno* (se specificato) creati al momento <block ref="a1061025d6c6e25a2b8607068ce69197" category="inline-xref-macro-rx"></block>.</block>
+  <block id="1d2976e5126e0cf8526afeab66bc8fa3" category="list-text">Supporto per i protocolli CIFS, iSCSI, NFSv3, NFSv4.x e SMB v2,0 - v3,1.1.</block>
 </blocks>

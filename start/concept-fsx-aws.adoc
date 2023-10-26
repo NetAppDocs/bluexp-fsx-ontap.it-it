@@ -21,7 +21,7 @@ link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["A
 == Caratteristiche
 
 * Non è necessario configurare o gestire dispositivi di storage, software o backup.
-* Supporto per i protocolli CIFS, NFSv3, NFSv4.x e SMB v2.0 - v3.1.1.
+* Supporto per i protocolli CIFS, iSCSI, NFSv3, NFSv4.x e SMB v2,0 - v3,1.1.
 * Capacità di storage dei dati virtualmente illimitata e a basso costo utilizzando il Tier di storage IA (Unrequently Available Unrequently Available).
 * Certificato per l'esecuzione su applicazioni sensibili alla latenza, tra cui Oracle RAC.
 * Scelta di prezzi in bundle e pay-as-you-go.
