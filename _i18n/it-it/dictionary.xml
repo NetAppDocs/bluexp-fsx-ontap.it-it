@@ -15,7 +15,6 @@
   <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">Se disponi di un account partner o reseller, puoi aggiungere uno o più account NSS, ma non possono essere aggiunti insieme agli account a livello di cliente.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Fasi</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">Schermata del menu Help (Guida) in cui Support (Assistenza) è la prima opzione elencata</block>
-  <block id="19d089db572ee6a1e154a0c9c9e57bfd" category="paragraph">NetApp utilizza Microsoft Azure Active Directory come provider di identità per i servizi di autenticazione specifici per il supporto e la concessione di licenze.</block>
   <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">Nella pagina di accesso, fornire l'indirizzo e-mail e la password registrati del NetApp Support Site per eseguire il processo di autenticazione.</block>
   <block id="cbc6cc3bb022583403171b447b2a962c" category="paragraph">Queste azioni consentono a BlueXP di utilizzare il tuo account NSS per download di licenze, verifica dell'aggiornamento software e registrazioni di supporto future.</block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">Tenere presente quanto segue:</block>
@@ -60,8 +59,6 @@
   <block id="00c5fef3bb9d593ae96bf5d2ee60354a" category="paragraph">Unisciti alla community BlueXP per seguire le discussioni in corso o crearne di nuove.</block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">Documentazione</block>
   <block id="a4a6c2ea0078252eac2d74ef3e6c917c" category="paragraph">La documentazione BlueXP attualmente visualizzata.</block>
-  <block id="80b1b0d2b1ebf2b3cba2d25759801afd" category="list-text">Mailto:ng-cloudmanager-feedback@netapp.com[email di feedback]</block>
-  <block id="6702efec14563f45f1ee2f8c613b8ad8" category="paragraph">Diamo valore al tuo contributo. Invia un feedback per aiutarci a migliorare BlueXP.</block>
   <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">Crea un caso con il supporto NetApp</block>
   <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">Oltre alle opzioni di supporto autonomo sopra descritte, puoi collaborare con uno specialista del supporto NetApp per risolvere eventuali problemi dopo l'attivazione del supporto.</block>
   <block id="8fece025a1a8fef7018449bf104a2527" category="paragraph-title">Prima di iniziare</block>
@@ -115,7 +112,6 @@
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Open source</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">I file di avviso forniscono informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.</block>
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">Avviso per BlueXP</block>
-  <block id="5bf4f331231141b7f8c69e636d5e0a8f" category="summary">Amazon FSX per NetApp ONTAP è un servizio completamente gestito che consente ai clienti di lanciare ed eseguire file system basati sul sistema operativo per lo storage ONTAP di NetApp. FSX per ONTAP offre le stesse funzionalità, performance e funzionalità amministrative che i clienti NetApp utilizzano on-premise oggi, con la semplicità, l'agilità, la sicurezza e la scalabilità di un servizio AWS nativo.</block>
   <block id="9b52174f321d3579b4ad28ec9c136481" category="doc">Scopri di più su Amazon FSX per NetApp ONTAP</block>
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link-macro">Amazon FSX per NetApp ONTAP</block>
   <block id="ee0913f891047fad10e625ab9754d92d" category="paragraph"><block ref="9b424e413e3d5660d5b403cf87df1eb5" category="inline-link-macro-rx"></block> È un servizio completamente gestito che consente ai clienti di lanciare ed eseguire file system basati sul sistema operativo per lo storage ONTAP di NetApp. FSX per ONTAP offre le stesse funzionalità, performance e funzionalità amministrative che i clienti NetApp utilizzano on-premise, con la semplicità, l'agilità, la sicurezza e la scalabilità di un servizio AWS nativo.</block>
@@ -607,7 +603,6 @@
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Webinar sul cloud</block>
   <block id="c82c15e6d66564201da1f424b2fb9bf4" category="sidebar">Documentazione di Amazon FSX per NetApp ONTAP</block>
   <block id="6faf2fd9ba5b0e89a953f43cd89d6c46" category="sidebar">Gestire un ambiente di lavoro</block>
-  <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Tutta la documentazione BlueXP</block>
   <block id="3cb5845101cca1d3632756ad505df41c" category="list-text">La modalità Standard sfrutta il layer BlueXP SaaS per fornire funzionalità complete.</block>
   <block id="8515864aee35dd4c309a887dc85ffb7f" category="list-text">La modalità limitata è disponibile per le organizzazioni con restrizioni di connettività.</block>
   <block id="2579d10862aa7770a64b058fb84ce858" category="inline-link-macro">Modalità di implementazione di BlueXP</block>
@@ -821,5 +816,8 @@
   <block id="5490038d2be728c6d3679ab6915e87e3" category="list-text">Copia il ruolo ARN del ruolo IAM in modo che sia possibile incollarlo in BlueXP nel passaggio successivo.</block>
   <block id="1a913f679da8e614b14423480f9ce6be" category="paragraph">Se è stato appena creato il ruolo IAM, attendere alcuni minuti per rendere disponibili le nuove credenziali.</block>
   <block id="a2841ca82f44794bf8912d92f8eaf4d6" category="list-text">*Definisci credenziali*: Fornire un *nome credenziali* e il *ruolo ARN* e *ID esterno* (se specificato) creati al momento <block ref="a1061025d6c6e25a2b8607068ce69197" category="inline-xref-macro-rx"></block>.</block>
-  <block id="1d2976e5126e0cf8526afeab66bc8fa3" category="list-text">Supporto per i protocolli CIFS, iSCSI, NFSv3, NFSv4.x e SMB v2,0 - v3,1.1.</block>
+  <block id="f816b06b546eb2ff8ac6090bf971453f" category="summary">Amazon FSX per NetApp ONTAP è un servizio completamente gestito che consente ai clienti di avviare ed eseguire file system basati sul sistema operativo per lo storage ONTAP di NetApp. FSX per ONTAP offre le stesse funzionalità, performance e funzionalità amministrative che i clienti NetApp utilizzano on-premise oggi, con la semplicità, l'agilità, la sicurezza e la scalabilità di un servizio AWS nativo.</block>
+  <block id="e2ab7c65b21ed8cc1c3b642b5e36429e" category="inline-link">S3</block>
+  <block id="8280a5bab29babe5ff8dd3e177dfa797" category="list-text">Supporto per i<block ref="97e05c9ce048cdd88b5a9f36d693565c" category="inline-link-rx"></block> protocolli CIFS, iSCSI, NFSv3, NFSv4.x e SMB v2,0 - v3,1.1.</block>
+  <block id="d59e0b46782e48a01966e5c7ccc38d17" category="paragraph">NetApp utilizza Microsoft Entra ID come provider di identità per i servizi di autenticazione specifici per il supporto e la licenza.</block>
 </blocks>
