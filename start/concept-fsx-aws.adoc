@@ -67,4 +67,4 @@ Amazon FSX per NetApp ONTAP è una soluzione AWS first-party. Per domande o prob
 
 Per domande generali sulle soluzioni e i servizi di storage BlueXP o BlueXP, è possibile iniziare con la chat BlueXP in linea.
 
-Per problemi di supporto tecnico relativi a soluzioni e servizi di storage BlueXP o BlueXP, è possibile aprire un ticket di supporto NetApp utilizzando il numero di serie a livello di account BlueXP. È necessario link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/support/task-support-registration.html["Registrare l'account BlueXP"^] per attivare il supporto.
+Per problemi di supporto tecnico specifici di servizi e soluzioni storage BlueXP  o BlueXP , puoi aprire una richiesta di assistenza NetApp utilizzando il numero seriale a livello di organizzazione BlueXP . Sarà necessario link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/support/task-support-registration.html["Registrare la propria organizzazione BlueXP "^]attivare il supporto.
