@@ -1,0 +1,15 @@
+= Aggiungere una VM di storage
+:allow-uri-read: 
+
+
+
+
+=== Aggiungere una VM di storage
+
+Ora puoi farlo link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-svm.html["Aggiungere una VM di storage"] Al file system Amazon FSX per NetApp ONTAP utilizzando BlueXP.
+
+
+
+=== **Le mie opportunità** la scheda è ora **il mio patrimonio**
+
+La scheda **le mie opportunità** è ora **la mia proprietà**. La documentazione viene aggiornata in modo da riflettere il nuovo nome.

@@ -20,6 +20,10 @@ Scopri le novità di FSX per ONTAP.
 
 == 30 luglio 2023
 
+
+
+=== Sostegno a tre regioni supplementari
+
 I clienti possono ora creare file system Amazon FSX per NetApp ONTAP in tre nuove regioni AWS: Europa (Zurigo), Europa (Spagna) e Asia-Pacifico (Hyderabad).
 
 Fare riferimento a. link:https://aws.amazon.com/about-aws/whats-new/2023/04/amazon-fsx-netapp-ontap-three-regions/#:~:text=Customers%20can%20now%20create%20Amazon,file%20systems%20in%20the%20cloud["Amazon FSX per NetApp ONTAP è ora disponibile in altre tre regioni"^] per informazioni dettagliate.
@@ -28,29 +32,57 @@ Fare riferimento a. link:https://aws.amazon.com/about-aws/whats-new/2023/04/amaz
 
 == 02 luglio 2023
 
-* Ora puoi farlo link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-svm.html["Aggiungere una VM di storage"] Al file system Amazon FSX per NetApp ONTAP utilizzando BlueXP.
-* La scheda **le mie opportunità** è ora **la mia proprietà**. La documentazione viene aggiornata in modo da riflettere il nuovo nome.
 
+
+=== Aggiungere una VM di storage
+
+Ora puoi farlo link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-svm.html["Aggiungere una VM di storage"] Al file system Amazon FSX per NetApp ONTAP utilizzando BlueXP.
+
+
+
+=== **Le mie opportunità** la scheda è ora **il mio patrimonio**
+
+La scheda **le mie opportunità** è ora **la mia proprietà**. La documentazione viene aggiornata in modo da riflettere il nuovo nome.
 
 
 
 == 04 giugno 2023
 
-* Quando link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["creazione di un ambiente di lavoro"], è possibile specificare l'ora di inizio della finestra di manutenzione settimanale di 30 minuti per garantire che la manutenzione non sia in conflitto con le attività aziendali critiche.
-* Quando link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html["creazione di un volume"], È possibile abilitare l'ottimizzazione dei dati creando un FlexGroup per distribuire i dati tra i volumi.
 
+
+=== Ora di inizio della finestra di manutenzione
+
+Quando link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["creazione di un ambiente di lavoro"], è possibile specificare l'ora di inizio della finestra di manutenzione settimanale di 30 minuti per garantire che la manutenzione non sia in conflitto con le attività aziendali critiche.
+
+
+
+=== Distribuire i dati dei volumi utilizzando FlexGroup
+
+Quando link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html["creazione di un volume"], È possibile abilitare l'ottimizzazione dei dati creando un FlexGroup per distribuire i dati tra i volumi.
 
 
 
 == 07 maggio 2023
 
-* Quando si crea un ambiente di lavoro, è ora possibile utilizzare BlueXP link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["generare un gruppo di sicurezza"^] Che consente il traffico solo all'interno del VPC selezionato. Questa funzione link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["richiede autorizzazioni aggiuntive"^].
-* È possibile scegliere se link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#create-volumes["aggiungi"^] e. link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html#manage-volume-tags["modificare"^] tag per categorizzare i volumi.
 
+
+=== Generare un gruppo di protezione
+
+Quando si crea un ambiente di lavoro, è ora possibile disporre di BlueXP  link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["generare un gruppo di sicurezza"]che consente il traffico solo all'interno del VPC selezionato. Questa funzione link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["richiede autorizzazioni aggiuntive"].
+
+
+
+=== Aggiungere o modificare tag
+
+Facoltativamente, è possibile link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#create-volumes["aggiungi"]utilizzare link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html#manage-volume-tags["modificare"] tag per categorizzare i volumi.
 
 
 
 == 02 aprile 2023
+
+
+
+=== Aumento del limite IOPS
 
 Il limite IOPS viene aumentato per consentire il provisioning manuale o automatico fino a 160,000.
 
@@ -58,46 +90,81 @@ Il limite IOPS viene aumentato per consentire il provisioning manuale o automati
 
 == 05 marzo 2023
 
+
+
+=== Interfaccia utente migliorata
+
 Sono stati apportati miglioramenti all'interfaccia utente e sono state aggiornate le schermate nella documentazione.
 
 
 
 == 01 gennaio 2023
 
-È ora possibile scegliere di attivare link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#manage-automatic-capacity["gestione automatica della capacità"^] per aggiungere storage incrementale in base alla richiesta. La gestione automatica della capacità esegue il polling del cluster a intervalli regolari per valutare la domanda e aumenta automaticamente la capacità dello storage con incrementi del 10% fino al 80% della capacità massima del cluster.
+
+
+=== Gestione automatica della capacità
+
+È ora possibile scegliere di abilitare link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#manage-automatic-capacity["gestione automatica della capacità"]l'aggiunta di storage incrementale in base alla richiesta. La gestione automatica della capacità esegue il polling del cluster a intervalli regolari per valutare la domanda e aumenta automaticamente la capacità di storage in incrementi del 10% fino al 80% della capacità massima del cluster.
 
 
 
 == 18 settembre 2022
 
-Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#change-storage-capacity-and-IOPS["Modificare la capacità dello storage e gli IOPS"^] In qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.
+
+
+=== Modificare la capacità dello storage e gli IOPS
+
+Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#change-storage-capacity-and-IOPS["Modificare la capacità dello storage e gli IOPS"]in qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.
 
 
 
 == 31 luglio 2022
 
-* Se in precedenza hai fornito le tue credenziali AWS a Cloud Manager, la nuova funzionalità *My estate* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando Cloud Manager. Puoi anche rivedere i servizi dati disponibili attraverso la scheda *My estate*.
-+
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#discover-an-existing-fsx-for-ontap-file-system["Scopri FSX per ONTAP utilizzando My estate"^]
 
-* Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#change-throughput-capacity["modificare la capacità di throughput"^] In qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.
-* Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html#replicate-and-sync-data["replica e sincronizzazione dei dati"^] A sistemi on-premise e ad altri sistemi FSX per ONTAP che utilizzano FSX per ONTAP come fonte.
-* Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#creating-volumes["Creazione di volumi iSCSI in FSX per ONTAP utilizzando Cloud Manager"^].
 
+=== Funzione *My estate*
+
+Se in precedenza hai fornito le tue credenziali AWS a Cloud Manager, la nuova funzionalità *My estate* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando Cloud Manager. Puoi anche rivedere i servizi dati disponibili attraverso la scheda *My estate*.
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#discover-an-existing-fsx-for-ontap-file-system["Scopri FSX per ONTAP utilizzando My estate"]
+
+
+
+=== Modificare la capacità di throughput
+
+Ora puoi farlo link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#change-throughput-capacity["modificare la capacità di throughput"]in qualsiasi momento dopo aver creato l'ambiente di lavoro FSX per ONTAP.
+
+
+
+=== Replica e sincronizzazione dei dati
+
+Ora puoi link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html#replicate-and-sync-data["replica e sincronizzazione dei dati"]accedere a sistemi on-premise e ad altri sistemi FSX per ONTAP usando FSX per ONTAP come origine.
+
+
+
+=== Creazione di un volume iSCSI
+
+Ora è possibile link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#creating-volumes["Creazione di volumi iSCSI in FSX per ONTAP utilizzando Cloud Manager"].
 
 
 
 == 3 luglio 2022
 
-* È ora possibile selezionare un modello di implementazione ha per Availability zone singolo o multiplo.
-+
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-ontap-working-environment["Creare un ambiente di lavoro FSX per ONTAP"^]
-
-* L'autenticazione dell'account AWS GovCloud è ora supportata in Cloud Manager.
-+
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html#set-up-the-iam-role["Impostare il ruolo IAM"^]
 
 
+=== Supporto per disponibilità singola o multipla
+
+È ora possibile selezionare un modello di implementazione ha per Availability zone singolo o multiplo.
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-ontap-working-environment["Creare un ambiente di lavoro FSX per ONTAP"]
+
+
+
+=== Supporto per l'autenticazione dell'account GovCloud
+
+L'autenticazione dell'account AWS GovCloud è ora supportata in Cloud Manager.
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html#set-up-the-iam-role["Impostare il ruolo IAM"]
 
 
 
@@ -109,7 +176,7 @@ link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up
 
 Quando si crea un ambiente di lavoro FSX per ONTAP, è necessario fornire l'ARN di un ruolo IAM che Cloud Manager può assumere per creare un ambiente di lavoro FSX per ONTAP. In precedenza era necessario fornire le chiavi di accesso AWS.
 
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Scopri come impostare le autorizzazioni per FSX per ONTAP"^].
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Scopri come impostare le autorizzazioni per FSX per ONTAP"].
 
 
 
@@ -125,7 +192,7 @@ link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up
 
 === Selezionare le unità di volume durante la creazione dei volumi
 
-È possibile link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#creating-volumes["Selezionare le unità di volume (GiB o TIB) durante la creazione dei volumi"^] In FSX per ONTAP.
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#creating-volumes["Selezionare le unità di volume (GiB o TIB) durante la creazione dei volumi"]In FSX per ONTAP.
 
 
 
@@ -135,13 +202,13 @@ link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up
 
 === Creare volumi CIFS utilizzando Cloud Manager
 
-Ora puoi link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#creating-volumes["Creazione di volumi CIFS in FSX per ONTAP utilizzando Cloud Manager"^].
+Ora è possibile link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-add-fsx-volumes.html#creating-volumes["Creazione di volumi CIFS in FSX per ONTAP utilizzando Cloud Manager"].
 
 
 
 === Modificare i volumi utilizzando Cloud Manager
 
-Ora puoi link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html#editing-volumes["Modifica FSX per ONTAP Volumes con Cloud Manager"^].
+Ora è possibile link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx-volumes.html#editing-volumes["Modifica FSX per ONTAP Volumes con Cloud Manager"].
 
 
 
@@ -153,11 +220,11 @@ Ora puoi link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-fsx
 
 * link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon FSX per NetApp ONTAP"^] È un servizio completamente gestito che consente ai clienti di lanciare ed eseguire file system basati sul sistema operativo per lo storage ONTAP di NetApp. FSX per ONTAP offre le stesse funzionalità, performance e funzionalità amministrative che i clienti NetApp utilizzano on-premise, con la semplicità, l'agilità, la sicurezza e la scalabilità di un servizio AWS nativo.
 +
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/concept-fsx-aws.html["Scopri di più su Amazon FSX per NetApp ONTAP"^].
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/concept-fsx-aws.html["Scopri di più su Amazon FSX per NetApp ONTAP"].
 
 * È possibile configurare un ambiente di lavoro FSX per ONTAP in Cloud Manager.
 +
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html["Creare un ambiente di lavoro Amazon FSX per NetApp ONTAP"^].
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html["Creare un ambiente di lavoro Amazon FSX per NetApp ONTAP"].
 
 * Utilizzando un connettore in AWS e Cloud Manager, è possibile creare e gestire volumi, replicare i dati e integrare FSX per ONTAP con i servizi cloud NetApp, come Data Sense e Cloud Sync.
 +
