@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: requirements/task-setting-up-permissions-fsx.html 
-keywords: fsx for ontap, iam, user role, permissions, aws govcloud, govcloud, credentials 
+keywords: fsx for ontap, iam, user role, permissions, credentials 
 summary: 'Per creare o gestire un ambiente di lavoro FSX per ONTAP, devi aggiungere le credenziali AWS a BlueXP fornendo l"ARN di un ruolo IAM che assegna ad BlueXP le autorizzazioni necessarie per creare un ambiente di lavoro FSX per ONTAP.' 
 ---
 = Impostare le autorizzazioni per FSX per ONTAP
@@ -18,134 +18,192 @@ Per creare o gestire un ambiente di lavoro FSX per ONTAP, devi aggiungere le cre
 
 
 
-== Impostare il ruolo IAM
+== Perché sono richieste le credenziali AWS
 
-Impostare un ruolo IAM che consenta a BlueXP di assumere il ruolo.
+Le credenziali AWS sono necessarie per creare e gestire gli ambienti di lavoro FSX per ONTAP in BlueXP . Puoi creare nuove credenziali AWS o aggiungere credenziali AWS a un'organizzazione BlueXP  esistente. Le credenziali forniscono a BlueXP  le autorizzazioni necessarie per gestire risorse e processi all'interno dell'ambiente cloud AWS.
+
+Le credenziali e i permessi vengono gestiti tramite la farm di workload BlueXP . BlueXP  workload Factory è una piattaforma di gestione del ciclo di vita progettata per aiutare gli utenti a ottimizzare i carichi di lavoro utilizzando Amazon FSX per i file system NetApp ONTAP. BlueXP  utilizza lo stesso set di credenziali e autorizzazioni AWS della farm di workload BlueXP .
+
+L'interfaccia workload factory offre agli utenti BlueXP  opzioni per abilitare funzionalità di workload come Storage, VMware, database e Genai, e per selezionare le autorizzazioni per i workload. _Storage_ è la funzionalità di gestione dello storage in una fabbrica di workload ed è l'unica funzionalità che ti occorre abilitare e aggiungere credenziali per creare e gestire i file system FSX per ONTAP.
+
+
+
+== A proposito di questa attività
+
+Quando Aggiungi nuove credenziali per FSX per ONTAP dallo storage in una fabbrica di workload BlueXP , devi decidere in quale livello di permessi, o _modalità operativa_, vorresti operare. Per scoprire e implementare risorse AWS come FSX per ONTAP, avrai bisogno delle autorizzazioni _Read_ o _Automate_. BlueXP  FSX per ONTAP funzionerà in modalità _BASIC_ a meno che non si selezioni la modalità _Read_ o _Automate_. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html.html["Ulteriori informazioni sulle modalità operative"].
+
+Le credenziali AWS nuove ed esistenti sono visualizzabili dalla pagina Impostazioni BlueXP  > *credenziali*.
+
+È possibile aggiungere credenziali utilizzando due metodi:
+
+* *Manualmente*: Si creano la policy IAM e il ruolo IAM nell'account AWS mentre si aggiungono le credenziali nella fabbrica del carico di lavoro.
+* *Automaticamente*: È possibile acquisire una quantità minima di informazioni sulle autorizzazioni e utilizzare uno stack CloudFormation per creare i criteri e il ruolo IAM per le credenziali.
+
+
+
+
+== Aggiungere manualmente le credenziali a un account
+
+Puoi aggiungere manualmente le credenziali AWS a BlueXP  per assegnare al tuo account le autorizzazioni necessarie per gestire le risorse AWS che utilizzerai per eseguire i tuoi workload unici. Ogni insieme di credenziali aggiunto includerà uno o più criteri IAM in base alle capacità del carico di lavoro che si desidera utilizzare e un ruolo IAM assegnato all'account.
+
+Le credenziali vengono create in tre parti:
+
+* Seleziona i servizi e i livelli di autorizzazioni che desideri utilizzare, quindi crea le policy IAM dalla Console di gestione AWS.
+* Creare un ruolo IAM dalla Console di gestione AWS.
+* Dai workload in BlueXP , inserisci un nome e Aggiungi le credenziali.
+
+
+Per creare o gestire un ambiente di lavoro FSX per ONTAP, devi aggiungere le credenziali AWS a BlueXP fornendo l'ARN di un ruolo IAM che assegna ad BlueXP le autorizzazioni necessarie per creare un ambiente di lavoro FSX per ONTAP.
+
+.Prima di iniziare
+Devi disporre delle credenziali per accedere al tuo account AWS.
 
 .Fasi
-. Accedere alla console IAM nell'account di destinazione.
-. Concede l'accesso BlueXP all'account AWS. In Gestione accessi, fare clic su *ruoli > Crea ruolo* e seguire i passaggi per creare il ruolo.
+. Nella console BlueXP , selezionare l'icona *Impostazioni* e selezionare *credenziali*.
+. Selezionare *Aggiungi credenziali*.
+. Selezionare *Amazon Web Services*, quindi *FSX per ONTAP* e poi *Avanti*.
 +
-** In *Trusted entity type*, selezionare *AWS account*.
-** Seleziona *un altro account AWS* e immetti l'ID *account* di BlueXP:
+Ora siete sulla pagina *Aggiungi credenziali* nella fabbrica dei workload BlueXP .
+
+. Selezionare *Aggiungi manualmente*, quindi seguire i passaggi riportati di seguito per compilare le tre sezioni in _Configurazione autorizzazioni_.
 +
-*** Per BlueXP SaaS: 952013314444
-*** Per AWS GovCloud (USA): 033442085313
+image:screenshot-add-credentials-manually.png["Una schermata che mostra gli elementi da definire manualmente per ogni set di credenziali."]
+
+
+
+
+
+=== Fase 1: Selezionare le capacità del carico di lavoro e creare i criteri IAM
+
+In questa sezione è possibile scegliere quali tipi di funzionalità del carico di lavoro saranno gestibili come parte di queste credenziali e le autorizzazioni abilitate per ogni carico di lavoro. Per creare le policy, dovrai copiare da Codebox le autorizzazioni delle policy per ogni carico di lavoro selezionato e aggiungerle ad AWS Management Console all'interno dell'account AWS.
+
+image:screenshot-create-policies-manual.png["Uno screenshot che mostra quali tipi di funzionalità del carico di lavoro saranno gestibili come parte delle policy in queste credenziali."]
+
+.Fasi
+. Nella sezione *Crea criteri*, abilitare ciascuna funzionalità del carico di lavoro che si desidera includere in queste credenziali. Abilitare *Storage* per creare e gestire file system.
 +
+Puoi aggiungere funzionalità in un secondo momento, quindi seleziona solo i carichi di lavoro da implementare e gestire.
 
-NOTE: Per una maggiore protezione, si consiglia di specificare un link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html["_ID esterno_"^]. Per accedere al tuo account AWS, BlueXP dovrà fornire il ruolo ARN (Amazon Resource Name) e l'ID esterno specificato. Questo impedisce link:https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html["problema del sostituto confuso"^].
+. Per le funzionalità del carico di lavoro che offrono una scelta di livelli di autorizzazione (automatizzare o leggere), selezionare il tipo di autorizzazioni che saranno disponibili con queste credenziali. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Informazioni sulle autorizzazioni, note anche come modalità operative"^].
+. Nella finestra Codebox, copiare le autorizzazioni per il primo criterio IAM.
+. Apri un'altra finestra del browser ed effettua l'accesso al tuo account AWS in AWS Management Console.
+. Aprire il servizio IAM, quindi selezionare *Criteri* > *Crea criterio*.
+. Selezionare JSON come tipo di file, incollare le autorizzazioni copiate al passaggio 3 e selezionare *Avanti*.
+. Immettere il nome del criterio e selezionare *Crea criterio*.
+. Se nel passaggio 1 sono state selezionate più funzionalità del carico di lavoro, ripetere questi passaggi per creare un criterio per ogni gruppo di autorizzazioni del carico di lavoro.
 
 
 
 
+=== Passaggio 2: Creare il ruolo IAM che utilizza i criteri
 
-. Creare un criterio che includa le seguenti autorizzazioni minime richieste e facoltative, in base alle necessità.
+In questa sezione verrà impostato un ruolo IAM che workload Factory supporterà che includa le autorizzazioni e i criteri appena creati.
+
+image:screenshot-create-role.png["Una schermata che mostra quali autorizzazioni faranno parte del nuovo ruolo."]
+
+.Fasi
+. Nella Console di gestione AWS, selezionare *ruoli > Crea ruolo*.
+. In *Trusted entity type*, selezionare *AWS account*.
 +
-[role="tabbed-block"]
-====
-.Autorizzazioni richieste
---
-Per consentire a BlueXP di creare il file system FSX per NetApp ONTAP, sono necessarie le seguenti autorizzazioni minime.
+.. Seleziona *un altro account AWS* e copia e incolla l'ID account per la gestione del workload FSX per ONTAP dall'interfaccia utente di BlueXP  workload Factory.
+.. Selezionare *ID esterno richiesto* e copiare e incollare l'ID esterno dall'interfaccia utente dei workload BlueXP .
 
+
+. Selezionare *Avanti*.
+. Nella sezione Criteri autorizzazioni, scegliere tutti i criteri definiti in precedenza e selezionare *Avanti*.
+. Immettere un nome per il ruolo e selezionare *Crea ruolo*.
+. Copiare il ruolo ARN.
+. Tornare alla pagina Aggiungi credenziali dei carichi di lavoro BlueXP , espandere la sezione *Crea ruolo* e incollare l'ARN nel campo _ARN ruolo_.
+
+
+
+
+=== Passaggio 3: Immettere un nome e aggiungere le credenziali
+
+Il passaggio finale consiste nell'immettere un nome per le credenziali in fabbrica per il carico di lavoro BlueXP .
+
+.Fasi
+. Dalla pagina Aggiungi credenziali dei carichi di lavoro di BlueXP , espandere *Nome credenziali*.
+. Immettere il nome che si desidera utilizzare per queste credenziali.
+. Selezionare *Aggiungi* per creare le credenziali.
+
+
+.Risultato
+Le credenziali vengono create e visualizzate nella pagina credenziali. È ora possibile utilizzare le credenziali durante la creazione di un ambiente di lavoro FSX per ONTAP.
+
+
+
+== Aggiungere credenziali a un account utilizzando CloudFormation
+
+Puoi aggiungere le credenziali AWS ai carichi di lavoro BlueXP  utilizzando uno stack AWS CloudFormation selezionando le funzionalità del carico di lavoro da utilizzare e quindi lanciando lo stack AWS CloudFormation nell'account AWS. CloudFormation creerà i criteri IAM e il ruolo IAM in base alle funzionalità del carico di lavoro selezionate.
+
+.Prima di iniziare
+* Devi disporre delle credenziali per accedere al tuo account AWS.
+* Quando si aggiungono credenziali utilizzando uno stack CloudFormation, è necessario disporre delle seguenti autorizzazioni nell'account AWS:
++
 [source, json]
 ----
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "fsx:*",
-                "ec2:Describe*",
-                "ec2:CreateTags",
-                "iam:CreateServiceLinkedRole",
-                "kms:Describe*",
-                "kms:List*",
-                "kms:CreateGrant"
+                "cloudformation:CreateStack",
+                "cloudformation:UpdateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:DescribeChangeSet",
+                "cloudformation:ExecuteChangeSet",
+                "cloudformation:ListStacks",
+                "cloudformation:ListStackResources",
+                "cloudformation:GetTemplate",
+                "cloudformation:ValidateTemplate",
+                "lambda:InvokeFunction",
+                "iam:PassRole",
+                "iam:CreateRole",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:AttachRolePolicy",
+                "iam:CreateServiceLinkedRole"
             ],
             "Resource": "*"
         }
     ]
 }
 ----
---
-.Capacità automatica
---
-Per l'abilitazione sono necessarie le seguenti autorizzazioni aggiuntive link:../use/task-manage-working-environment.html["gestione automatica della capacità"].
 
-[source, json]
-----
-"cloudwatch:GetMetricData",
-"cloudwatch:GetMetricStatistics"
-----
---
-.Gruppi di sicurezza
---
-Per consentire a BlueXP di, sono necessarie le seguenti autorizzazioni aggiuntive link:../use/task-creating-fsx-working-environment.html["generare gruppi di sicurezza"].
-
-[source, json]
-----
-"ec2:AuthorizeSecurityGroupEgress",
-"ec2:AuthorizeSecurityGroupIngress",
-"ec2:RevokeSecurityGroupEgress",
-"ec2:RevokeSecurityGroupIngress",
-"ec2:CreateSecurityGroup",
-"ec2:DeleteSecurityGroup",
-"cloudformation:CreateStack",
-"cloudformation:ValidateTemplate",
-"cloudformation:DescribeStacks",
-"cloudformation:DescribeStackEvents"
-----
---
-====
-. Copia il ruolo ARN del ruolo IAM in modo che sia possibile incollarlo in BlueXP nel passaggio successivo.
-
-
-.Risultato
-Il ruolo IAM dispone ora delle autorizzazioni necessarie.
-
-
-
-== Aggiungere le credenziali
-
-Dopo aver fornito al ruolo IAM le autorizzazioni richieste, aggiungere il ruolo ARN a BlueXP.
-
-.Prima di iniziare
-Se è stato appena creato il ruolo IAM, attendere alcuni minuti per rendere disponibili le nuove credenziali.
 
 .Fasi
-. Nella parte superiore destra della console BlueXP, fare clic sull'icona Impostazioni e selezionare *credenziali*.
+. Nella console BlueXP , selezionare l'icona *Impostazioni* e selezionare *credenziali*.
+. Selezionare *Aggiungi credenziali*.
+. Selezionare *Amazon Web Services*, quindi *FSX per ONTAP* e poi *Avanti*. Ora siete sulla pagina *Aggiungi credenziali* nella fabbrica dei workload BlueXP .
+. Selezionare *Aggiungi tramite AWS CloudFormation*.
 +
-image:screenshot_settings_icon.gif["Una schermata che mostra l'icona Settings (Impostazioni) in alto a destra della console BlueXP."]
+image:screenshot-add-credentials-cloudformation.png["Una schermata che mostra gli elementi da definire prima di poter avviare CloudFormation per creare le credenziali."]
 
-. Fare clic su *Add Credentials* (Aggiungi credenziali) e seguire la procedura guidata.
+. In *Crea criteri*, abilitare tutte le funzionalità del carico di lavoro che si desidera includere in queste credenziali e scegliere un livello di autorizzazione per ogni carico di lavoro.
 +
-.. *Posizione credenziali*: Selezionare *Amazon Web Services > BlueXP*.
-.. *Definisci credenziali*: Fornire un *nome credenziali* e il *ruolo ARN* e *ID esterno* (se specificato) creati al momento <<Impostare il ruolo IAM>>.
+Puoi aggiungere funzionalità in un secondo momento, quindi seleziona solo i carichi di lavoro da implementare e gestire.
+
+. In *Nome credenziali*, immettere il nome che si desidera utilizzare per queste credenziali.
+. Aggiungi le credenziali da AWS CloudFormation:
 +
-[NOTE]
-====
-*** Se utilizzi un account AWS GovCloud (US), seleziona *uso un account AWS GovCloud (US)*.
+.. Selezionare *Aggiungi* (oppure selezionare *Reindirizza a CloudFormation*) per visualizzare la pagina Reindirizza a CloudFormation.
 +
-image:screenshot-govcloud-checkbox.png["Una schermata della casella di controllo dell'account GovCloud (USA)."]
+image:screenshot-redirect-cloudformation.png["Uno screenshot che mostra come creare lo stack CloudFormation per l'aggiunta di criteri e un ruolo per le credenziali di fabbrica del workload."]
 
-*** L'autenticazione con AWS GovCloud disattiva la piattaforma SaaS. Si tratta di una modifica permanente dell'account e non può essere annullata.
+.. Se si utilizza il single sign-on (SSO) con AWS, aprire una scheda separata del browser ed effettuare l'accesso alla console AWS prima di selezionare *continua*.
++
+Devi accedere all'account AWS in cui si trova il file system FSX per ONTAP.
 
-
-====
-.. *Revisione*: Confermare i dettagli relativi alle nuove credenziali e fare clic su *Aggiungi*.
+.. Selezionare *continua* dalla pagina Redirect to CloudFormation.
+.. Nella pagina creazione rapida stack, in funzionalità, selezionare *Acknowledge that AWS CloudFormation May create IAM resources* (riconosco che AWS CloudFormation potrebbe creare risorse IAM*).
+.. Selezionare *Crea stack*.
+.. Tornare alla fabbrica del carico di lavoro BlueXP  e aprire la pagina credenziali dall'icona del menu per verificare che le nuove credenziali siano in corso o che siano state aggiunte.
 
 
 
 
 .Risultato
-È ora possibile utilizzare le credenziali durante la creazione di un ambiente di lavoro FSX per ONTAP.
-
-
-
-== Link correlati
-
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html["Credenziali e autorizzazioni AWS"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Gestione delle credenziali AWS per BlueXP"^]
-
+Le credenziali vengono create e visualizzate nella pagina credenziali. È ora possibile utilizzare le credenziali durante la creazione di un ambiente di lavoro FSX per ONTAP.

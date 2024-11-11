@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: Documentazione di Amazon FSX per NetApp ONTAP
+  title: Gestione di Amazon FSX per NetApp ONTAP con BlueXP 
   lead: Amazon FSX per NetApp ONTAP offre le funzionalità complete di ONTAP a un servizio
     gestito AWS nativo, offrendo un'esperienza di cloud ibrido coerente. Questa documentazione
     descrive come gestire FSX per ONTAP utilizzando NetApp BlueXP.
@@ -13,20 +13,12 @@ indexpage:
       url: "/start/concept-fsx-aws.html"
     - title: Avvio rapido
       url: "/start/task-getting-started-fsx.html"
-  - title: Requisiti
-    links:
-    - title: Impostare le autorizzazioni
-      url: "/requirements/task-setting-up-permissions-fsx.html"
-    - title: Regole del gruppo di sicurezza
-      url: "/requirements/reference-security-groups-fsx.html"
-  - title: USA FSX per ONTAP
-    links:
     - title: Creare o scoprire un ambiente di lavoro
       url: "/use/task-creating-fsx-working-environment.html"
-    - title: Creare e montare un volume
-      url: "/use/task-add-fsx-volumes.html"
-    - title: Aggiungere e gestire una VM di storage
-      url: "/use/task-add-fsx-svm.html"
+  - title: USA FSX per ONTAP
+    links:
+    - title: Gestire un file system FSX per ONTAP
+      url: "/use/task-manage-working-environment.html"
     - title: NVMe e iSCSI host Configuration (Configurazione host iSCSI e NVMe)
       url: https://docs.netapp.com/us-en/ontap-sanhost/
   - title: Conoscenza e supporto

@@ -20,94 +20,199 @@ Con BlueXP puoi creare o scoprire un ambiente di lavoro FSX per ONTAP per aggiun
 
 == Creare un ambiente di lavoro FSX per ONTAP
 
-Il primo passo è creare un ambiente di lavoro FSX per ONTAP. Se è già stato creato un file system FSX per ONTAP nella console di gestione AWS, è possibile link:task-creating-fsx-working-environment.html#discover-an-existing-fsx-for-ontap-file-system["Scoprilo con BlueXP"].
+Il primo passo è creare un ambiente di lavoro FSX per ONTAP, o file system. Se è già stato creato un file system FSX per ONTAP nella console di gestione AWS, è possibile link:task-creating-fsx-working-environment.html#discover-an-existing-fsx-for-ontap-file-system["Scoprilo con BlueXP"].
+
+.A proposito di questa attività
+Una VM di storage viene creata quando si crea un file system.
 
 .Prima di iniziare
-Prima di creare l'ambiente di lavoro FSX per ONTAP in BlueXP, è necessario:
+Prima di creare il file system FSX per ONTAP, hai bisogno di:
 
-* L'ARN di un ruolo IAM che fornisce a BlueXP le autorizzazioni necessarie per creare un ambiente di lavoro FSX per ONTAP. Vedere link:../requirements/task-setting-up-permissions-fsx.html["Aggiunta di credenziali AWS a BlueXP"] per ulteriori informazioni.
-* Le informazioni relative all'area geografica e alla VPN per la creazione dell'istanza FSX per ONTAP.
+* L'ARN di un ruolo IAM che assegna a workload Factory le autorizzazioni necessarie per creare un file system FSX per ONTAP. link:task-setting-up-permissions-fsx.html["Scopri come concedere autorizzazioni a un account AWS"^].
+* Le informazioni relative all'area geografica e alla VPC per la creazione dell'istanza FSX per ONTAP.
 
+
+
+
+== Crea un file system FSX per ONTAP
+
+È possibile creare un file system FSX per ONTAP utilizzando _creazione rapida_ o _creazione avanzata_. È inoltre possibile utilizzare i seguenti strumenti disponibili in Codebox: API REST, CloudFormation e Terraform. link:https://docs.netapp.com/us-en/workload-setup-admin/use-codebox.html#how-to-use-codebox["Scopri come utilizzare Codebox per l'automazione"^].
+
+
+NOTE: Quando si utilizza Terraform da Codebox, il codice che si copia o si scarica nasconde `fsxadmin` e `vsadmin` password. Sarà necessario immettere nuovamente le password quando si esegue il codice.
+
+[role="tabbed-block"]
+====
+.Creazione rapida
+--
+Creazione rapida consente di utilizzare una configurazione di Best practice consigliata. È possibile modificare la maggior parte delle impostazioni dopo aver creato un file system FSX per ONTAP.
 
 .Fasi
-. In BlueXP, aggiungere un nuovo ambiente di lavoro, selezionare *Amazon Web Services* e fare clic su *Add new* for Amazon FSX for NetApp ONTAP.
+. In BlueXP , aggiungere un nuovo ambiente di lavoro, selezionare *Amazon Web Services* e selezionare *Aggiungi nuovo* per Amazon FSX per NetApp ONTAP.
+. Nella pagina Crea FSX per ONTAP, selezionare *creazione rapida*.
 +
-image:screenshot_add_fsx_working_env.png["Schermata dell'aggiunta di un ambiente di lavoro per FSX per ONTAP"]
+È anche possibile caricare una configurazione salvata.
 
-. *FSX per autenticazione ONTAP*
+. In Configurazione generale del file system, fornire quanto segue:
 +
-.. Se esiste un ruolo IAM nell'account con le autorizzazioni AWS corrette per FSX per ONTAP, selezionarlo dal menu a discesa.
-.. Se non è presente alcun ruolo IAM nell'account, fare clic su *credenziali* e seguire la procedura guidata per aggiungere un ARN per un ruolo AWS IAM con FSX per le credenziali ONTAP. Vedere link:../requirements/task-setting-up-permissions-fsx.html["Aggiunta di credenziali AWS a BlueXP"] per ulteriori informazioni.
-
-
-. *Dettagli e credenziali*
+.. *Credenziali AWS*: Selezionare per aggiungere credenziali AWS o continuare senza credenziali. Senza credenziali, è possibile copiare e scaricare il codice parzialmente completo dal Codebox. Il codice può essere utilizzato come un modello in cui è possibile inserire informazioni mancanti (ad esempio, credenziali) o personalizzare alcuni dati prima di eseguire il codice.
+.. *Nome file system*: Immettere un nome per il file system.
+.. *Topologia di distribuzione*: Selezionare una topologia di distribuzione.
 +
-.. Inserire il nome dell'ambiente di lavoro che si desidera utilizzare.
-.. In alternativa, è possibile creare tag facendo clic sul segno più e immettendo il nome e il valore di un tag.
-.. In alternativa, è possibile specificare l'ora di inizio di FSX per ONTAP per eseguire la manutenzione settimanale di 30 minuti. Questo può essere utilizzato per garantire che la manutenzione non coincida con le attività aziendali critiche. Se si seleziona *Nessuna preferenza*, viene assegnato un orario di inizio casuale. È possibile modificarlo in qualsiasi momento.
-.. Inserire e confermare la password del cluster ONTAP che si desidera utilizzare.
-.. Se si desidera, deselezionare l'opzione per utilizzare la stessa password per l'utente SVM e impostare una password diversa.
+*** La topologia con scalabilità verticale è la sede in cui viene utilizzato un unico file system per la distribuzione di dati e può aumentare le dimensioni per adattarsi alla crescita dei dati.
+*** La topologia scale-out è la sede in cui vengono utilizzati più file system per la distribuzione dei dati.
 
 
-. *Modello di implementazione ha*
+.. *Ha Pairs*: Inserire il numero di coppie ha.
 +
-.. Selezionare un modello di implementazione ha *Single Availability zone* o *Multiple Availability Zones*. Per più zone di disponibilità, selezionare le subnet in almeno due zone di disponibilità in modo che ciascun nodo si trovi in un'area di disponibilità dedicata.
-.. Selezionare il Virtual Private Cloud (VPC) che si desidera associare al file system.
-.. Utilizzare un gruppo di protezione esistente o selezionare *gruppo di protezione generato* per consentire a BlueXP di generare un gruppo di protezione che consenta il traffico solo all'interno del VPC selezionato.
+*** Per le implementazioni scale-up, puoi avere una sola coppia ha.
+*** Per le implementazioni scale-out è possibile avere tra due e dodici coppie ha.
+
+
+.. *Tipo di distribuzione*: Selezionare un tipo di distribuzione.
 +
+*** Implementazione con zona di disponibilità singola (Single-AZ): Garantisce la disponibilità monitorando gli errori dell'hardware e sostituendo automaticamente i componenti dell'infrastruttura in caso di guasti. Ottiene una durata elevata replicando automaticamente i dati all'interno di una zona di disponibilità per proteggerli dai guasti dei componenti.
+*** Implementazione di diverse zone di disponibilità (Multi-AZ): Fornisce disponibilità continua ai dati anche quando una zona di disponibilità non è disponibile. I file system multi-AZ supportano tutte le funzionalità di disponibilità e durata dei file system Single-AZ. Un file system Multi-AZ è progettato per carichi di lavoro di produzione business-critical che richiedono alta disponibilità per i dati dei file ONTAP condivisi e uno storage necessario con replica integrata tra zone di disponibilità.
 
-NOTE: link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules.html["Gruppi di sicurezza AWS"^] controllare il traffico in entrata e in uscita. Questi sono configurati dall'amministratore di AWS e sono associati allo link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html["AWS Elastic Network Interface (ENI)"^].
+
+.. *Tags*: Opzionalmente, è possibile aggiungere fino a 50 tag.
 
 
-
-. *IP mobile* (solo zone di disponibilità multiple)
+. In *rete e sicurezza*, nel campo *Regione e VPC*, selezionare la regione e il VPC per il file system.
+. In *Dettagli file system*, specificare quanto segue:
 +
-Lasciare vuoto _CIDR Range_ per impostare automaticamente un intervallo disponibile. In alternativa, è possibile utilizzare https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html["AWS Transit Gateway"^] per configurare manualmente un intervallo.
+.. *Capacità di archiviazione SSD*: Immettere la capacità di archiviazione e selezionare l'unità della capacità di archiviazione.
+.. *Credenziali ONTAP*: Immettere il nome utente e la password ONTAP.
+.. *Impostazione SMB/CIFS*: Opzionale. Se si intende utilizzare il protocollo SMB/CIFS per accedere ai volumi, è necessario configurare Active Directory per la VM di storage durante la creazione del file system. Fornire i seguenti dettagli per la VM di storage creata per questo file system.
++
+... *Dominio Active Directory a cui collegarsi*: Immettere il nome di dominio completo (FQDN) per Active Directory.
+... *Indirizzi IP DNS*: Immettere un massimo di tre indirizzi IP DNS separati da virgole.
+... *SMB server NetBIOS name*: Immettere il nome NetBIOS del server SMB dell'oggetto computer Active Directory da creare per la macchina virtuale di storage. Nome della VM di storage in Active Directory.
+... *Nome utente*: Immettere il nome utente dell'account del servizio nell'Active Directory esistente.
++
+Non includere un prefisso o un suffisso di dominio. Per `EXAMPLE\ADMIN`, utilizzare `ADMIN`.
+
+... *Password*: Immettere la password per l'account del servizio.
+... *Unità organizzativa*: Se si desidera, immettere il nome dell'unità organizzativa in cui si intende creare l'account del computer per FSX per ONTAP. L'unità organizzativa è il nome del percorso distinto dell'unità organizzativa a cui si desidera unire il file system.
+... *Gruppo amministratori delegati*: Se si desidera, immettere il nome del gruppo in Active Directory che può amministrare il file system.
++
+Se utilizzi ad Microsoft gestito da AWS, devi specificare un gruppo come ad esempio gli amministratori FSX delegati di AWS, gli amministratori delegati di AWS o un gruppo personalizzato con autorizzazioni delegate all'unità organizzativa.
 
 +
-[WARNING]
-====
-.Gli IPS nei seguenti intervalli non sono supportati:
-** 0.0.0.0/8
-** 127.0.0.0/8
-** 198.19.0.0/20
-** 224.0.0.0/4
-** 240.0.0.0/4
-** 255.255.255.255/32
-
-
-====
-. *Tabelle di percorso* (solo zone di disponibilità multiple)
-+
-Selezionare le tabelle di routing che includono i percorsi verso gli indirizzi IP mobili. Se si dispone di una sola tabella di routing per le subnet nel VPC (la tabella di routing principale), BlueXP aggiunge automaticamente gli indirizzi IP mobili alla tabella di routing.
-
-. *Crittografia dei dati*
-+
-Accettare la chiave master AWS predefinita o fare clic su *Change Key* (Cambia chiave) per selezionare una diversa chiave master cliente AWS (CMK). Per ulteriori informazioni su CMK, vedere link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["Configurazione di AWS KMS"^].
-
-. *Configurazione dello storage*
-+
-.. Selezionare il throughput, la capacità e l'unità. È possibile modificare il throughput, la capacità dello storage e gli IOPS in qualsiasi momento.
-.. Facoltativamente, è possibile specificare un valore IOPS. Se non si specifica un valore IOPS, BlueXP imposta un valore predefinito in base a 3 IOPS per GiB della capacità totale immessa. Ad esempio, se si immette 2000 GiB per la capacità totale e nessun valore per gli IOPS, il valore IOPS effettivo verrà impostato su 6000. È possibile modificare il valore IOPS in qualsiasi momento.
-+
-
-NOTE: Se si specifica un valore IOPS che non soddisfa i requisiti minimi, viene visualizzato un errore durante l'aggiunta dell'ambiente di lavoro.
+Se si sta effettuando l'accesso a un ad autogestito, utilizzare il nome del gruppo nell'ad. Il gruppo predefinito è `Domain Admins`.
 
 
 
-. *Rivedi*
-+
-.. Fare clic sulle schede per esaminare le proprietà di ONTAP, le proprietà del provider e la configurazione di rete.
-.. Fare clic su *Previous* (precedente) per apportare modifiche alle impostazioni o su *Add* (Aggiungi) per accettare le impostazioni e creare l'ambiente di lavoro.
 
 
+. Aprire il *Riepilogo* per esaminare la configurazione definita. Se necessario, è possibile modificare qualsiasi impostazione in questo momento prima di salvare o creare il file system.
+. Salvare o creare il file system.
 
 
 .Risultato
-BlueXP visualizza la configurazione di FSX per ONTAP su Canvas. Ora puoi aggiungere volumi all'ambiente di lavoro FSX per ONTAP utilizzando BlueXP.
+Se è stato creato il file system, BlueXP  visualizza la configurazione di FSX per ONTAP sul Canvas. Ora puoi link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-volume.html["aggiungere volumi"^]accedere all'ambiente di lavoro FSX per ONTAP usando la farm di workload BlueXP .
+
+--
+.Creazione avanzata
+--
+Con creazione avanzata, è possibile impostare tutte le opzioni di configurazione, inclusi disponibilità, protezione, backup e manutenzione.
+
+.Fasi
+. In BlueXP , aggiungere un nuovo ambiente di lavoro, selezionare *Amazon Web Services* e selezionare *Aggiungi nuovo* per Amazon FSX per NetApp ONTAP.
+. Nella pagina Crea FSX per ONTAP, selezionare *creazione avanzata*.
++
+È anche possibile caricare una configurazione salvata.
+
+. In Configurazione generale del file system, fornire quanto segue:
++
+.. *Credenziali AWS*: Seleziona per aggiungere le credenziali AWS in workload Factory o continua senza credenziali.
+.. *Nome file system*: Immettere un nome per il file system.
+.. *Topologia di distribuzione*: Selezionare una topologia di distribuzione.
++
+*** La topologia con scalabilità verticale è la sede in cui viene utilizzato un unico file system per la distribuzione di dati e può aumentare le dimensioni per adattarsi alla crescita dei dati.
+*** La topologia scale-out è la sede in cui vengono utilizzati più file system per la distribuzione dei dati.
+
+
+.. *Ha Pairs*: Inserire il numero di coppie ha.
++
+*** Per le implementazioni scale-up, puoi avere una sola coppia ha.
+*** Per le implementazioni scale-out è possibile avere tra due e dodici coppie ha.
+
+
+.. *Tipo di distribuzione*: Selezionare un tipo di distribuzione.
++
+*** Implementazione con zona di disponibilità singola (Single-AZ): Garantisce la disponibilità monitorando gli errori dell'hardware e sostituendo automaticamente i componenti dell'infrastruttura in caso di guasti. Ottiene una durata elevata replicando automaticamente i dati all'interno di una zona di disponibilità per proteggerli dai guasti dei componenti.
+*** Implementazione di diverse zone di disponibilità (Multi-AZ): Fornisce disponibilità continua ai dati anche quando una zona di disponibilità non è disponibile. I file system multi-AZ supportano tutte le funzionalità di disponibilità e durata dei file system Single-AZ. Un file system Multi-AZ è progettato per carichi di lavoro di produzione business-critical che richiedono alta disponibilità per i dati dei file ONTAP condivisi e uno storage necessario con replica integrata tra zone di disponibilità.
+
+
+.. *Tags*: Opzionalmente, è possibile aggiungere fino a 50 tag.
+
+
+. In rete e sicurezza, fornire quanto segue:
++
+.. *Regione e VPC*: Selezionare la regione e il VPC per il file system.
+.. *Gruppo di protezione*: Consente di creare o utilizzare un gruppo di protezione esistente.
+.. *Zone di disponibilità*: Selezionare zone di disponibilità e subnet.
++
+*** Per il nodo di configurazione del cluster 1: Selezionare una zona di disponibilità e una subnet.
+*** Per il nodo di configurazione del cluster 2: Selezionare una zona di disponibilità e una subnet.
+
+
+.. *Tabelle di routing VPC*: Selezionare la tabella di routing VPC per abilitare l'accesso client ai volumi.
+.. *Intervallo di indirizzi IP endpoint*: Selezionare *intervallo di indirizzi IP mobili al di fuori del VPC* o *immettere un intervallo di indirizzi IP* e immettere un intervallo di indirizzi IP.
+.. *Crittografia*: Selezionare il nome della chiave di crittografia dal menu a discesa.
+
+
+. In Dettagli file system, fornire quanto segue:
++
+.. *Capacità di archiviazione SSD*: Immettere la capacità di archiviazione e selezionare l'unità della capacità di archiviazione.
+.. *IOPS forniti*: Selezionare *automatico* o *fornito dall'utente*.
+.. *Capacità di throughput per coppia ha*: Selezionare la capacità di throughput per coppia ha.
+.. *Credenziali ONTAP*: Immettere il nome utente e la password ONTAP.
+.. *Credenziali VM di archiviazione*: Immettere il proprio nome utente. La password può essere specifica per questo file system o si utilizza la stessa password immessa per le credenziali ONTAP.
+.. *Impostazione SMB/CIFS*: Opzionale. Se si intende utilizzare il protocollo SMB/CIFS per accedere ai volumi, è necessario configurare Active Directory per la VM di storage durante la creazione del file system. Fornire i seguenti dettagli per la VM di storage creata per questo file system.
++
+... *Dominio Active Directory a cui collegarsi*: Immettere il nome di dominio completo (FQDN) per Active Directory.
+... *Indirizzi IP DNS*: Immettere un massimo di tre indirizzi IP DNS separati da virgole.
+... *SMB server NetBIOS name*: Immettere il nome NetBIOS del server SMB dell'oggetto computer Active Directory da creare per la macchina virtuale di storage. Nome della VM di storage in Active Directory.
+... *Nome utente*: Immettere il nome utente dell'account del servizio nell'Active Directory esistente.
++
+Non includere un prefisso o un suffisso di dominio. Per `EXAMPLE\ADMIN`, utilizzare `ADMIN`.
+
+... *Password*: Immettere la password per l'account del servizio.
+... *Unità organizzativa*: Se si desidera, immettere il nome dell'unità organizzativa in cui si intende creare l'account del computer per FSX per ONTAP. L'unità organizzativa è il nome del percorso distinto dell'unità organizzativa a cui si desidera unire il file system.
+... *Gruppo amministratori delegati*: Se si desidera, immettere il nome del gruppo in Active Directory che può amministrare il file system.
++
+Se utilizzi ad Microsoft gestito da AWS, devi specificare un gruppo come ad esempio gli amministratori FSX delegati di AWS, gli amministratori delegati di AWS o un gruppo personalizzato con autorizzazioni delegate all'unità organizzativa.
+
++
+Se si sta effettuando l'accesso a un ad autogestito, utilizzare il nome del gruppo nell'ad. Il gruppo predefinito è `Domain Admins`.
+
+
+
+
+
+. In Backup e manutenzione, fornire quanto segue:
++
+.. *FSX per il backup ONTAP*: I backup automatici giornalieri sono abilitati per impostazione predefinita. Disattivare se desiderato.
++
+... *Periodo conservazione backup automatico*: Immettere il numero di giorni per la conservazione dei backup automatici.
+... *Finestra di backup automatico giornaliero*: Selezionare *Nessuna preferenza* (l'ora di inizio del backup giornaliero è selezionata per l'utente) o *selezionare l'ora di inizio per i backup giornalieri* e specificare l'ora di inizio.
+... *Finestra manutenzione settimanale*: Selezionare *Nessuna preferenza* (l'ora di inizio della finestra di manutenzione settimanale è selezionata) o *selezionare l'ora di inizio per la finestra manutenzione settimanale di 30 minuti* e specificare un'ora di inizio.
+
+
+
+
+. Salvare o creare il file system.
+
+
+.Risultato
+Se è stato creato il file system, BlueXP  visualizza la configurazione di FSX per ONTAP sul Canvas. Ora puoi link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-volume.html["aggiungere volumi"^]accedere all'ambiente di lavoro FSX per ONTAP usando la farm di workload BlueXP .
 
 image:screenshot_add_fsx_cloud.png["Una schermata di FSX per ONTAP nella pagina degli ambienti di lavoro."]
 
+--
+====
 
 
 == Scopri un file system FSX per ONTAP esistente
@@ -115,15 +220,28 @@ image:screenshot_add_fsx_cloud.png["Una schermata di FSX per ONTAP nella pagina 
 Se in precedenza hai fornito le tue credenziali AWS a BlueXP, *My estate* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando BlueXP. È inoltre possibile esaminare i servizi dati disponibili.
 
 .A proposito di questa attività
-Puoi scoprire FSX per i file system ONTAP quando lo desideri <<Creare un ambiente di lavoro FSX per ONTAP>> Oppure utilizzando la pagina *My estate*. Questa attività descrive il rilevamento mediante *My estate*
+È possibile scoprire i file system FSX per ONTAP quando si <<Creare un ambiente di lavoro FSX per ONTAP>>utilizza la pagina *My estate*.
 
+[role="tabbed-block"]
+====
+.Scopri aggiungendo un ambiente di lavoro
+--
 .Fasi
-. In BlueXP, fare clic sulla scheda *My estate*.
-. Viene visualizzato il numero di FSX rilevati per i file system ONTAP. Fare clic su *Discover* (rileva).
+. In BlueXP , aggiungere un nuovo ambiente di lavoro, selezionare *Amazon Web Services* e selezionare *Scopri esistente* per Amazon FSX per NetApp ONTAP.
+. Selezionare le credenziali e la regione per visualizzare i file system esistenti.
+. Selezionare uno o più file system e selezionare *Scopri* per aggiungerli a Canvas.
+
+
+--
+.Scoprilo utilizzando la pagina </strong> di <strong> Evenestatasathas
+--
+.Fasi
+. In BlueXP , selezionare la scheda *My estate*.
+. Viene visualizzato il numero di FSX rilevati per i file system ONTAP. Selezionare *Discover*.
 +
 image:screenshot-opportunities.png["Una schermata della pagina My estate per FSX per ONTAP."]
 
-. Selezionare uno o più file system e fare clic su *Discover* per aggiungerli al Canvas.
+. Selezionare uno o più file system e selezionare *Scopri* per aggiungerli a Canvas.
 
 
 [NOTE]
@@ -133,7 +251,9 @@ image:screenshot-opportunities.png["Una schermata della pagina My estate per FSX
 
 
 ====
+--
+====
 .Risultato
-BlueXP visualizza il file system FSX per ONTAP rilevato su Canvas. Ora puoi aggiungere volumi all'ambiente di lavoro FSX per ONTAP utilizzando BlueXP.
+BlueXP visualizza il file system FSX per ONTAP rilevato su Canvas. Ora puoi link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-volume.html["aggiungere volumi"^]accedere all'ambiente di lavoro FSX per ONTAP e gestire il file system FSX per ONTAP tramite lo storage nei workload BlueXP .
 
-image:screenshot_fsx_working_environment_select.png["Una schermata che mostra la selezione della regione AWS e dell'ambiente di lavoro"]
+image:screenshot_fsx_working_environment_select.png["Uno screenshot di un cloud dell'ambiente di lavoro in Canvas"]

@@ -18,6 +18,18 @@ Scopri le novità di FSX per ONTAP.
 
 
 
+== 11 novembre 2024
+
+
+
+=== FSX per ONTAP si integra con lo storage in una fabbrica di workload BlueXP 
+
+FSX per i task di gestione del file system ONTAP, come l'aggiunta di volumi, l'espansione della capacità del file system e la gestione delle macchine virtuali storage, sono ora gestiti in una fabbrica di workload BlueXP , un nuovo servizio offerto da NetApp e Amazon FSX per NetApp ONTAP. È possibile utilizzare le credenziali e le autorizzazioni esistenti come in precedenza. Con la differenza che ora puoi fare di più dalla fabbrica dei carichi di lavoro BlueXP  per gestire i file system. Quando apri un ambiente di lavoro FSX per ONTAP da BlueXP  Canvas, passerai direttamente alla fabbrica di workload BlueXP .
+
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/learn-fsx-ontap.html#features["Scopri le funzionalità di FSX per ONTAP in una fabbrica di workload BlueXP "^]
+
+
+
 == 30 luglio 2023
 
 
@@ -43,6 +55,22 @@ Ora puoi farlo link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/ta
 === **Le mie opportunità** la scheda è ora **il mio patrimonio**
 
 La scheda **le mie opportunità** è ora **la mia proprietà**. La documentazione viene aggiornata in modo da riflettere il nuovo nome.
+
+
+
+== 04 giugno 2023
+
+
+
+=== Ora di inizio della finestra di manutenzione
+
+Quando link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["creazione di un ambiente di lavoro"], è possibile specificare l'ora di inizio della finestra di manutenzione settimanale di 30 minuti per garantire che la manutenzione non sia in conflitto con le attività aziendali critiche.
+
+
+
+=== Distribuire i dati dei volumi utilizzando FlexGroup
+
+Quando link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-add-fsx-volumes.html["creazione di un volume"], È possibile abilitare l'ottimizzazione dei dati creando un FlexGroup per distribuire i dati tra i volumi.
 
 
 
