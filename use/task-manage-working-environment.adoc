@@ -28,7 +28,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Scopri come gestire
 
 == Gestione di un file system con Gestione sistema di ONTAP
 
-Se conosci ONTAP System Manager, puoi gestire un file system FSX per ONTAP direttamente da BlueXP  utilizzando l'interfaccia di ONTAP System Manager.
+Puoi gestire un file system FSX per ONTAP direttamente da BlueXP  usando l'interfaccia di ONTAP System Manager. Per utilizzare System Manager è necessario un connettore.
 
 image:screenshot-system-manager.png["Una schermata del pannello di destra in BlueXP  Canvas dopo aver selezionato un ambiente di lavoro che mostra l'opzione Gestione sistema."]
 
