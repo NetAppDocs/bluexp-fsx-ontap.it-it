@@ -1,0 +1,11 @@
+= NetApp rilascia ulteriori risorse di CloudFormation
+:allow-uri-read: 
+
+
+
+
+=== NetApp rilascia ulteriori risorse di CloudFormation
+
+NetApp ora fornisce risorse di CloudFormation che consentono ai clienti di utilizzare componenti ONTAP avanzati che non sono esposti all'interno della console AWS. CloudFormation è il meccanismo Infrastructure-as-code per AWS. Sarai in grado di creare relazioni di replica, CIFS share, policy di esportazione NFS, snapshot e altro ancora.
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html["Gestisci i file system Amazon FSX per NetApp ONTAP utilizzando CloudFormation"]

@@ -30,7 +30,7 @@ L'interfaccia workload factory offre agli utenti BlueXP  opzioni per abilitare 
 
 == A proposito di questa attività
 
-Quando Aggiungi nuove credenziali per FSX per ONTAP dallo storage in una fabbrica di workload BlueXP , devi decidere in quale livello di permessi, o _modalità operativa_, vorresti operare. Per scoprire e implementare risorse AWS come FSX per ONTAP, avrai bisogno delle autorizzazioni _Read_ o _Automate_. BlueXP  FSX per ONTAP funzionerà in modalità _BASIC_ a meno che non si selezioni la modalità _Read_ o _Automate_. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Ulteriori informazioni sulle modalità operative"].
+Quando Aggiungi nuove credenziali per FSX per ONTAP dallo storage in una fabbrica di workload BlueXP , devi decidere in quale livello di permessi, o _modalità operativa_, vorresti operare. Per scoprire e implementare risorse AWS come FSX per ONTAP, avrai bisogno delle autorizzazioni _Read_ o _Automate_. BlueXP  FSX per ONTAP funzionerà in modalità _BASIC_ a meno che non si selezioni la modalità _Read_ o _Automate_. _Read_ sono le stesse delle autorizzazioni di visualizzazione. _Automate_ sono le stesse delle autorizzazioni Operate. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Ulteriori informazioni sulle modalità operative"].
 
 Le credenziali AWS nuove ed esistenti sono visualizzabili dalla pagina Impostazioni BlueXP  > *credenziali*.
 
@@ -73,9 +73,9 @@ image:screenshot-add-credentials-manually.png["Una schermata che mostra gli elem
 
 
 
-=== Fase 1: Selezionare le capacità del carico di lavoro e creare i criteri IAM
+=== Passaggio 1: Selezionare la capacità di archiviazione e creare il criterio IAM
 
-In questa sezione è possibile scegliere quali tipi di funzionalità del carico di lavoro saranno gestibili come parte di queste credenziali e le autorizzazioni abilitate per ogni carico di lavoro. Per creare le policy, dovrai copiare da Codebox le autorizzazioni delle policy per ogni carico di lavoro selezionato e aggiungerle ad AWS Management Console all'interno dell'account AWS.
+In questa sezione, è possibile scegliere la funzionalità di archiviazione da gestire come parte di queste credenziali e le autorizzazioni abilitate per l'archiviazione. Puoi anche selezionare altri workload come database, Genai o VMware. Una volta effettuate le selezioni, dovrai copiare le autorizzazioni delle policy per ogni carico di lavoro selezionato da Codebox e aggiungerle ad AWS Management Console all'interno dell'account AWS per creare le policy.
 
 image:screenshot-create-policies-manual.png["Uno screenshot che mostra quali tipi di funzionalità del carico di lavoro saranno gestibili come parte delle policy in queste credenziali."]
 
@@ -86,6 +86,51 @@ Puoi aggiungere funzionalità in un secondo momento, quindi seleziona solo i car
 
 . Per le funzionalità del carico di lavoro che offrono una scelta di livelli di autorizzazione (automatizzare o leggere), selezionare il tipo di autorizzazioni che saranno disponibili con queste credenziali. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Informazioni sulle autorizzazioni, note anche come modalità operative"^].
 . Nella finestra Codebox, copiare le autorizzazioni per il primo criterio IAM.
++
+Le autorizzazioni di archiviazione possono anche essere copiate dalle seguenti schede.
+
++
+[role="tabbed-block"]
+====
+.Autorizzazioni di lettura
+--
+[source, json]
+----
+        "fsx:Describe*",
+        "fsx:ListTagsForResource",
+        "ec2:Describe*",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+----
+--
+.Automatizzare le autorizzazioni
+--
+[source, json]
+----
+        "fsx:*",
+        "ec2:Describe*",
+        "ec2:CreateTags",
+        "ec2:CreateSecurityGroup",
+        "iam:CreateServiceLinkedRole",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "kms:CreateGrant",
+        "cloudwatch:PutMetricData",
+        "cloudwatch:GetMetricData",
+        "iam:SimulatePrincipalPolicy",
+        "cloudwatch:GetMetricStatistics"
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup"
+----
+--
+====
 . Apri un'altra finestra del browser ed effettua l'accesso al tuo account AWS in AWS Management Console.
 . Aprire il servizio IAM, quindi selezionare *Criteri* > *Crea criterio*.
 . Selezionare JSON come tipo di file, incollare le autorizzazioni copiate al passaggio 3 e selezionare *Avanti*.
