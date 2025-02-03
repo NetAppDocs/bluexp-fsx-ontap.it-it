@@ -1,0 +1,35 @@
+= Associa il file system FSX per ONTAP a un'area di lavoro in BlueXP 
+:allow-uri-read: 
+
+
+
+
+=== Associa il file system FSX per ONTAP a un'area di lavoro in BlueXP 
+
+Dopo l'integrazione di BlueXP  nel novembre 2024, i file system FSX per ONTAP appena creati non erano associati a un'area di lavoro in BlueXP . Ora che create o scoprite file system FSX per ONTAP, questi sono associati a un'area di lavoro all'interno di un account BlueXP .
+
+Se esistono file system FSX per ONTAP non associati a un'area di lavoro, sarà possibile associarli a un'area di lavoro in BlueXP . È possibile link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-get-help.html#create-a-case-with-netapp-support["Crea un caso con il supporto NetApp"^] dall'interno della console BlueXP . Selezionare *workload Factory* come servizio.
+
+
+
+=== Rimozione del file system da BlueXP  Canvas
+
+Ora puoi rimuovere un file system FSX per ONTAP da un'area di lavoro in BlueXP  Canvas. Questa operazione dissocia il file system da un'area di lavoro in modo che sia possibile associarlo a un'altra area di lavoro all'interno dello stesso account BlueXP .
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-remove-filesystem.html["Scopri come rimuovere un file system FSX per ONTAP da un'area di lavoro in BlueXP "^]
+
+
+
+=== Tracker disponibile per il monitoraggio e il monitoraggio delle operazioni
+
+Tracker, una nuova funzionalità di monitoring, è disponibile in BlueXP  Amazon FSX per NetApp ONTAP. È possibile utilizzare Tracker per monitorare e monitorare l'avanzamento e lo stato delle credenziali, le operazioni di archiviazione e collegamento, esaminare i dettagli delle attività operative e delle sottoattività, diagnosticare eventuali problemi o errori, modificare i parametri per le operazioni non riuscite e riprovare le operazioni non riuscite.
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-monitor-operations.html["Scopri come monitorare e monitorare le operazioni di FSX per ONTAP in BlueXP "^]
+
+
+
+=== CloudShell disponibile con carichi di lavoro BlueXP 
+
+CloudShell è disponibile nei workload BlueXP  all'interno della console BlueXP . CloudShell ti consente di utilizzare le credenziali AWS e ONTAP fornite nel tuo account BlueXP  ed eseguire i comandi dell'interfaccia a riga di comando di AWS o i comandi dell'interfaccia a riga di comando di ONTAP in un ambiente simile alla shell.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/use-cloudshell.html#before-you-begin["Utilizzare CloudShell"^]

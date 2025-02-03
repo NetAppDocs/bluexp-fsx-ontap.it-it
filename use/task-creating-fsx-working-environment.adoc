@@ -217,10 +217,12 @@ image:screenshot_add_fsx_cloud.png["Una schermata di FSX per ONTAP nella pagina 
 
 == Scopri un file system FSX per ONTAP esistente
 
-Se in precedenza hai fornito le tue credenziali AWS a BlueXP, *My estate* può rilevare e suggerire automaticamente FSX per i file system ONTAP da aggiungere e gestire utilizzando BlueXP. È inoltre possibile esaminare i servizi dati disponibili.
+Se in precedenza hai fornito le credenziali AWS a BlueXP , *My estate* può rilevare e suggerire automaticamente i file system FSX for ONTAP all'interno di un'area di lavoro da aggiungere e gestire tramite BlueXP . È inoltre possibile esaminare i servizi dati disponibili.
 
 .A proposito di questa attività
-È possibile scoprire i file system FSX per ONTAP quando si <<Creare un ambiente di lavoro FSX per ONTAP>>utilizza la pagina *My estate*.
+È possibile scoprire i file system FSX per ONTAP quando si aggiunge un ambiente di lavoro o utilizzando la pagina *My estate*.
+
+Puoi scoprire un file system FSX per ONTAP solo una volta all'interno di un account BlueXP  e allegarlo a un'unica area di lavoro. Il file system può essere successivamente rimosso e riassociato a un'area di lavoro diversa.
 
 [role="tabbed-block"]
 ====

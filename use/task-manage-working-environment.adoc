@@ -54,7 +54,7 @@ image:screenshot-data-services.png["Una schermata del pannello di destra in Blue
 
 Il servizio di backup e recovery di BlueXP  offre una data Protection efficiente, sicura e conveniente per dati NetApp ONTAP, database e macchine virtuali, sia on-premise che nel cloud.
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/index.html["Inizia subito con il backup e recovery di BlueXP "^]
+link:https://docs.netapp.com/us-en/bluexp-backup-recovery/index.html["Inizia subito con il backup e recovery di BlueXP "^]
 
 
 
@@ -62,7 +62,7 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/index.html["Inizia subito c
 
 BlueXP copy and Sync è un servizio di replica e sincronizzazione cloud per il trasferimento dei dati NAS tra archivi di oggetti on-premise e cloud.
 
-https://docs.netapp.com/us-en/bluexp-copy-sync/task-quick-start.html["Introduzione alla copia e alla sincronizzazione di BlueXP "^]
+link:https://docs.netapp.com/us-en/bluexp-copy-sync/task-quick-start.html["Introduzione alla copia e alla sincronizzazione di BlueXP "^]
 
 
 
@@ -70,7 +70,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-quick-start.html["Introduzio
 
 La classificazione BlueXP ti consente di analizzare e classificare i dati nel multicloud ibrido dell'organizzazione.
 
-https://docs.netapp.com/us-en/bluexp-classification/index.html["Inizia subito con la classificazione BlueXP "^]
+link:https://docs.netapp.com/us-en/bluexp-classification/index.html["Inizia subito con la classificazione BlueXP "^]
 
 
 
@@ -78,7 +78,7 @@ https://docs.netapp.com/us-en/bluexp-classification/index.html["Inizia subito co
 
 La replica BlueXP  ti consente di replicare i dati tra sistemi storage ONTAP per supportare backup e disaster recovery nel cloud o tra cloud.
 
-https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Introduzione alla replica BlueXP "^]
+link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Introduzione alla replica BlueXP "^]
 
 
 
@@ -86,4 +86,4 @@ https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Int
 
 Il caching dei volumi di BlueXP  fornisce un volume persistente e scrivibile in un luogo remoto. È possibile utilizzare il caching dei volumi BlueXP per accelerare l'accesso ai dati o per trasferire il traffico dai volumi ad accesso elevato.
 
-https://docs.netapp.com/us-en/bluexp-volume-caching/get-started/cache-intro.html["Inizia subito con il caching dei volumi di BlueXP "^]
+link:https://docs.netapp.com/us-en/bluexp-volume-caching/get-started/cache-intro.html["Inizia subito con il caching dei volumi di BlueXP "^]
