@@ -77,7 +77,7 @@ image:screenshot-add-credentials-manually.png["Una schermata che mostra gli elem
 
 In questa sezione, è possibile scegliere la funzionalità di archiviazione da gestire come parte di queste credenziali e le autorizzazioni abilitate per l'archiviazione. Puoi anche selezionare altri workload come database, Genai o VMware. Una volta effettuate le selezioni, dovrai copiare le autorizzazioni delle policy per ogni carico di lavoro selezionato da Codebox e aggiungerle ad AWS Management Console all'interno dell'account AWS per creare le policy.
 
-image:screenshot-create-policies-manual.png["Uno screenshot che mostra quali tipi di funzionalità del carico di lavoro saranno gestibili come parte delle policy in queste credenziali."]
+image:screenshot-create-policies-manual-permissions-check.png["Uno screenshot che mostra quali tipi di funzionalità del carico di lavoro saranno gestibili come parte delle policy in queste credenziali."]
 
 .Fasi
 . Nella sezione *Crea criteri*, abilitare ciascuna funzionalità del carico di lavoro che si desidera includere in queste credenziali. Abilitare *Storage* per creare e gestire file system.
@@ -85,6 +85,7 @@ image:screenshot-create-policies-manual.png["Uno screenshot che mostra quali tip
 Puoi aggiungere funzionalità in un secondo momento, quindi seleziona solo i carichi di lavoro da implementare e gestire.
 
 . Per le funzionalità del carico di lavoro che offrono una scelta di livelli di autorizzazione (automatizzare o leggere), selezionare il tipo di autorizzazioni che saranno disponibili con queste credenziali. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Informazioni sulle autorizzazioni, note anche come modalità operative"^].
+. Facoltativo: Selezionare *Abilita controllo automatico autorizzazioni* per verificare se si dispone delle autorizzazioni necessarie per completare le operazioni del carico di lavoro. L'attivazione del segno di spunta aggiunge `iam:SimulatePrincipalPolicy permission` ai criteri di autorizzazione. Lo scopo di questa autorizzazione è solo confermare le autorizzazioni. È possibile rimuovere l'autorizzazione dopo aver aggiunto le credenziali, ma si consiglia di conservarla per evitare la creazione di risorse per operazioni parzialmente riuscite e per evitare di eliminare qualsiasi pulitura manuale delle risorse richiesta.
 . Nella finestra Codebox, copiare le autorizzazioni per il primo criterio IAM.
 +
 Le autorizzazioni di archiviazione possono anche essere copiate dalle seguenti schede.
@@ -129,51 +130,50 @@ Le autorizzazioni di archiviazione possono anche essere copiate dalle seguenti s
 [source, json]
 ----
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "fsx:*",
-                "ec2:Describe*",
-                "ec2:CreateTags",
-                "ec2:CreateSecurityGroup",
-                "iam:CreateServiceLinkedRole",
-                "kms:Describe*",
-                "elasticfilesystem:Describe*",
-                "kms:List*",
-                "kms:CreateGrant",
-                "cloudwatch:PutMetricData",
-                "cloudwatch:GetMetricData",
-                "iam:SimulatePrincipalPolicy",
-                "cloudwatch:GetMetricStatistics"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:DeleteSecurityGroup"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "StringLike": {
-                    "ec2:ResourceTag/AppCreator": "NetappFSxWF"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "iam:SimulatePrincipalPolicy"
-            ],
-            "Resource": "*"
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:*",
+        "ec2:Describe*",
+        "ec2:CreateTags",
+        "ec2:CreateSecurityGroup",
+        "iam:CreateServiceLinkedRole",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "kms:CreateGrant",
+        "cloudwatch:PutMetricData",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/AppCreator": "NetappFSxWF"
         }
-    ]
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 ----
 --
@@ -278,6 +278,7 @@ image:screenshot-add-credentials-cloudformation.png["Una schermata che mostra gl
 +
 Puoi aggiungere funzionalità in un secondo momento, quindi seleziona solo i carichi di lavoro da implementare e gestire.
 
+. Facoltativo: Selezionare *Abilita controllo automatico autorizzazioni* per verificare se si dispone delle autorizzazioni necessarie per completare le operazioni del carico di lavoro. L'attivazione del controllo aggiunge l' `iam:SimulatePrincipalPolicy`autorizzazione ai criteri di autorizzazione. Lo scopo di questa autorizzazione è solo confermare le autorizzazioni. È possibile rimuovere l'autorizzazione dopo aver aggiunto le credenziali, ma si consiglia di conservarla per evitare la creazione di risorse per operazioni parzialmente riuscite e per evitare di eliminare qualsiasi pulitura manuale delle risorse richiesta.
 . In *Nome credenziali*, immettere il nome che si desidera utilizzare per queste credenziali.
 . Aggiungi le credenziali da AWS CloudFormation:
 +
