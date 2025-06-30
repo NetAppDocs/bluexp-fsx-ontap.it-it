@@ -30,7 +30,7 @@ L'interfaccia workload factory offre agli utenti BlueXP  opzioni per abilitare 
 
 == A proposito di questa attività
 
-Quando si aggiungono nuove credenziali per FSX per ONTAP dallo storage in una fabbrica di workload BlueXP , è necessario decidere in quale livello di autorizzazioni, o _modalità operativa_, operare. Per rilevare e implementare risorse AWS come FSX per i file system ONTAP, sono necessari i permessi _di sola lettura_ o _di lettura/scrittura_. BlueXP  FSX per ONTAP funzionerà in modalità _BASIC_ a meno che non si selezioni la modalità _sola lettura_ o la modalità _lettura/scrittura_. _Sola lettura_ sono le stesse delle autorizzazioni di visualizzazione. _Read/Write_ sono le stesse delle autorizzazioni Operate. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Ulteriori informazioni sulle modalità operative"].
+Quando si aggiungono nuove credenziali per FSx for ONTAP da Storage nella factory di carichi di lavoro BlueXP, è necessario decidere il livello di autorizzazioni, o _modalità operativa_, in cui si desidera operare. Per individuare e distribuire risorse AWS come i file system di FSx for ONTAP, sono necessarie autorizzazioni di _sola lettura_ o _lettura/scrittura_. BlueXP FSx for ONTAP funzionerà in modalità _base_ a meno che non si selezioni la modalità _sola lettura_ o _lettura/scrittura_. _Sola lettura_ sono le stesse delle autorizzazioni di visualizzazione. _Read/Write_ sono le stesse delle autorizzazioni Operate. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Ulteriori informazioni sulle modalità operative"].
 
 Le credenziali AWS nuove ed esistenti sono visualizzabili dalla pagina Impostazioni BlueXP  > *credenziali*.
 
@@ -84,7 +84,7 @@ image:screenshot-create-policies-manual-permissions-check.png["Uno screenshot ch
 +
 Puoi aggiungere funzionalità in un secondo momento, quindi seleziona solo i carichi di lavoro da implementare e gestire.
 
-. Per le funzionalità del carico di lavoro che offrono una scelta di livelli di autorizzazione (lettura/scrittura o sola lettura), selezionare il tipo di autorizzazioni che saranno disponibili con queste credenziali. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Informazioni sulle autorizzazioni, note anche come modalità operative"^].
+. Per le funzionalità del carico di lavoro che offrono una scelta di livelli di autorizzazione (sola lettura o lettura/scrittura), selezionare il tipo di autorizzazioni che saranno disponibili con queste credenziali. link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["Informazioni sulle autorizzazioni, note anche come modalità operative"^].
 . Facoltativo: Selezionare *Abilita controllo automatico autorizzazioni* per verificare se si dispone delle autorizzazioni necessarie per completare le operazioni del carico di lavoro. L'attivazione del segno di spunta aggiunge `iam:SimulatePrincipalPolicy permission` ai criteri di autorizzazione. Lo scopo di questa autorizzazione è solo confermare le autorizzazioni. È possibile rimuovere l'autorizzazione dopo aver aggiunto le credenziali, ma si consiglia di conservarla per evitare la creazione di risorse per operazioni parzialmente riuscite e per evitare di eliminare qualsiasi pulitura manuale delle risorse richiesta.
 . Nella finestra Codebox, copiare le autorizzazioni per il primo criterio IAM.
 +
@@ -221,7 +221,7 @@ Il passaggio finale consiste nell'immettere un nome per le credenziali in fabbri
 
 
 .Risultato
-Le credenziali vengono create e visualizzate nella pagina credenziali. È ora possibile utilizzare le credenziali durante la creazione di un ambiente di lavoro FSX per ONTAP.
+Le credenziali vengono create e visualizzate nella pagina credenziali. È ora possibile utilizzare le credenziali durante la creazione di un ambiente di lavoro FSX per ONTAP. Ogni volta che lo desideri, puoi rinominare le credenziali o rimuoverle dalla console BlueXP.
 
 
 
@@ -299,4 +299,4 @@ Devi accedere all'account AWS in cui si trova il file system FSX per ONTAP.
 
 
 .Risultato
-Le credenziali vengono create e visualizzate nella pagina credenziali. È ora possibile utilizzare le credenziali durante la creazione di un ambiente di lavoro FSX per ONTAP.
+Le credenziali vengono create e visualizzate nella pagina credenziali. È ora possibile utilizzare le credenziali durante la creazione di un ambiente di lavoro FSX per ONTAP. Ogni volta che lo desideri, puoi rinominare le credenziali o rimuoverle dalla console BlueXP.

@@ -18,7 +18,7 @@ Inizia subito con Amazon FSX per NetApp ONTAP in BlueXP  aggiungendo credenzial
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] link:../requirements/task-setting-up-permissions-fsx.html["Aggiungere credenziali e autorizzazioni"]
 [role="quick-margin-para"]
-L'aggiunta di credenziali AWS è necessaria per fornire a BlueXP  le autorizzazioni necessarie per creare e gestire i file system FSX per ONTAP. È possibile scegliere tra le autorizzazioni _lettura/scrittura_ e _sola lettura_.
+L'aggiunta di credenziali AWS è necessaria per fornire a BlueXP  le autorizzazioni necessarie per creare e gestire i file system FSX per ONTAP. È possibile scegliere tra permessi di _sola lettura_ e _lettura/scrittura_.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Facoltativo: Creare un connettore o un collegamento
 [role="quick-margin-para"]
